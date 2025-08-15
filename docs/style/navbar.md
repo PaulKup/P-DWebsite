@@ -1,0 +1,15 @@
+- NavBar
+    - Color: `#ebd9c2`
+    - Height: 65px at top of page transitions to 41px on scrolling
+    - Links
+        - Home
+        - Services
+        - About Us
+        - Contact Us
+            - Links Color: `#2d2a26`
+            - Links font: Roboto Mono, 20 pt
+        - Logo anchored to the right side
+    - Effects
+        - I want this to be larger when at the top of the page, and to decrease in size as you scroll, 65px at the top of the page transitions to 41px on scrolling
+    - Images:
+        ![logo.png](@logo.png)

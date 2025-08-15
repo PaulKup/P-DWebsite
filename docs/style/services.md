@@ -1,0 +1,78 @@
+- Services Page
+    - Navbar
+    - Header
+        - Font: Meow Script, 180pt
+        - Placed over the top of this image
+            
+            ![ourServicesBackground.png](ourServicesBackground.png)
+            
+        - Center aligned
+        - With a shadow effect
+        - CTA center aligned button under the header text
+    - Section One
+        - Six cards on a carousel, three showing at a time, only moving with the user's scroll
+        - Center aligned on the page horizontally below the header
+            - All three cards are vertically long rectangles, approx 1:1.5
+            - Card Color: `#f5efe8`
+            - Thin border on the cards
+                - Border color: `#984d37`
+            - Images
+                ![servicesCard1.png](@servicesCard1.png)
+                ![servicesCard2.png](@servicesCard2.png)
+                ![servicesCard3.png](@servicesCard3.png)
+                - Near the top of each card is a circular image representing the text
+                - Images should occupy the top fifth of the card
+            - Card Text
+                - Header
+                    - Horizontally centered on each card
+                    - Below images
+                    - Font: Open Sauce, 21pt
+                    - Color: `#984d37`
+                - Body text
+                    - horizontally centered on each card
+                    - Below the subheader
+                    - Font: Open Sauce, 24pt
+                    - Color: `#2d2a26`
+                    - The header, and body text will occupy the bottom four-fifths of the cards
+            - Effects
+                - Glow shadow behind each card.
+                - Implement a hover effect similar to what we have on the current landing page cards.
+                    - On hover, it should have a slight enlargement, and the lineweight of the border should also enlarge a little
+    - Pricing Plans
+        - Header
+            - Open Sauce, 60pt
+            - Color:`#2d2a26`
+            - Center aligned near the top of the page
+        - Subheader
+            - Open Sauce, 23pt
+            - Center aligned below the header
+        - Cards
+            - Three cards center aligned on the page horizontally below the header
+            - All three cards are vertically long rectangles, approx 1:1.5
+            - Card Color: `#f5efe8`
+            - Thin border on the cards, the middle card should have a thicker border
+            - Border color: `#984d37`
+        - Card Text
+            - Header
+                - Horizontally centered on each card
+                - Near the top of the card
+                - Font: Open Sauce, 35pt
+                - Color: `#2d2a26`
+            - Subheader
+                - Horizontally centered on each card
+                - Below the header
+                - Font: Open Sauce, 35 pt
+                - Color: `#2d2a26`
+                - The header and subheader should occupy the top fourth of the card
+                - The third card to the right should have a small CTA button instead of a subheader
+            - Body text
+                - horizontally centered on each card
+                - Below the subheader
+                - Font: Open Sauce, 20pt
+                - Color: `#2d2a26`
+                - The body text will occupy the bottom three-fourths of the cards
+        - Effects
+            - Glow shadow behind each card.
+            - Implement a hover effect similar to what we have on the current landing page cards.
+                - On hover, it should have a slight enlargement, and the lineweight of the border should also enlarge a little
+    - Footer

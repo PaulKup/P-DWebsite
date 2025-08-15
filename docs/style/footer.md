@@ -1,0 +1,20 @@
+- Footer
+    - Top Section
+        - This photo is above the footer with a background color: `#f5efe8`
+        - This photo is already at the correct opacity
+        
+        ![footer.png](@footer.png)
+        
+    - Bottom Section
+        - Background Color:  `#ae7b60`
+        - Medium Lineweight line separating image on top from the footer below
+            - Color `#f5efe8`
+        - “Get in Touch” on the left side in font: Open Sauce, 25 pt
+            - Email and phone number in font: Open Sauce, 18 pt
+        - Quick links on left side in font: Open Sauce, 25 pt
+            - Links to all pages below in font: Open Sauce, 18 pt
+        - Medium Lineweight line separating the above information from “© 2024 P&D Web Studio. All rights reserved.”
+            - Color: `#f5efe8`
+        - Text: “© 2024 P&D Web Studio. All rights reserved.” centered C
+            - Font: Open Sauce, 6 pt
+            - Color: `#ebd9c2`

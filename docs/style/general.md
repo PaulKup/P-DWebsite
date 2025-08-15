@@ -1,0 +1,14 @@
+- Rules that always apply
+    - Implement a snapscroll effect with a little bounce to every page
+    - CTA Buttons should always be:
+        - a  superellipse with a flat top and bottom
+        - about 4:1 long horizontally
+        - Text
+            - Color:`#f5efe8`
+            - Font: Roboto Mono, 16 pt
+        - Effects:
+            - Hover effect on button
+            - Focus State: `#ae7b60`
+            - Hover State: `#984d37`
+            - Slightly enlarge on hover.
+            - This is how I want all buttons to behave

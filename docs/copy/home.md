@@ -1,0 +1,36 @@
+- Hero
+    - **Headline: Let’s Get You a Website That Brings in Customers.**
+    - **Body:** Your website should be working just as hard as you are. We build clean, functional websites that turn visitors into customers. No confusing tech, no pushy upsells, just practical, professional design delivered on time.
+    - **CTA Button**: Don’t know where to start? Let’s chat
+- Featured section one: Why choose us
+    - Card one: We're passionate about helping small businesses thrive. Your success is our success, and we're committed to building a digital presence that reflects the quality and unique character of your business.
+    - Card two :
+        - **Your Vision, Brought to Life**
+        - ****We take the time to understand your story and your brand. Then, we craft a beautiful, custom website that captures the unique personality of your business and attracts the right customers.
+    - Card Three
+        - **A Personal Relationship**
+        - You'll work directly with our dedicated team. We provide a hands-on, personal experience that you won’t find with a large corporation. We’re in this together.
+    - Card Four
+        - **Small Business Focused**
+        - We build websites that help you stand out in your community. Our designs are not only stunning but also optimized to help new customers discover you online and walk through your front door.
+- Featured section two
+    - Card one: Modern Design
+        - Clean, contemporary designs that capture attention and convert visitors into customers.
+    - Card two: Responsive
+        - Perfect functionality across all devices - desktop, tablet, and mobile.
+    - Card three: Fast Performance
+        - Optimized for speed and performance to ensure the best user experience.
+- Footer CTA
+    - Ready to Transform Your Online Presence?
+        - Let's discuss your project and create something amazing together.
+        - CTA Button: Contact Us Now
+- Footer
+    - Get in Touch
+        - Email: [pdwebdev.studio@gmail.com](mailto:pdwebdev.studio@gmail.com)
+        Phone: (407) 801-9652
+    - Quick links
+        - Links to
+            - Home
+            - Contact Us
+            - Our Services
+            - About Us
