@@ -1,0 +1,76 @@
+# Task ID: 6
+# Title: About Us Page Implementation
+# Status: pending
+# Dependencies: 3
+# Priority: medium
+# Description: Develop the About Us page with company information and team details.
+# Details:
+1. Create page component in app/about/page.tsx:
+```typescript
+import { Metadata } from 'next';
+import Image from 'next/image';
+import AboutContent from '@/components/about/AboutContent';
+import TeamSection from '@/components/about/TeamSection';
+
+export const metadata: Metadata = {
+  title: 'About Us - P&D Web Development',
+  description: 'Learn about P&D Web Development and our team',
+  // Add OG image metadata
+};
+
+export default function AboutPage() {
+  return (
+    <>
+      <section className="container mx-auto py-12">
+        <h1 className="text-4xl font-bold mb-8">About P&D Web Development</h1>
+        <AboutContent />
+      </section>
+      <TeamSection />
+    </>
+  );
+}
+```
+2. Implement AboutContent component with company story and values
+3. Create TeamSection component to showcase team members (if applicable)
+4. Load content from markdown files in `@/docs/copy/`
+5. Optimize images using next/image
+6. Add optional JSON-LD structured data for organization
+
+# Test Strategy:
+1. Verify content is correctly loaded from markdown files
+2. Test responsive layout at all breakpoints
+3. Verify images are properly optimized and displayed
+4. Test structured data using Google's Rich Results Test
+5. Verify SEO metadata is correctly implemented
+
+# Subtasks:
+## 1. Create AboutContent Component [pending]
+### Dependencies: None
+### Description: Implement the AboutContent component that displays the company story, mission, and values.
+### Details:
+Create a new file at components/about/AboutContent.tsx. Use the MDX or markdown loader to fetch content from @/docs/copy/about.md. Structure the component with sections for company history, mission statement, and core values. Include appropriate styling using Tailwind CSS classes for responsive layout. Implement a grid or flex layout for different sections of the content.
+
+## 2. Implement TeamSection Component [pending]
+### Dependencies: None
+### Description: Create the TeamSection component to showcase team members with photos, names, roles, and short bios.
+### Details:
+Create components/about/TeamSection.tsx with a grid layout for team members. Each team member should have a card with their photo, name, role, and short bio. Use next/image for optimized image loading with appropriate width, height, and priority attributes. Load team member data from @/docs/copy/team.md or a JSON file. Include hover effects for team member cards and ensure the layout is responsive across all device sizes.
+
+## 3. Add Open Graph and SEO Metadata [pending]
+### Dependencies: None
+### Description: Complete the metadata configuration for the About page with Open Graph tags and other SEO enhancements.
+### Details:
+Update the metadata object in app/about/page.tsx to include Open Graph image, type, and URL properties. Add Twitter card metadata. Create an appropriate OG image for the About page and store it in the public directory. Ensure all meta tags follow best practices for social sharing and SEO.
+
+## 4. Implement JSON-LD Structured Data [pending]
+### Dependencies: 6.1, 6.2
+### Description: Add JSON-LD structured data for the organization to improve search engine understanding of the company information.
+### Details:
+Create a new component called StructuredData.tsx that generates the JSON-LD schema for the organization. Include details like organization name, logo, social profiles, contact information, and founding date. Import and use this component in the About page. The structured data should follow schema.org standards for Organization type.
+
+## 5. Optimize Page Layout and Responsiveness [pending]
+### Dependencies: 6.1, 6.2, 6.3, 6.4
+### Description: Finalize the About page layout with proper spacing, animations, and responsive behavior across all device sizes.
+### Details:
+Review and refine the overall page layout in app/about/page.tsx. Add appropriate spacing between sections. Implement subtle animations or transitions for content sections using CSS or a library like Framer Motion. Ensure the page is fully responsive with no layout issues at any breakpoint. Add a breadcrumb navigation component at the top of the page. Test and optimize for Core Web Vitals.
+

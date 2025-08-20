@@ -4,10 +4,14 @@ const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: Number(process.env.MAIL_PORT ?? 587),
   secure: false,
-  auth: { user: process.env.MAIL_USER, pass: process.env.MAIL_PASS }
+  auth: { user: process.env.MAIL_USER, pass: process.env.MAIL_PASS },
 })
 
-export interface EmailPayload { name: string; email: string; message: string }
+export interface EmailPayload {
+  name: string
+  email: string
+  message: string
+}
 
 export const emailService = {
   async sendOwnerAndCustomer({ name, email, message }: EmailPayload) {
@@ -18,14 +22,25 @@ export const emailService = {
       from: process.env.MAIL_FROM ?? process.env.MAIL_USER,
       to: ownerTo,
       subject: `New inquiry from ${name}`,
-      text: `${name} <${email}>\n\n${message}`
+      text: `${name} <${email}>\n\n${message}`,
+      html: `<p><strong>${name}</strong> &lt;${email}&gt;</p><p>${escapeHtml(message)}</p>`,
     })
 
     await transporter.sendMail({
       from: process.env.MAIL_FROM ?? process.env.MAIL_USER,
       to: email,
       subject: 'Thanks for contacting P&D Web Development',
-      text: `Hi ${name},\n\nWe received your message and will get back to you shortly.\n\n— P&D`
+      text: `Hi ${name},\n\nWe received your message and will get back to you shortly.\n\n— P&D`,
+      html: `<p>Hi ${escapeHtml(name)},</p><p>We received your message and will get back to you shortly.</p><p>— P&amp;D</p>`,
     })
-  }
+  },
+}
+
+function escapeHtml(input?: string) {
+  return (input ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
 }
