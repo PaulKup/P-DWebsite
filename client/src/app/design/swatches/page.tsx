@@ -27,7 +27,14 @@ export default function SwatchesPage() {
                 <div className="h-20" style={{ backgroundColor: value }} />
                 <div className="p-3 text-sm">
                   <div className="font-medium">{name}</div>
-                  <div className="text-ink-medium">{value}</div>
+                  <div className="mt-1 flex items-center gap-2">
+                    <span
+                      aria-hidden
+                      className="inline-block h-4 w-4 rounded border"
+                      style={{ backgroundColor: value }}
+                    />
+                    <span className="text-ink-medium">{value}</span>
+                  </div>
                 </div>
               </div>
             ))}

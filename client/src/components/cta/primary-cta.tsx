@@ -1,21 +1,39 @@
 import Link from 'next/link'
-import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { Button } from '@/components/ui/button'
 
-export function PrimaryCta() {
+export interface PrimaryCtaProps {
+  title?: string
+  description?: string
+  buttonText?: string
+}
+
+export function PrimaryCta({
+  title = 'Ready to Transform Your Online Presence?',
+  description = "Let's discuss your project and create something amazing together.",
+  buttonText = 'Get Started!',
+}: PrimaryCtaProps) {
   return (
-    <Section padded bg="dark">
-      <Container className="flex flex-col items-center gap-4 text-center">
-        <h2 className="text-3xl font-semibold">Ready to elevate your web presence?</h2>
-        <p className="max-w-2xl text-white/80">
-          Tell us about your project. We’ll recommend a practical plan and timeline that fits your
-          goals.
+    <Section
+      padded
+      bg="background"
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+    >
+      <div className="flex w-full flex-col items-center gap-3 px-4 text-center sm:gap-4 sm:px-6 lg:gap-3 lg:px-8">
+        <h2 className="text-ink-dark font-mono text-[32px] font-light sm:text-[48px] md:text-[56px] lg:text-7xl">
+          {title}
+        </h2>
+        <p className="text-ink-dark max-w-4xl font-mono text-[18px] sm:text-[20px] md:text-[23px] lg:text-[30px]">
+          {description}
         </p>
-        <Button asChild>
-          <Link href="/contact">Get in touch</Link>
+        <Button
+          asChild
+          size="xl"
+          className="whitespace-nowrap rounded-full px-4 text-[20px] text-[#f5efe8] shadow-[3px_5px_5px_0_#2D2A26] hover:shadow-[3px_5px_5px_0_#2D2A26] sm:px-6 sm:text-[24px] lg:text-3xl/none"
+        >
+          <Link href="/contact">{buttonText}</Link>
         </Button>
-      </Container>
+      </div>
     </Section>
   )
 }

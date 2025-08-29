@@ -2,7 +2,7 @@ import { cn } from '@/lib/cn'
 
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   padded?: boolean
-  bg?: 'none' | 'light' | 'dark'
+  bg?: 'none' | 'light' | 'dark' | 'background'
 }
 
 export function Section({ className, padded = true, bg = 'none', ...props }: SectionProps) {

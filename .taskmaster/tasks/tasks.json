@@ -65,7 +65,9 @@
         "details": "1. Set up design tokens in Tailwind config:\n```javascript\n// tailwind.config.js\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n        brand: { /* colors from style guide */ },\n        ink: { /* colors from style guide */ },\n        sand: { /* colors from style guide */ }\n      },\n      spacing: {\n        // 8-pt grid system\n      },\n      borderRadius: {\n        // radii from style guide\n      }\n    }\n  }\n}\n```\n2. Configure typography with Inter font:\n```typescript\n// app/fonts.ts\nimport { Inter } from 'next/font/google';\n\nexport const inter = Inter({ subsets: ['latin'] });\n```\n3. Create base components using shadcn and CVA:\n   - Button component with variants\n   - Card component\n   - Section component\n   - Navbar component with mobile menu\n   - Footer component\n4. Implement responsive design utilities",
         "testStrategy": "1. Create a component storybook or test page to visually verify all components\n2. Test components for responsive behavior across different viewport sizes\n3. Verify accessibility of components using axe or similar tools\n4. Unit test component variants and states",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "done",
         "subtasks": [
           {
@@ -81,7 +83,9 @@
             "id": 2,
             "title": "Set Up Typography System",
             "description": "Configure typography with the Inter font and establish text styles for headings, body text, and other text elements.",
-            "dependencies": ["2.1"],
+            "dependencies": [
+              "2.1"
+            ],
             "details": "Complete the fonts.ts configuration for Inter font. Create typography classes in Tailwind for different text styles (headings h1-h6, body, caption, etc.) with appropriate font sizes, line heights, and font weights. Implement responsive typography that scales appropriately across different viewport sizes. Add any special text treatments like links, emphasized text, or quotes.\n<info added on 2025-08-16T03:20:58.900Z>\nTypography has been implemented using the Inter font from the next/font package. The font is configured in client/src/app/layout.tsx with the following settings: Inter({ subsets: ['latin'], display: 'swap' }). The base font has been applied to the HTML element to ensure consistent typography throughout the application.\n</info added on 2025-08-16T03:20:58.900Z>",
             "status": "done",
             "testStrategy": "Create a typography test page showing all text styles at different viewport sizes to verify consistency and readability."
@@ -90,7 +94,9 @@
             "id": 4,
             "title": "Build Navigation Components",
             "description": "Create the Navbar and Footer components with responsive behavior and mobile menu functionality.",
-            "dependencies": ["2.3"],
+            "dependencies": [
+              "2.3"
+            ],
             "details": "Implement Navbar component with logo, navigation links, and mobile menu toggle. Create mobile menu with smooth animations for opening/closing. Build Footer component with site links, social media icons, and copyright information. Both components should be responsive and adapt to different viewport sizes. Use the previously created Button component for any CTAs in these components.\n<info added on 2025-08-16T03:21:02.515Z>\nComponents have been successfully implemented at the specified file paths:\n- Navbar component: `client/src/components/navbar/navbar.tsx`\n- Footer component: `client/src/components/footer/footer.tsx`\n\nBoth components include all required features: responsive layout that adapts to different viewport sizes, navigation links, and Call-to-Action buttons using the previously created Button component. The mobile menu toggle and animations are working as expected in the Navbar component, and the Footer includes site links, social media icons, and copyright information.\n</info added on 2025-08-16T03:21:02.515Z>",
             "status": "done",
             "testStrategy": "Test mobile menu open/close functionality. Verify keyboard navigation works correctly. Test responsive behavior at various breakpoints. Ensure all links are correctly wired."
@@ -99,7 +105,10 @@
             "id": 5,
             "title": "Create Responsive Layout Utilities",
             "description": "Implement responsive design utilities and layout components to ensure consistent spacing and alignment across the site.",
-            "dependencies": ["2.3", "2.4"],
+            "dependencies": [
+              "2.3",
+              "2.4"
+            ],
             "details": "Create Container component for consistent max-width and padding across the site. Implement Grid and Flex layout components/utilities for common layout patterns. Add responsive spacing utilities that follow the 8-pt grid system. Create responsive visibility utilities (show/hide at different breakpoints). Document all utilities with examples for the development team.\n<info added on 2025-08-16T03:25:55.532Z>\nImplemented responsive layout utilities in client/src/components/ui directory with the following components:\n\n- Container: Centers content with max-w-7xl and responsive padding on both sides\n- Section: Provides background options (none/light/dark) with configurable vertical padding presets\n- Grid: Supports responsive column layouts with customizable breakpoints (base/sm/md/lg) and adjustable gap spacing\n\nAll components follow the established 8-pt spacing system and use the tokenized color palette. Components are fully documented with usage examples and are ready for implementation across all site pages.\n</info added on 2025-08-16T03:25:55.532Z>",
             "status": "done",
             "testStrategy": "Create a test page with various layout examples to verify responsive behavior. Test across multiple devices and browsers to ensure consistency."
@@ -113,7 +122,9 @@
         "details": "1. Create layout component in app/layout.tsx:\n```typescript\nimport { inter } from './fonts';\nimport Navbar from '@/components/Navbar';\nimport Footer from '@/components/Footer';\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\" className={inter.className}>\n      <body className=\"flex min-h-screen flex-col\">\n        <Navbar />\n        <main className=\"flex-grow\">{children}</main>\n        <Footer />\n      </body>\n    </html>\n  );\n}\n```\n2. Implement sticky Navbar with mobile menu toggle:\n```typescript\n// components/Navbar.tsx\nimport Link from 'next/link';\nimport { useState } from 'react';\nimport { Button } from './ui/Button';\n\nexport default function Navbar() {\n  const [isMenuOpen, setIsMenuOpen] = useState(false);\n  \n  // Implement sticky navbar with mobile menu\n  // Include navigation links to Home, Services, About, Contact\n  // Ensure keyboard accessibility\n}\n```\n3. Implement Footer with navigation and branding\n4. Add metadata configuration in layout for SEO",
         "testStrategy": "1. Test navbar sticky behavior on scroll\n2. Verify mobile menu opens and closes correctly\n3. Test keyboard navigation through menu items\n4. Ensure all links in navbar and footer work correctly\n5. Test responsive behavior at various breakpoints",
         "priority": "high",
-        "dependencies": [2],
+        "dependencies": [
+          2
+        ],
         "status": "done",
         "subtasks": [
           {
@@ -129,7 +140,9 @@
             "id": 2,
             "title": "Implement Sticky Navbar Component",
             "description": "Create a responsive navbar component that sticks to the top of the viewport and includes a mobile menu toggle for smaller screens.",
-            "dependencies": ["3.1"],
+            "dependencies": [
+              "3.1"
+            ],
             "details": "1. Create components/Navbar.tsx with useState for mobile menu toggle\n2. Implement desktop navigation with Links to main pages\n3. Add sticky positioning with appropriate z-index\n4. Create mobile hamburger menu that toggles navigation on smaller screens\n5. Style the navbar according to design system with Tailwind\n6. Ensure keyboard accessibility with proper focus management\n7. Add transition animations for menu opening/closing",
             "status": "done",
             "testStrategy": "Test navbar sticky behavior on scroll. Verify mobile menu opens and closes correctly. Test keyboard navigation through menu items. Ensure responsive behavior at various breakpoints."
@@ -138,7 +151,9 @@
             "id": 3,
             "title": "Implement Footer Component",
             "description": "Create a responsive footer component with navigation links, branding, and copyright information.",
-            "dependencies": ["3.1"],
+            "dependencies": [
+              "3.1"
+            ],
             "details": "1. Create components/Footer.tsx\n2. Implement footer with navigation links grouped by categories\n3. Add company branding and logo\n4. Include copyright information and current year\n5. Add social media links with appropriate icons\n6. Style the footer according to design system with Tailwind\n7. Ensure responsive layout for different screen sizes",
             "status": "done",
             "testStrategy": "Verify all links work correctly. Test responsive layout at different breakpoints. Ensure accessibility of all interactive elements."
@@ -147,7 +162,10 @@
             "id": 4,
             "title": "Add Accessibility Features to Layout Components",
             "description": "Enhance the layout components with proper accessibility attributes, keyboard navigation, and screen reader support.",
-            "dependencies": ["3.2", "3.3"],
+            "dependencies": [
+              "3.2",
+              "3.3"
+            ],
             "details": "1. Add appropriate ARIA attributes to navigation elements\n2. Implement skip-to-content link at the beginning of the page\n3. Ensure proper heading hierarchy throughout the layout\n4. Add focus indicators for keyboard navigation\n5. Test and fix any accessibility issues in the navbar and footer\n6. Ensure color contrast meets WCAG standards\n7. Add screen reader announcements for dynamic content changes",
             "status": "done",
             "testStrategy": "Test with keyboard-only navigation. Use accessibility tools like axe or Lighthouse to identify and fix issues. Test with screen readers to ensure proper announcements."
@@ -156,7 +174,11 @@
             "id": 5,
             "title": "Implement Responsive Behavior and Testing",
             "description": "Finalize the responsive behavior of the layout components and perform comprehensive testing across devices and browsers.",
-            "dependencies": ["3.2", "3.3", "3.4"],
+            "dependencies": [
+              "3.2",
+              "3.3",
+              "3.4"
+            ],
             "details": "1. Add responsive breakpoints for all layout components\n2. Test and fix any layout issues on mobile, tablet, and desktop viewports\n3. Implement any missing hover/focus states for interactive elements\n4. Optimize performance by ensuring minimal layout shifts\n5. Test layout with different content lengths to ensure flexibility\n6. Add any necessary polyfills or fallbacks for cross-browser compatibility\n7. Document the layout component API and usage guidelines",
             "status": "done",
             "testStrategy": "Test on multiple devices and browsers. Verify responsive behavior at all standard breakpoints. Check for layout shifts and visual consistency. Measure Core Web Vitals to ensure good performance."
@@ -170,7 +192,9 @@
         "details": "1. Create page component in app/page.tsx:\n```typescript\nimport { Metadata } from 'next';\nimport HeroSection from '@/components/home/HeroSection';\nimport WhyChooseUsSection from '@/components/home/WhyChooseUsSection';\nimport FeaturesSection from '@/components/home/FeaturesSection';\nimport CTASection from '@/components/home/CTASection';\n\nexport const metadata: Metadata = {\n  title: 'P&D Web Development',\n  description: 'Professional web development services for small businesses',\n  // Add OG image metadata\n};\n\nexport default function HomePage() {\n  return (\n    <>\n      <HeroSection />\n      <WhyChooseUsSection />\n      <FeaturesSection />\n      <CTASection />\n    </>\n  );\n}\n```\n2. Implement each section component:\n   - Hero with headline, subheadline, and CTA button\n   - Why Choose Us with cards highlighting benefits\n   - Features section showcasing services\n   - CTA section with button to contact page\n3. Load content from markdown files in `@/docs/copy/`\n4. Optimize images using next/image\n5. Add animations for enhanced UX (optional)",
         "testStrategy": "1. Verify content is correctly loaded from markdown files\n2. Test responsive layout at all breakpoints\n3. Measure Core Web Vitals (LCP, CLS) to ensure they meet requirements\n4. Verify image optimization is working correctly\n5. Test all CTAs and links",
         "priority": "high",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -213,7 +237,12 @@
             "id": 5,
             "title": "Implement Markdown Content Loading Utility",
             "description": "Create a utility function to load and parse markdown content from files in the @/docs/copy/ directory for use in the home page sections.",
-            "dependencies": ["4.1", "4.2", "4.3", "4.4"],
+            "dependencies": [
+              "4.1",
+              "4.2",
+              "4.3",
+              "4.4"
+            ],
             "details": "Create lib/markdown.ts with:\n- Function to load and parse markdown files\n- Support for frontmatter metadata\n- Error handling for missing files\n- Type definitions for content structure\n- Cache results to improve performance\n\nExample implementation:\n```typescript\nimport fs from 'fs/promises';\nimport path from 'path';\nimport matter from 'gray-matter';\nimport { cache } from 'react';\n\nconst CONTENT_DIR = path.join(process.cwd(), 'docs/copy');\n\nexport interface MarkdownContent {\n  [key: string]: any;\n}\n\nexport const getMarkdownContent = cache(async (filename: string): Promise<MarkdownContent> => {\n  try {\n    const filePath = path.join(CONTENT_DIR, filename);\n    const fileContent = await fs.readFile(filePath, 'utf8');\n    \n    const { data, content } = matter(fileContent);\n    \n    // Parse nested content if needed based on the file structure\n    // This is just an example - adjust based on your markdown structure\n    if (filename === 'features.md' && data.features) {\n      // If features are defined in frontmatter, use those\n      return data;\n    } else if (filename === 'why-choose-us.md' && data.benefits) {\n      // If benefits are defined in frontmatter, use those\n      return data;\n    }\n    \n    // Return combined data from frontmatter and content\n    return {\n      ...data,\n      content\n    };\n  } catch (error) {\n    console.error(`Error loading markdown file ${filename}:`, error);\n    return { error: `Failed to load content from ${filename}` };\n  }\n});\n\n// Create sample markdown files in docs/copy/ directory\nexport async function createSampleMarkdownFiles() {\n  const heroContent = `---\ntitle: Professional Web Development for Small Businesses\nsubtitle: Custom websites that drive growth and engagement\nctaText: Get Started\n---`;\n  \n  const whyChooseUsContent = `---\ntitle: Why Choose P&D Web Development\nintroduction: We combine technical expertise with business understanding to deliver websites that work for you.\nbenefits:\n  - icon: ⚡\n    title: Fast Performance\n    description: Websites optimized for speed and conversion\n  - icon: 📱\n    title: Mobile-First Design\n    description: Responsive layouts that work on all devices\n  - icon: 🔍\n    title: SEO Optimized\n    description: Built with search engines in mind from day one\n---`;\n  \n  const featuresContent = `---\ntitle: Our Services\nintroduction: We offer end-to-end web development services tailored to your business needs.\nfeatures:\n  - title: Custom Web Development\n    description: Bespoke websites built with modern technologies that perfectly match your brand and business requirements.\n    image: /images/custom-development.jpg\n    imageAlt: Developer working on custom website code\n  - title: E-commerce Solutions\n    description: Online stores that drive sales with seamless checkout experiences and powerful inventory management.\n    image: /images/ecommerce.jpg\n    imageAlt: E-commerce website on multiple devices\n  - title: Content Management\n    description: Easy-to-use CMS solutions that put you in control of your website content.\n    image: /images/cms.jpg\n    imageAlt: Content management system interface\n---`;\n  \n  const ctaContent = `---\ntitle: Ready to transform your online presence?\ndescription: Contact us today for a free consultation and quote.\nbuttonText: Contact Us\n---`;\n  \n  try {\n    await fs.mkdir(CONTENT_DIR, { recursive: true });\n    await fs.writeFile(path.join(CONTENT_DIR, 'hero.md'), heroContent);\n    await fs.writeFile(path.join(CONTENT_DIR, 'why-choose-us.md'), whyChooseUsContent);\n    await fs.writeFile(path.join(CONTENT_DIR, 'features.md'), featuresContent);\n    await fs.writeFile(path.join(CONTENT_DIR, 'cta.md'), ctaContent);\n    console.log('Sample markdown files created successfully');\n  } catch (error) {\n    console.error('Error creating sample markdown files:', error);\n  }\n}\n```",
             "status": "done",
             "testStrategy": "1. Test loading markdown files with various structures\n2. Verify error handling for missing files\n3. Test parsing of frontmatter metadata\n4. Verify caching works correctly\n5. Test with sample content to ensure correct data structure"
@@ -227,7 +256,9 @@
         "details": "1. Create page component in app/services/page.tsx:\n```typescript\nimport { Metadata } from 'next';\nimport ServicesList from '@/components/services/ServicesList';\nimport ServiceCTA from '@/components/services/ServiceCTA';\n\nexport const metadata: Metadata = {\n  title: 'Our Services - P&D Web Development',\n  description: 'Explore our web development services for small businesses',\n  // Add OG image metadata\n};\n\nexport default function ServicesPage() {\n  return (\n    <>\n      <section className=\"container mx-auto py-12\">\n        <h1 className=\"text-4xl font-bold mb-8\">Our Services</h1>\n        <ServicesList />\n      </section>\n      <ServiceCTA />\n    </>\n  );\n}\n```\n2. Implement ServicesList component to display services with descriptions\n3. Create individual service components with details\n4. Add ServiceCTA component to encourage contact\n5. Load content from markdown files in `@/docs/copy/`\n6. Optimize images using next/image",
         "testStrategy": "1. Verify content is correctly loaded from markdown files\n2. Test responsive layout at all breakpoints\n3. Verify all service details are displayed correctly\n4. Test CTA functionality\n5. Verify SEO metadata is correctly implemented",
         "priority": "medium",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -261,7 +292,9 @@
             "id": 4,
             "title": "Implement SEO Metadata and OG Images",
             "description": "Complete the SEO metadata for the Services page, including Open Graph images and structured data to improve search engine visibility and social sharing.",
-            "dependencies": ["5.1"],
+            "dependencies": [
+              "5.1"
+            ],
             "details": "Update the Services page component to include complete metadata including Open Graph images and JSON-LD structured data. Modify app/services/page.tsx as follows:\n\n```typescript\nimport { Metadata } from 'next';\nimport ServicesList from '@/components/services/ServicesList';\nimport ServiceCTA from '@/components/services/ServiceCTA';\nimport { getServicesList } from '@/lib/services';\n\nexport async function generateMetadata(): Promise<Metadata> {\n  return {\n    title: 'Our Services - P&D Web Development',\n    description: 'Explore our professional web development services for small businesses including website design, e-commerce solutions, and SEO optimization.',\n    openGraph: {\n      title: 'Web Development Services for Small Businesses | P&D',\n      description: 'Discover how our web development services can help your small business grow online with custom websites, e-commerce solutions, and digital marketing.',\n      images: [\n        {\n          url: '/images/og/services-og.jpg',\n          width: 1200,\n          height: 630,\n          alt: 'P&D Web Development Services',\n        },\n      ],\n      type: 'website',\n    },\n    twitter: {\n      card: 'summary_large_image',\n      title: 'Web Development Services | P&D',\n      description: 'Professional web development services tailored for small businesses.',\n      images: ['/images/og/services-og.jpg'],\n    },\n  };\n}\n\nexport default async function ServicesPage() {\n  const services = await getServicesList();\n  \n  // JSON-LD structured data for services\n  const jsonLd = {\n    '@context': 'https://schema.org',\n    '@type': 'ItemList',\n    itemListElement: services.map((service, index) => ({\n      '@type': 'ListItem',\n      position: index + 1,\n      item: {\n        '@type': 'Service',\n        name: service.title,\n        description: service.description,\n        url: `https://pandwebdev.com/services/${service.slug}`,\n      },\n    })),\n  };\n\n  return (\n    <>\n      <script\n        type=\"application/ld+json\"\n        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}\n      />\n      <section className=\"container mx-auto py-12 px-4\">\n        <h1 className=\"text-4xl font-bold mb-8\">Our Services</h1>\n        <p className=\"text-lg text-gray-700 mb-12 max-w-3xl\">\n          We offer a comprehensive range of web development services designed to help small businesses establish a strong online presence and achieve their digital goals.\n        </p>\n        <ServicesList />\n      </section>\n      <ServiceCTA />\n    </>\n  );\n}```",
             "status": "done",
             "testStrategy": "1. Validate structured data using Google's Rich Results Test\n2. Verify Open Graph tags using Facebook's Sharing Debugger\n3. Test Twitter card preview using Twitter Card Validator\n4. Ensure all metadata is correctly implemented\n5. Verify the OG image is properly sized and displays correctly"
@@ -270,7 +303,10 @@
             "id": 5,
             "title": "Create Service Detail Page Component",
             "description": "Implement the dynamic service detail page that will display comprehensive information about each individual service when a user clicks 'Learn More'.",
-            "dependencies": ["5.1", "5.2"],
+            "dependencies": [
+              "5.1",
+              "5.2"
+            ],
             "details": "Create a dynamic route for individual service pages that will display detailed information about each service. Implement the following files:\n\n1. First, create app/services/[slug]/page.tsx:\n\n```typescript\nimport { Metadata } from 'next';\nimport Image from 'next/image';\nimport { notFound } from 'next/navigation';\nimport { getServiceBySlug, getServicesList } from '@/lib/services';\nimport ServiceCTA from '@/components/services/ServiceCTA';\nimport MarkdownContent from '@/components/shared/MarkdownContent';\n\ntype Props = {\n  params: { slug: string };\n};\n\nexport async function generateStaticParams() {\n  const services = await getServicesList();\n  return services.map((service) => ({\n    slug: service.slug,\n  }));\n}\n\nexport async function generateMetadata({ params }: Props): Promise<Metadata> {\n  const service = await getServiceBySlug(params.slug);\n  \n  if (!service) {\n    return {\n      title: 'Service Not Found',\n    };\n  }\n  \n  return {\n    title: `${service.title} - P&D Web Development`,\n    description: service.description,\n    openGraph: {\n      title: `${service.title} | P&D Web Development Services`,\n      description: service.description,\n      images: [\n        {\n          url: '/images/og/services-og.jpg',\n          width: 1200,\n          height: 630,\n          alt: `P&D ${service.title} Service`,\n        },\n      ],\n    },\n  };\n}\n\nexport default async function ServicePage({ params }: Props) {\n  const service = await getServiceBySlug(params.slug);\n  \n  if (!service) {\n    notFound();\n  }\n  \n  // JSON-LD structured data for this service\n  const jsonLd = {\n    '@context': 'https://schema.org',\n    '@type': 'Service',\n    name: service.title,\n    description: service.description,\n    provider: {\n      '@type': 'Organization',\n      name: 'P&D Web Development',\n      url: 'https://pandwebdev.com',\n    },\n  };\n\n  return (\n    <>\n      <script\n        type=\"application/ld+json\"\n        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}\n      />\n      <div className=\"container mx-auto py-12 px-4\">\n        <div className=\"flex items-center mb-8\">\n          <Image \n            src={service.icon} \n            alt={`${service.title} icon`} \n            width={64} \n            height={64} \n            className=\"mr-4\"\n          />\n          <h1 className=\"text-4xl font-bold\">{service.title}</h1>\n        </div>\n        \n        <div className=\"grid grid-cols-1 lg:grid-cols-3 gap-12\">\n          <div className=\"lg:col-span-2\">\n            <MarkdownContent content={service.content} />\n          </div>\n          \n          <div className=\"lg:col-span-1\">\n            <div className=\"bg-gray-50 p-6 rounded-lg mb-8\">\n              <h2 className=\"text-2xl font-semibold mb-4\">Key Features</h2>\n              <ul className=\"space-y-2\">\n                {service.features.map((feature, index) => (\n                  <li key={index} className=\"flex items-start\">\n                    <span className=\"text-brand-600 mr-2\">✓</span>\n                    <span>{feature}</span>\n                  </li>\n                ))}\n              </ul>\n            </div>\n            \n            <div className=\"bg-brand-50 p-6 rounded-lg\">\n              <h2 className=\"text-2xl font-semibold mb-4\">Benefits</h2>\n              <ul className=\"space-y-2\">\n                {service.benefits.map((benefit, index) => (\n                  <li key={index} className=\"flex items-start\">\n                    <span className=\"text-brand-600 mr-2\">→</span>\n                    <span>{benefit}</span>\n                  </li>\n                ))}\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>\n      <ServiceCTA />\n    </>\n  );\n}\n```\n\n2. Then create a shared markdown content component at components/shared/MarkdownContent.tsx:\n\n```typescript\nimport ReactMarkdown from 'react-markdown';\n\ntype MarkdownContentProps = {\n  content: string;\n};\n\nexport default function MarkdownContent({ content }: MarkdownContentProps) {\n  return (\n    <div className=\"prose prose-lg max-w-none\">\n      <ReactMarkdown>{content}</ReactMarkdown>\n    </div>\n  );\n}\n```",
             "status": "done",
             "testStrategy": "1. Test dynamic routing with different service slugs\n2. Verify markdown content renders correctly\n3. Test the 404 behavior for non-existent services\n4. Verify responsive layout at different breakpoints\n5. Test structured data using Google's Rich Results Test"
@@ -284,7 +320,9 @@
         "details": "1. Create page component in app/about/page.tsx:\n```typescript\nimport { Metadata } from 'next';\nimport Image from 'next/image';\nimport AboutContent from '@/components/about/AboutContent';\nimport TeamSection from '@/components/about/TeamSection';\n\nexport const metadata: Metadata = {\n  title: 'About Us - P&D Web Development',\n  description: 'Learn about P&D Web Development and our team',\n  // Add OG image metadata\n};\n\nexport default function AboutPage() {\n  return (\n    <>\n      <section className=\"container mx-auto py-12\">\n        <h1 className=\"text-4xl font-bold mb-8\">About P&D Web Development</h1>\n        <AboutContent />\n      </section>\n      <TeamSection />\n    </>\n  );\n}\n```\n2. Implement AboutContent component with company story and values\n3. Create TeamSection component to showcase team members (if applicable)\n4. Load content from markdown files in `@/docs/copy/`\n5. Optimize images using next/image\n6. Add optional JSON-LD structured data for organization",
         "testStrategy": "1. Verify content is correctly loaded from markdown files\n2. Test responsive layout at all breakpoints\n3. Verify images are properly optimized and displayed\n4. Test structured data using Google's Rich Results Test\n5. Verify SEO metadata is correctly implemented",
         "priority": "medium",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -318,7 +356,10 @@
             "id": 4,
             "title": "Implement JSON-LD Structured Data",
             "description": "Add JSON-LD structured data for the organization to improve search engine understanding of the company information.",
-            "dependencies": ["6.1", "6.2"],
+            "dependencies": [
+              "6.1",
+              "6.2"
+            ],
             "details": "Create a new component called StructuredData.tsx that generates the JSON-LD schema for the organization. Include details like organization name, logo, social profiles, contact information, and founding date. Import and use this component in the About page. The structured data should follow schema.org standards for Organization type.",
             "status": "pending",
             "testStrategy": "Test the structured data using Google's Rich Results Test and Schema.org Validator. Ensure all required fields are present and formatted correctly according to schema.org specifications."
@@ -327,7 +368,12 @@
             "id": 5,
             "title": "Optimize Page Layout and Responsiveness",
             "description": "Finalize the About page layout with proper spacing, animations, and responsive behavior across all device sizes.",
-            "dependencies": ["6.1", "6.2", "6.3", "6.4"],
+            "dependencies": [
+              "6.1",
+              "6.2",
+              "6.3",
+              "6.4"
+            ],
             "details": "Review and refine the overall page layout in app/about/page.tsx. Add appropriate spacing between sections. Implement subtle animations or transitions for content sections using CSS or a library like Framer Motion. Ensure the page is fully responsive with no layout issues at any breakpoint. Add a breadcrumb navigation component at the top of the page. Test and optimize for Core Web Vitals.",
             "status": "pending",
             "testStrategy": "Test responsive layout at all standard breakpoints (mobile, tablet, desktop). Verify animations work correctly across browsers. Measure Core Web Vitals (LCP, CLS, FID) to ensure they meet Google's recommendations. Test keyboard navigation and screen reader accessibility."
@@ -341,7 +387,9 @@
         "details": "1. Create page component in app/contact/page.tsx:\n```typescript\nimport { Metadata } from 'next';\nimport ContactForm from '@/components/contact/ContactForm';\nimport ContactInfo from '@/components/contact/ContactInfo';\n\nexport const metadata: Metadata = {\n  title: 'Contact Us - P&D Web Development',\n  description: 'Get in touch with P&D Web Development',\n  // Add OG image metadata\n};\n\nexport default function ContactPage() {\n  return (\n    <section className=\"container mx-auto py-12\">\n      <h1 className=\"text-4xl font-bold mb-8\">Contact Us</h1>\n      <div className=\"grid grid-cols-1 md:grid-cols-2 gap-8\">\n        <ContactInfo />\n        <ContactForm />\n      </div>\n    </section>\n  );\n}\n```\n2. Implement ContactForm component with client-side validation:\n```typescript\n'use client';\nimport { useState } from 'react';\nimport { z } from 'zod';\nimport { Button } from '@/components/ui/Button';\n\nconst formSchema = z.object({\n  name: z.string().min(1, 'Name is required'),\n  email: z.string().email('Invalid email address'),\n  message: z.string().min(10, 'Message must be at least 10 characters')\n});\n\nexport default function ContactForm() {\n  const [formData, setFormData] = useState({ name: '', email: '', message: '' });\n  const [errors, setErrors] = useState({});\n  const [status, setStatus] = useState('idle'); // idle, submitting, success, error\n  \n  // Implement form handling, validation, submission\n  // Show loading, success, and error states\n}\n```\n3. Add rate limiting UI feedback\n4. Implement accessible form elements with proper labels and ARIA attributes\n5. Create success and error states with appropriate messaging",
         "testStrategy": "1. Test form validation for all fields\n2. Verify form accessibility using screen readers and keyboard navigation\n3. Test form submission with mock API\n4. Verify success and error states display correctly\n5. Test form responsiveness at different viewport sizes",
         "priority": "high",
-        "dependencies": [3],
+        "dependencies": [
+          3
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -366,7 +414,9 @@
             "id": 3,
             "title": "Create Form UI Components",
             "description": "Implement the form UI components with proper accessibility attributes, labels, and error message display.",
-            "dependencies": ["7.2"],
+            "dependencies": [
+              "7.2"
+            ],
             "details": "Update the ContactForm component to include the form UI elements:\n```typescript\n// Add this to the existing ContactForm component\nreturn (\n  <form onSubmit={handleSubmit} className=\"bg-white p-6 rounded-lg shadow-sm space-y-4\">\n    <div>\n      <label htmlFor=\"name\" className=\"block text-sm font-medium text-gray-700 mb-1\">\n        Name\n      </label>\n      <input\n        id=\"name\"\n        name=\"name\"\n        type=\"text\"\n        value={formData.name}\n        onChange={handleChange}\n        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none ${errors.name ? 'border-red-500' : 'border-gray-300'}`}\n        aria-invalid={!!errors.name}\n        aria-describedby={errors.name ? 'name-error' : undefined}\n        disabled={status === 'submitting'}\n      />\n      {errors.name && (\n        <p id=\"name-error\" className=\"mt-1 text-sm text-red-600\">\n          {errors.name}\n        </p>\n      )}\n    </div>\n\n    <div>\n      <label htmlFor=\"email\" className=\"block text-sm font-medium text-gray-700 mb-1\">\n        Email\n      </label>\n      <input\n        id=\"email\"\n        name=\"email\"\n        type=\"email\"\n        value={formData.email}\n        onChange={handleChange}\n        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none ${errors.email ? 'border-red-500' : 'border-gray-300'}`}\n        aria-invalid={!!errors.email}\n        aria-describedby={errors.email ? 'email-error' : undefined}\n        disabled={status === 'submitting'}\n      />\n      {errors.email && (\n        <p id=\"email-error\" className=\"mt-1 text-sm text-red-600\">\n          {errors.email}\n        </p>\n      )}\n    </div>\n\n    <div>\n      <label htmlFor=\"message\" className=\"block text-sm font-medium text-gray-700 mb-1\">\n        Message\n      </label>\n      <textarea\n        id=\"message\"\n        name=\"message\"\n        rows={5}\n        value={formData.message}\n        onChange={handleChange}\n        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none ${errors.message ? 'border-red-500' : 'border-gray-300'}`}\n        aria-invalid={!!errors.message}\n        aria-describedby={errors.message ? 'message-error' : undefined}\n        disabled={status === 'submitting'}\n      />\n      {errors.message && (\n        <p id=\"message-error\" className=\"mt-1 text-sm text-red-600\">\n          {errors.message}\n        </p>\n      )}\n    </div>\n\n    <Button \n      type=\"submit\" \n      disabled={status === 'submitting'}\n      className=\"w-full\"\n    >\n      {status === 'submitting' ? 'Sending...' : 'Send Message'}\n    </Button>\n  </form>\n);```",
             "status": "done",
             "testStrategy": "1. Test form accessibility using keyboard navigation\n2. Verify that error messages are properly associated with form fields using aria attributes\n3. Test form with screen readers to ensure proper labeling\n4. Verify that form fields are properly styled in different states (default, focus, error)\n5. Test that disabled state works correctly during form submission"
@@ -375,7 +425,11 @@
             "id": 5,
             "title": "Add Success and Error Feedback UI",
             "description": "Implement success and error feedback UI components to provide clear visual feedback to users after form submission.",
-            "dependencies": ["7.2", "7.3", "7.4"],
+            "dependencies": [
+              "7.2",
+              "7.3",
+              "7.4"
+            ],
             "details": "Add success and error message components to the ContactForm:\n```typescript\n// Add these imports at the top of the file\nimport { CheckCircle, AlertCircle, RefreshCw } from 'lucide-react';\n\n// Add this function inside the ContactForm component\nconst renderFormStatus = () => {\n  if (status === 'success') {\n    return (\n      <div className=\"mt-4 p-4 bg-green-50 border border-green-200 rounded-md flex items-start\">\n        <CheckCircle className=\"h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5\" />\n        <div>\n          <h3 className=\"text-sm font-medium text-green-800\">Message Sent!</h3>\n          <p className=\"mt-1 text-sm text-green-700\">\n            Thank you for reaching out. We'll get back to you as soon as possible.\n          </p>\n          <button \n            onClick={() => setStatus('idle')} \n            className=\"mt-2 text-sm text-green-600 hover:text-green-800 font-medium flex items-center\"\n          >\n            <RefreshCw className=\"h-4 w-4 mr-1\" />\n            Send another message\n          </button>\n        </div>\n      </div>\n    );\n  }\n  \n  if (status === 'error') {\n    return (\n      <div className=\"mt-4 p-4 bg-red-50 border border-red-200 rounded-md flex items-start\">\n        <AlertCircle className=\"h-5 w-5 text-red-500 mr-3 flex-shrink-0 mt-0.5\" />\n        <div>\n          <h3 className=\"text-sm font-medium text-red-800\">Something went wrong</h3>\n          <p className=\"mt-1 text-sm text-red-700\">\n            We couldn't send your message. Please try again or contact us directly via email.\n          </p>\n          <button \n            onClick={() => setStatus('idle')} \n            className=\"mt-2 text-sm text-red-600 hover:text-red-800 font-medium flex items-center\"\n          >\n            <RefreshCw className=\"h-4 w-4 mr-1\" />\n            Try again\n          </button>\n        </div>\n      </div>\n    );\n  }\n  \n  return null;\n};\n\n// Update the return statement to include the status messages\nreturn (\n  <div>\n    {status === 'success' ? (\n      renderFormStatus()\n    ) : (\n      <form onSubmit={handleSubmit} className=\"bg-white p-6 rounded-lg shadow-sm space-y-4\">\n        {/* Existing form fields */}\n        \n        <Button \n          type=\"submit\" \n          disabled={status === 'submitting'}\n          className=\"w-full flex items-center justify-center\"\n        >\n          {status === 'submitting' ? (\n            <>\n              <svg className=\"animate-spin -ml-1 mr-2 h-4 w-4 text-white\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n                <circle className=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" strokeWidth=\"4\"></circle>\n                <path className=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"></path>\n              </svg>\n              Sending...\n            </>\n          ) : 'Send Message'}\n        </Button>\n        \n        {status === 'error' && renderFormStatus()}\n      </form>\n    )}\n  </div>\n);```\n\nUpdate the OG image metadata in the page component:\n```typescript\n// In app/contact/page.tsx, update the metadata object\nexport const metadata: Metadata = {\n  title: 'Contact Us - P&D Web Development',\n  description: 'Get in touch with P&D Web Development for your web development needs',\n  openGraph: {\n    title: 'Contact Us - P&D Web Development',\n    description: 'Get in touch with P&D Web Development for your web development needs',\n    images: ['/images/og/contact.jpg'],\n    type: 'website',\n  },\n};```",
             "status": "done",
             "testStrategy": "1. Test success message display after successful form submission\n2. Verify error message display when submission fails\n3. Test the \"Try again\" and \"Send another message\" buttons functionality\n4. Verify loading spinner appears during form submission\n5. Test that form resets correctly after successful submission"
@@ -389,7 +443,9 @@
         "details": "1. Set up Express server:\n```javascript\n// server/index.js\nconst express = require('express');\nconst cors = require('cors');\nconst { z } = require('zod');\nconst nodemailer = require('nodemailer');\nconst rateLimit = require('express-rate-limit');\nrequire('dotenv').config();\n\nconst app = express();\napp.use(express.json());\napp.use(cors({ origin: process.env.NEXT_PUBLIC_FRONTEND_URL }));\n\n// Rate limiting middleware\nconst limiter = rateLimit({\n  windowMs: 15 * 60 * 1000, // 15 minutes\n  max: 5, // 5 requests per window\n  message: { error: 'Too many requests, please try again later.' }\n});\n\napp.post('/contact', limiter, async (req, res) => {\n  // Implement contact form handling with validation\n  // Send emails to both site owner and customer\n});\n\nconst PORT = process.env.PORT || 3001;\napp.listen(PORT, () => console.log(`Server running on port ${PORT}`));\n```\n2. Implement form validation with Zod\n3. Set up Nodemailer for sending emails:\n```javascript\nconst transporter = nodemailer.createTransport({\n  host: process.env.SMTP_HOST,\n  port: process.env.SMTP_PORT,\n  secure: process.env.SMTP_SECURE === 'true',\n  auth: {\n    user: process.env.SMTP_USER,\n    pass: process.env.SMTP_PASS\n  }\n});\n\nasync function sendEmail(to, subject, html) {\n  const mailOptions = {\n    from: process.env.MAIL_FROM,\n    to,\n    subject,\n    html\n  };\n  \n  return transporter.sendMail(mailOptions);\n}\n```\n4. Create email templates for owner and customer\n5. Implement error handling and logging",
         "testStrategy": "1. Unit test validation logic\n2. Test rate limiting functionality\n3. Mock email sending to verify templates\n4. Test error handling with various scenarios\n5. Verify CORS configuration works correctly\n6. Load test to ensure stability under higher traffic",
         "priority": "high",
-        "dependencies": [7],
+        "dependencies": [
+          7
+        ],
         "status": "done",
         "subtasks": [
           {
@@ -414,7 +470,10 @@
             "id": 4,
             "title": "Integrate email sending functionality with Nodemailer",
             "description": "Implement the email sending logic using Nodemailer to send confirmation emails to customers and notification emails to the site owner.",
-            "dependencies": ["8.2", "8.3"],
+            "dependencies": [
+              "8.2",
+              "8.3"
+            ],
             "details": "// In server/index.js, integrate the email templates and sending functionality\nconst { getOwnerEmailTemplate, getCustomerEmailTemplate } = require('./emailTemplates');\n\napp.post('/contact', limiter, async (req, res) => {\n  try {\n    // Validate the request body\n    const validatedData = contactSchema.parse(req.body);\n    \n    // Send email to site owner\n    await sendEmail(\n      process.env.MAIL_TO,\n      `New Contact Form: ${validatedData.subject}`,\n      getOwnerEmailTemplate(validatedData)\n    );\n    \n    // Send confirmation email to customer\n    await sendEmail(\n      validatedData.email,\n      'Thank you for contacting P&D Web Development',\n      getCustomerEmailTemplate(validatedData)\n    );\n    \n    res.status(200).json({ success: true, message: 'Form submitted successfully' });\n  } catch (error) {\n    // Error handling as implemented in previous subtask\n    if (error instanceof z.ZodError) {\n      return res.status(400).json({ \n        success: false, \n        errors: error.errors.map(e => ({ path: e.path.join('.'), message: e.message }))\n      });\n    }\n    \n    console.error('Contact form error:', error);\n    res.status(500).json({ success: false, message: 'Server error, please try again later' });\n  }\n});",
             "status": "done",
             "testStrategy": "Mock the Nodemailer transporter to test email sending without actually sending emails. Verify both customer and owner emails are triggered with the correct templates and data. Test error handling when email sending fails."
@@ -423,7 +482,9 @@
             "id": 5,
             "title": "Implement logging and security enhancements",
             "description": "Add comprehensive logging, input sanitization, and additional security measures to protect the contact form API from abuse.",
-            "dependencies": ["8.4"],
+            "dependencies": [
+              "8.4"
+            ],
             "details": "// Add these enhancements to server/index.js\nconst winston = require('winston');\nconst sanitizeHtml = require('sanitize-html');\n\n// Set up logger\nconst logger = winston.createLogger({\n  level: 'info',\n  format: winston.format.combine(\n    winston.format.timestamp(),\n    winston.format.json()\n  ),\n  transports: [\n    new winston.transports.File({ filename: 'error.log', level: 'error' }),\n    new winston.transports.File({ filename: 'combined.log' })\n  ]\n});\n\nif (process.env.NODE_ENV !== 'production') {\n  logger.add(new winston.transports.Console({\n    format: winston.format.simple()\n  }));\n}\n\n// Sanitize input function\nfunction sanitizeInput(data) {\n  return {\n    name: sanitizeHtml(data.name),\n    email: sanitizeHtml(data.email),\n    subject: sanitizeHtml(data.subject),\n    message: sanitizeHtml(data.message)\n  };\n}\n\n// Update the contact endpoint\napp.post('/contact', limiter, async (req, res) => {\n  try {\n    // Log incoming request (excluding sensitive data)\n    logger.info(`Contact form submission from ${req.ip}`);\n    \n    // Validate the request body\n    const validatedData = contactSchema.parse(req.body);\n    \n    // Sanitize inputs to prevent XSS in emails\n    const sanitizedData = sanitizeInput(validatedData);\n    \n    // Send emails as implemented in previous subtask\n    // ...\n    \n    logger.info(`Successfully processed contact form for ${sanitizedData.email}`);\n    res.status(200).json({ success: true, message: 'Form submitted successfully' });\n  } catch (error) {\n    // Enhanced error logging\n    if (error instanceof z.ZodError) {\n      logger.warn(`Validation error: ${JSON.stringify(error.errors)}`);\n      return res.status(400).json({ \n        success: false, \n        errors: error.errors.map(e => ({ path: e.path.join('.'), message: e.message }))\n      });\n    }\n    \n    logger.error('Contact form error:', { error: error.message, stack: error.stack });\n    res.status(500).json({ success: false, message: 'Server error, please try again later' });\n  }\n});",
             "status": "done",
             "testStrategy": "Test that logging correctly captures different types of events. Verify that HTML/script injection attempts are properly sanitized. Test that rate limiting correctly blocks excessive requests from the same IP. Verify that error responses don't leak sensitive information."
@@ -437,7 +498,12 @@
         "details": "1. Set up analytics:\n```typescript\n// app/layout.tsx\nimport PlausibleAnalytics from '@/components/PlausibleAnalytics';\n// or\nimport GoogleAnalytics from '@/components/GoogleAnalytics';\n\n// Add to layout component\n<PlausibleAnalytics />\n```\n2. Implement cookie banner if using GA4\n3. Optimize images and fonts:\n   - Ensure all images use next/image with width/height\n   - Verify fonts are properly loaded with next/font\n4. Implement performance optimizations:\n   - Add appropriate caching headers\n   - Implement code splitting\n   - Optimize Tailwind by purging unused styles\n5. Add JSON-LD structured data for SEO\n6. Implement metadata for all pages\n7. Run Lighthouse audits and fix issues to meet score requirements",
         "testStrategy": "1. Verify analytics is tracking correctly\n2. Run Lighthouse audits to ensure scores meet requirements (Performance ≥ 90, Accessibility ≥ 95, SEO ≥ 95)\n3. Test Core Web Vitals (LCP < 2.5s, CLS < 0.1)\n4. Verify structured data using testing tools\n5. Test cookie banner functionality if implemented\n6. Verify all images are properly optimized",
         "priority": "medium",
-        "dependencies": [4, 5, 6, 7],
+        "dependencies": [
+          4,
+          5,
+          6,
+          7
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -453,7 +519,9 @@
             "id": 2,
             "title": "Optimize images and fonts loading",
             "description": "Ensure all images use next/image with proper dimensions and optimize font loading with next/font to improve performance.",
-            "dependencies": ["9.1"],
+            "dependencies": [
+              "9.1"
+            ],
             "details": "1. Audit all image usage across the application and replace standard <img> tags with next/image components\n2. Add explicit width and height attributes to all images to prevent layout shifts\n3. Configure image quality and formats in next.config.js\n4. Verify all fonts are loaded using next/font with appropriate subsets\n5. Create a fonts.ts file to centralize font definitions:\n```typescript\nimport { Inter } from 'next/font/google';\n\nexport const inter = Inter({\n  subsets: ['latin'],\n  display: 'swap',\n  variable: '--font-inter'\n});\n```\n6. Apply font variables consistently in the global CSS",
             "status": "done",
             "testStrategy": "1. Measure Cumulative Layout Shift (CLS) before and after optimization\n2. Verify image optimization by checking network requests for WebP/AVIF formats\n3. Test font loading performance with and without cache\n4. Verify no render-blocking resources related to fonts"
@@ -462,7 +530,9 @@
             "id": 4,
             "title": "Add structured data and metadata",
             "description": "Implement JSON-LD structured data for SEO and ensure all pages have appropriate metadata including title, description, and Open Graph tags.",
-            "dependencies": ["9.3"],
+            "dependencies": [
+              "9.3"
+            ],
             "details": "1. Create a reusable JsonLd component in `components/JsonLd.tsx`:\n```typescript\nexport default function JsonLd({ data }: { data: any }) {\n  return (\n    <script\n      type=\"application/ld+json\"\n      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}\n    />\n  );\n}\n```\n2. Implement organization schema in the layout:\n```typescript\nconst organizationData = {\n  '@context': 'https://schema.org',\n  '@type': 'Organization',\n  name: 'Company Name',\n  url: 'https://example.com',\n  logo: 'https://example.com/logo.png',\n  // additional organization data\n};\n```\n3. Add page-specific structured data (Article, Product, etc.) as needed\n4. Create a metadata export in each page file:\n```typescript\nexport const metadata: Metadata = {\n  title: 'Page Title | Site Name',\n  description: 'Page description',\n  openGraph: {\n    title: 'Page Title',\n    description: 'Page description',\n    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],\n  },\n};\n```",
             "status": "done",
             "testStrategy": "1. Validate structured data using Google's Rich Results Test\n2. Verify metadata is correctly rendered in the HTML head\n3. Test Open Graph tags using Facebook's Sharing Debugger\n4. Ensure Twitter Card tags are properly implemented"
@@ -471,7 +541,12 @@
             "id": 5,
             "title": "Run Lighthouse audits and fix issues",
             "description": "Perform Lighthouse audits to identify and fix performance, accessibility, SEO, and best practices issues to meet score requirements.",
-            "dependencies": ["9.1", "9.2", "9.3", "9.4"],
+            "dependencies": [
+              "9.1",
+              "9.2",
+              "9.3",
+              "9.4"
+            ],
             "details": "1. Run Lighthouse audits in Chrome DevTools for both mobile and desktop versions\n2. Address performance issues to achieve a score ≥ 90:\n   - Eliminate render-blocking resources\n   - Optimize First Contentful Paint and Largest Contentful Paint\n   - Minimize unused JavaScript\n3. Fix accessibility issues to achieve a score ≥ 95:\n   - Ensure proper contrast ratios\n   - Add missing ARIA attributes\n   - Fix heading hierarchy\n4. Address SEO issues to achieve a score ≥ 95:\n   - Fix missing alt text\n   - Ensure tap targets are properly sized\n   - Fix crawlable links\n5. Document the optimization process and results in a performance.md file",
             "status": "done",
             "testStrategy": "1. Run before/after Lighthouse audits to measure improvement\n2. Test Core Web Vitals using PageSpeed Insights\n3. Verify improvements across different devices and connection speeds\n4. Create a CI/CD step to run Lighthouse audits automatically\n5. Test with real users on different devices to validate improvements"
@@ -485,7 +560,10 @@
         "details": "1. Configure environment variables for all environments:\n```\n# .env.example\nNEXT_PUBLIC_API_URL=http://localhost:3001\nMAIL_FROM=noreply@example.com\nMAIL_TO=owner@example.com\nSMTP_HOST=smtp.example.com\nSMTP_PORT=587\nSMTP_SECURE=false\nSMTP_USER=user\nSMTP_PASS=password\n```\n2. Set up Vercel deployment for the frontend:\n   - Connect GitHub repository\n   - Configure environment variables\n   - Set up custom domain if available\n3. Deploy backend to Render, Railway, or AWS:\n   - Set up environment variables\n   - Configure CORS to allow only the frontend domain\n   - Set up monitoring\n4. Implement email deliverability best practices:\n   - Configure SPF and DKIM records\n   - Test email delivery to various providers\n5. Set up CI/CD pipeline with automated testing\n6. Create documentation for future maintenance",
         "testStrategy": "1. Verify all environment variables are correctly loaded\n2. Test the complete application flow in staging environment\n3. Verify email deliverability to various email providers\n4. Test CORS configuration\n5. Verify analytics is working in production\n6. Run final Lighthouse audits in production environment\n7. Test site on various devices and browsers",
         "priority": "high",
-        "dependencies": [8, 9],
+        "dependencies": [
+          8,
+          9
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -501,7 +579,9 @@
             "id": 2,
             "title": "Frontend Deployment on Vercel",
             "description": "Set up the Vercel deployment pipeline for the Next.js frontend application.",
-            "dependencies": ["10.1"],
+            "dependencies": [
+              "10.1"
+            ],
             "details": "1. Create a Vercel account if not already available\n2. Connect the GitHub repository to Vercel\n3. Configure build settings and environment variables in Vercel dashboard\n4. Set up preview deployments for pull requests\n5. Configure custom domain if available\n6. Set up branch protection rules to ensure deployments only happen after tests pass",
             "status": "pending",
             "testStrategy": "Deploy to a preview environment first and verify all functionality works before promoting to production"
@@ -510,7 +590,10 @@
             "id": 4,
             "title": "Email Delivery Configuration",
             "description": "Set up email delivery infrastructure with proper authentication and deliverability practices.",
-            "dependencies": ["10.1", "10.3"],
+            "dependencies": [
+              "10.1",
+              "10.3"
+            ],
             "details": "1. Configure SMTP settings in the production environment\n2. Set up SPF records for the sending domain\n3. Configure DKIM authentication for improved deliverability\n4. Create templates for all system emails\n5. Implement email sending retry logic\n6. Set up email delivery monitoring",
             "status": "pending",
             "testStrategy": "Send test emails to various providers (Gmail, Outlook, Yahoo) and verify delivery, check spam scores using tools like mail-tester.com"
@@ -522,7 +605,10 @@
         "title": "Implement Form Submission and API Integration",
         "description": "Add the form submission functionality that sends data to the backend API and handles the response appropriately.",
         "status": "done",
-        "dependencies": ["7.2", "7.3"],
+        "dependencies": [
+          "7.2",
+          "7.3"
+        ],
         "priority": "medium",
         "details": "Update the handleSubmit function in the ContactForm component to send data to the API:\n```typescript\nconst handleSubmit = async (e: React.FormEvent) => {\n  e.preventDefault();\n  \n  if (!validateForm()) return;\n  \n  setStatus('submitting');\n  \n  try {\n    const response = await fetch('/api/contact', {\n      method: 'POST',\n      headers: {\n        'Content-Type': 'application/json',\n      },\n      body: JSON.stringify(formData),\n    });\n    \n    if (!response.ok) {\n      const errorData = await response.json();\n      throw new Error(errorData.message || 'Failed to send message');\n    }\n    \n    setStatus('success');\n    setFormData({ name: '', email: '', message: '' });\n  } catch (error) {\n    console.error('Form submission error:', error);\n    setStatus('error');\n  }\n};\n\n// Create a temporary API route for development until the backend is implemented\n// Create file: app/api/contact/route.ts\n```\n\nCreate a temporary API route for development:\n```typescript\n// app/api/contact/route.ts\nimport { NextResponse } from 'next/server';\n\nexport async function POST(request: Request) {\n  try {\n    const body = await request.json();\n    \n    // Simulate API processing time\n    await new Promise(resolve => setTimeout(resolve, 1000));\n    \n    // Simulate validation\n    if (!body.name || !body.email || !body.message) {\n      return NextResponse.json(\n        { message: 'Missing required fields' },\n        { status: 400 }\n      );\n    }\n    \n    // This is just a mock - the actual email sending will be implemented in the backend\n    console.log('Contact form submission:', body);\n    \n    return NextResponse.json({ message: 'Message sent successfully' });\n  } catch (error) {\n    console.error('Contact API error:', error);\n    return NextResponse.json(\n      { message: 'Internal server error' },\n      { status: 500 }\n    );\n  }\n}```",
         "testStrategy": "1. Test form submission with mock API responses\n2. Verify error handling for different HTTP status codes\n3. Test network error handling\n4. Verify that form state updates correctly after submission\n5. Test rate limiting behavior with multiple submissions",
@@ -540,7 +626,9 @@
             "id": 2,
             "title": "Create Temporary API Route",
             "description": "Implement a temporary API route in Next.js to handle contact form submissions during development before the backend is fully implemented.",
-            "dependencies": ["11.1"],
+            "dependencies": [
+              "11.1"
+            ],
             "details": "1. Create the file structure for the API route at app/api/contact/route.ts\n2. Implement the POST handler function\n3. Add request body parsing with request.json()\n4. Implement form validation for required fields\n5. Add artificial delay to simulate network latency\n6. Return appropriate success and error responses\n7. Add logging for debugging purposes\n\n```typescript\n// app/api/contact/route.ts\nimport { NextResponse } from 'next/server';\n\nexport async function POST(request: Request) {\n  try {\n    const body = await request.json();\n    \n    // Simulate API processing time\n    await new Promise(resolve => setTimeout(resolve, 1000));\n    \n    // Simulate validation\n    if (!body.name || !body.email || !body.message) {\n      return NextResponse.json(\n        { message: 'Missing required fields' },\n        { status: 400 }\n      );\n    }\n    \n    // This is just a mock - the actual email sending will be implemented in the backend\n    console.log('Contact form submission:', body);\n    \n    return NextResponse.json({ message: 'Message sent successfully' });\n  } catch (error) {\n    console.error('Contact API error:', error);\n    return NextResponse.json(\n      { message: 'Internal server error' },\n      { status: 500 }\n    );\n  }\n}\n```",
             "status": "done",
             "testStrategy": ""
@@ -549,7 +637,10 @@
             "id": 3,
             "title": "Implement Response Handling and User Feedback",
             "description": "Add UI feedback mechanisms to show submission status, success messages, and error notifications to users after form submission.",
-            "dependencies": ["11.1", "11.2"],
+            "dependencies": [
+              "11.1",
+              "11.2"
+            ],
             "details": "1. Create UI components for different form states (submitting, success, error)\n2. Update the ContactForm component to display loading indicator during submission\n3. Implement success message display after successful submission\n4. Create error message component to show validation or server errors\n5. Add appropriate aria attributes for accessibility\n6. Implement auto-dismissal of success messages after a delay\n\n```typescript\n// Add to ContactForm component\nconst renderFormStatus = () => {\n  switch(status) {\n    case 'submitting':\n      return <div className=\"text-blue-500\" aria-live=\"polite\">Sending message...</div>;\n    case 'success':\n      return <div className=\"text-green-500\" aria-live=\"polite\">Message sent successfully!</div>;\n    case 'error':\n      return <div className=\"text-red-500\" aria-live=\"assertive\">Failed to send message. Please try again.</div>;\n    default:\n      return null;\n  }\n};\n\n// Add this before the return statement in the component\nuseEffect(() => {\n  if (status === 'success') {\n    const timer = setTimeout(() => setStatus('idle'), 5000);\n    return () => clearTimeout(timer);\n  }\n}, [status]);\n\n// Add this to the form JSX\n{renderFormStatus()}\n```\n<info added on 2025-08-18T00:27:43.578Z>\nImplementation completed in `client/src/components/contact/contact-form.tsx`:\n\n- Form validation implemented using Zod schema with field-specific error mapping\n- Each input has appropriate `aria-describedby` attributes linked to error messages\n- Form submission sends JSON payload to `/api/contact` endpoint\n- Comprehensive response handling:\n  - Success (2xx): Sets status to success, resets form, displays confirmation message\n  - Error (non-2xx): Displays server error message or falls back to generic error\n  - Network failures: Properly caught and displayed to user\n- Accessibility features:\n  - Status messages use proper ARIA live regions (`role=\"status\"`, `aria-live=\"polite\"`)\n  - Submit button disables during submission with visual loading indicator\n- Backend integration complete:\n  - Next.js API route proxies requests to Express backend at `${NEXT_PUBLIC_API_URL}/contact`\n  - Express endpoint performs validation, sanitization, rate-limiting\n  - Email delivery implemented via Nodemailer\n</info added on 2025-08-18T00:27:43.578Z>",
             "status": "done",
             "testStrategy": ""
@@ -561,7 +652,9 @@
         "title": "Implement contact form POST endpoint with validation",
         "description": "Complete the /contact endpoint implementation with form validation, error handling, and appropriate HTTP responses.",
         "status": "pending",
-        "dependencies": ["8.1"],
+        "dependencies": [
+          "8.1"
+        ],
         "priority": "medium",
         "details": "// In server/index.js, complete the POST endpoint\nconst { contactSchema } = require('./validation');\n\napp.post('/contact', limiter, async (req, res) => {\n  try {\n    // Validate the request body\n    const validatedData = contactSchema.parse(req.body);\n    \n    // Process the validated data\n    // (Email sending will be implemented in the next subtask)\n    \n    res.status(200).json({ success: true, message: 'Form submitted successfully' });\n  } catch (error) {\n    if (error instanceof z.ZodError) {\n      return res.status(400).json({ \n        success: false, \n        errors: error.errors.map(e => ({ path: e.path.join('.'), message: e.message }))\n      });\n    }\n    \n    console.error('Contact form error:', error);\n    res.status(500).json({ success: false, message: 'Server error, please try again later' });\n  }\n});",
         "testStrategy": "Test the endpoint with valid and invalid payloads to verify validation works correctly. Test rate limiting by sending multiple requests in quick succession. Verify appropriate error responses are returned for different error scenarios.",
@@ -579,7 +672,9 @@
             "id": 2,
             "title": "Implement comprehensive error handling for contact endpoint",
             "description": "Add detailed error handling for different scenarios including validation errors, server errors, and rate limiting responses.",
-            "dependencies": ["12.1"],
+            "dependencies": [
+              "12.1"
+            ],
             "details": "1. Complete the error handling in the catch block:\n```javascript\ncatch (error) {\n  if (error instanceof z.ZodError) {\n    return res.status(400).json({ \n      success: false, \n      errors: error.errors.map(e => ({ path: e.path.join('.'), message: e.message }))\n    });\n  }\n  \n  // Handle rate limiting errors\n  if (error.statusCode === 429) {\n    return res.status(429).json({\n      success: false,\n      message: 'Too many requests, please try again later',\n      retryAfter: error.headers['Retry-After'] || 60\n    });\n  }\n  \n  // Log the error for server-side debugging\n  console.error('Contact form error:', error);\n  \n  // Return a generic error to the client\n  res.status(500).json({ \n    success: false, \n    message: 'Server error, please try again later' \n  });\n}\n```\n2. Ensure all error responses follow a consistent format\n3. Add appropriate logging for server-side debugging",
             "status": "done",
             "testStrategy": ""
@@ -588,7 +683,10 @@
             "id": 3,
             "title": "Implement response formatting with appropriate HTTP status codes",
             "description": "Complete the endpoint implementation with proper response formatting for successful submissions and different error scenarios.",
-            "dependencies": ["12.1", "12.2"],
+            "dependencies": [
+              "12.1",
+              "12.2"
+            ],
             "details": "1. Finalize the successful response handling:\n```javascript\n// Process the validated data\nconst { name, email, message, subject, phone } = validatedData;\n\n// Store the submission data (temporary placeholder until email sending is implemented)\nconst submission = {\n  id: Date.now().toString(),\n  timestamp: new Date().toISOString(),\n  name,\n  email,\n  message,\n  subject: subject || 'No subject',\n  phone: phone || 'Not provided'\n};\n\n// Return success response with appropriate status code\nres.status(201).json({ \n  success: true, \n  message: 'Form submitted successfully',\n  submissionId: submission.id\n});\n```\n2. Ensure all responses include the 'success' boolean flag\n3. Use appropriate HTTP status codes (201 for creation, 400 for validation errors, 429 for rate limiting, 500 for server errors)\n4. Add appropriate headers to the responses (Content-Type, etc.)",
             "status": "done",
             "testStrategy": ""
@@ -600,7 +698,9 @@
         "title": "Implement performance optimizations",
         "description": "Add caching headers, implement code splitting, and optimize the Tailwind configuration to reduce bundle size and improve loading times.",
         "status": "pending",
-        "dependencies": ["9.2"],
+        "dependencies": [
+          "9.2"
+        ],
         "priority": "medium",
         "details": "1. Configure caching headers in next.config.js:\n```javascript\nmodule.exports = {\n  async headers() {\n    return [\n      {\n        source: '/(.*)',\n        headers: [\n          {\n            key: 'Cache-Control',\n            value: 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=31536000',\n          },\n        ],\n      },\n      // Add specific rules for static assets\n    ];\n  },\n}\n```\n2. Implement dynamic imports for heavy components:\n```typescript\nimport dynamic from 'next/dynamic';\nconst HeavyComponent = dynamic(() => import('@/components/HeavyComponent'), { ssr: false });\n```\n3. Configure Tailwind purging in tailwind.config.js:\n```javascript\nmodule.exports = {\n  content: [\n    './app/**/*.{js,ts,jsx,tsx}',\n    './components/**/*.{js,ts,jsx,tsx}',\n  ],\n  // rest of config\n}\n```\n4. Add preload hints for critical resources in layout.tsx",
         "testStrategy": "1. Measure bundle size before and after optimization\n2. Test Largest Contentful Paint (LCP) times\n3. Verify caching headers are correctly applied using browser dev tools\n4. Test code splitting by analyzing network requests during navigation",
@@ -618,7 +718,9 @@
             "id": 2,
             "title": "Implement code splitting with dynamic imports",
             "description": "Use Next.js dynamic imports to split code and lazy load components that aren't needed for initial page load",
-            "dependencies": ["13.1"],
+            "dependencies": [
+              "13.1"
+            ],
             "details": "1. Identify heavy components that can be lazy loaded (e.g., modals, complex visualizations, third-party widgets)\n2. Implement dynamic imports for these components:\n```typescript\nimport dynamic from 'next/dynamic';\n\n// Replace direct import with dynamic import\nconst DataVisualization = dynamic(\n  () => import('@/components/DataVisualization'),\n  { \n    loading: () => <p>Loading visualization...</p>,\n    ssr: false \n  }\n);\n\nconst FeedbackModal = dynamic(\n  () => import('@/components/FeedbackModal'),\n  { ssr: false }\n);\n```\n3. Add loading states for dynamically imported components\n4. Measure bundle size reduction using Next.js build analytics\n5. Expected improvement: 15-25% reduction in initial JavaScript bundle size",
             "status": "pending",
             "testStrategy": ""
@@ -636,7 +738,11 @@
             "id": 4,
             "title": "Implement critical path rendering optimization",
             "description": "Add preload and prefetch hints for critical resources to improve initial page load performance",
-            "dependencies": ["13.1", "13.2", "13.3"],
+            "dependencies": [
+              "13.1",
+              "13.2",
+              "13.3"
+            ],
             "details": "1. Add preload hints for critical fonts and CSS in layout.tsx:\n```typescript\nimport { Metadata } from 'next';\n\nexport const metadata: Metadata = {\n  // existing metadata\n}\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <head>\n        <link \n          rel=\"preload\" \n          href=\"/fonts/inter.woff2\" \n          as=\"font\" \n          type=\"font/woff2\" \n          crossOrigin=\"anonymous\" \n        />\n        <link \n          rel=\"preload\" \n          href=\"/critical.css\" \n          as=\"style\" \n        />\n      </head>\n      <body>{children}</body>\n    </html>\n  );\n}\n```\n2. Implement prefetching for likely navigation paths\n3. Add priority attribute to critical images\n4. Measure Largest Contentful Paint (LCP) and First Input Delay (FID) before and after changes\n5. Expected improvement: 20-30% reduction in LCP time",
             "status": "pending",
             "testStrategy": ""
@@ -648,7 +754,10 @@
         "title": "CI/CD Pipeline Implementation",
         "description": "Set up continuous integration and deployment pipeline with automated testing and deployment.",
         "status": "pending",
-        "dependencies": ["10.2", "10.3"],
+        "dependencies": [
+          "10.2",
+          "10.3"
+        ],
         "priority": "medium",
         "details": "1. Configure GitHub Actions workflow for CI/CD\n2. Set up automated testing in the pipeline (unit tests, integration tests)\n3. Implement linting and code quality checks\n4. Configure automatic deployment to staging on successful builds\n5. Set up manual approval process for production deployments\n6. Create comprehensive deployment documentation for the team",
         "testStrategy": "Verify the CI/CD pipeline by making test commits, ensure tests run correctly, and confirm deployments happen automatically to the correct environments",
@@ -666,7 +775,9 @@
             "id": 2,
             "title": "Automated Deployment Configuration",
             "description": "Configure automated deployment to staging and production environments",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "1. Create .github/workflows/deploy.yml for deployment with:\n   - Staging deployment on successful main branch builds\n   - Production deployment with manual approval step\n   - Environment-specific configuration loading\n2. Set up necessary GitHub secrets for deployment credentials\n3. Configure rollback mechanism for failed deployments\n4. Implement deployment notifications to Slack/Teams\n5. Add deployment verification steps to ensure successful deployment",
             "status": "pending",
             "testStrategy": ""
@@ -675,7 +786,9 @@
             "id": 3,
             "title": "Quality Gates Implementation",
             "description": "Implement quality gates with test coverage requirements and code quality metrics",
-            "dependencies": ["14.1"],
+            "dependencies": [
+              "14.1"
+            ],
             "details": "1. Configure Jest to generate code coverage reports\n2. Set minimum test coverage thresholds (e.g., 80% for lines, functions, branches)\n3. Integrate SonarQube or similar tool for code quality analysis\n4. Configure quality gates to fail builds if:\n   - Test coverage falls below thresholds\n   - Code smells exceed defined limits\n   - Security vulnerabilities are detected\n5. Add quality badges to README.md to display current status",
             "status": "pending",
             "testStrategy": ""
@@ -684,7 +797,11 @@
             "id": 4,
             "title": "CI/CD Documentation and Monitoring",
             "description": "Create comprehensive documentation and monitoring for the CI/CD pipeline",
-            "dependencies": ["14.1", "14.2", "14.3"],
+            "dependencies": [
+              "14.1",
+              "14.2",
+              "14.3"
+            ],
             "details": "1. Create detailed documentation in the project wiki/README covering:\n   - Pipeline architecture diagram\n   - Workflow configuration explanation\n   - Deployment process and environments\n   - Troubleshooting guide for common issues\n2. Set up monitoring for CI/CD pipeline:\n   - GitHub Actions workflow run time metrics\n   - Deployment success/failure alerts\n   - Test coverage trend tracking\n3. Create onboarding guide for new developers to understand the CI/CD process",
             "status": "pending",
             "testStrategy": ""
@@ -696,7 +813,10 @@
         "title": "Implement Core UI Components",
         "description": "Create the foundational UI components using shadcn and CVA (Class Variance Authority) for consistent styling and variants.",
         "status": "pending",
-        "dependencies": ["2.1", "2.2"],
+        "dependencies": [
+          "2.1",
+          "2.2"
+        ],
         "priority": "medium",
         "details": "Implement Button component with variants (primary, secondary, outline, ghost, etc.) and states (default, hover, focus, disabled). Create Card component with options for different padding, borders, and shadows. Build Section component for consistent page section styling. Each component should use CVA for variant management and be fully typed with TypeScript.",
         "testStrategy": "Create component tests for each variant and state. Test keyboard interactions and focus states. Verify accessibility with axe-core.",
@@ -732,7 +852,9 @@
             "id": 4,
             "title": "Implement Form Input Components with Validation States",
             "description": "Create form input components (Input, Textarea, Select) with validation states and consistent styling using CVA.",
-            "dependencies": ["15.1"],
+            "dependencies": [
+              "15.1"
+            ],
             "details": "1. Create Input component with validation states (default, error, success)\n2. Implement Textarea component with similar validation states\n3. Add Select component with dropdown styling\n4. Include helper text and error message display\n5. Example implementation for Input:\n```typescript\nimport { cva, type VariantProps } from 'class-variance-authority';\nimport { cn } from '@/lib/utils';\nimport React from 'react';\n\nconst inputVariants = cva(\n  'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',\n  {\n    variants: {\n      state: {\n        default: '',\n        error: 'border-destructive focus-visible:ring-destructive',\n        success: 'border-success focus-visible:ring-success',\n      },\n    },\n    defaultVariants: {\n      state: 'default',\n    },\n  }\n);\n\ninterface InputProps extends React.InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof inputVariants> {\n  error?: string;\n  helperText?: string;\n}\n```",
             "status": "pending",
             "testStrategy": ""
@@ -744,7 +866,9 @@
         "title": "Backend Deployment Configuration",
         "description": "Deploy the backend API to a cloud provider (Render, Railway, or AWS) with proper configuration.",
         "status": "pending",
-        "dependencies": ["10.1"],
+        "dependencies": [
+          "10.1"
+        ],
         "priority": "medium",
         "details": "1. Choose between Render, Railway, or AWS based on project requirements\n2. Set up the deployment configuration for the selected platform\n3. Configure environment variables on the platform\n4. Set up CORS to only allow requests from the frontend domain\n5. Configure database connection for production\n6. Implement health check endpoints for monitoring",
         "testStrategy": "Test API endpoints in the deployed environment, verify CORS configuration works correctly, and ensure database connections are secure",
@@ -762,7 +886,9 @@
             "id": 2,
             "title": "Environment and Database Configuration",
             "description": "Configure all necessary environment variables and database connections for the production environment.",
-            "dependencies": ["16.1"],
+            "dependencies": [
+              "16.1"
+            ],
             "details": "1. Create a comprehensive list of all required environment variables\n2. Set up environment variables on the cloud platform\n3. Configure sensitive data using the platform's secrets management\n4. Set up database connection string for production\n5. Configure database connection pooling for optimal performance\n6. Test database connectivity from the deployed environment\n7. Document the environment configuration process for future reference",
             "status": "pending",
             "testStrategy": ""
@@ -771,7 +897,9 @@
             "id": 3,
             "title": "CORS and Security Configuration",
             "description": "Implement security measures including CORS configuration, rate limiting, and other protections for the production API.",
-            "dependencies": ["16.2"],
+            "dependencies": [
+              "16.2"
+            ],
             "details": "1. Configure CORS to only allow requests from the frontend domain\n2. Implement or verify rate limiting for API endpoints\n3. Set up HTTPS/TLS for secure connections\n4. Configure security headers (Content-Security-Policy, X-XSS-Protection, etc.)\n5. Review and implement best practices for API security\n6. Test CORS configuration with actual frontend requests\n7. Document all security measures implemented",
             "status": "pending",
             "testStrategy": ""
@@ -780,7 +908,9 @@
             "id": 4,
             "title": "Monitoring and Deployment Verification",
             "description": "Set up monitoring, logging, and health checks for the production environment and verify the deployment is working correctly.",
-            "dependencies": ["16.3"],
+            "dependencies": [
+              "16.3"
+            ],
             "details": "1. Implement health check endpoints for monitoring\n2. Set up logging for the production environment\n3. Configure alerts for critical errors or downtime\n4. Create a deployment verification checklist\n5. Test all API endpoints in the production environment\n6. Verify performance under load (basic load testing)\n7. Document the monitoring setup and response procedures\n8. Create a rollback plan in case of deployment issues",
             "status": "pending",
             "testStrategy": ""
@@ -794,7 +924,10 @@
         "details": "1. Create a markdown file at `docs/audits/lighthouse.md` with the following structure:\n\n```markdown\n# Lighthouse Audit Checklist\n\n## Overview\nThis document tracks Lighthouse audit scores, issues, and fixes for our website across four key categories.\n\n## Scoring Goals\n- Performance: ≥ 90\n- Accessibility: ≥ 90\n- Best Practices: ≥ 90\n- SEO: ≥ 90\n\n## Performance Checklist\n- [ ] Largest Contentful Paint (LCP) ≤ 2.5s\n- [ ] Total Blocking Time (TBT) ≤ 200ms\n- [ ] Cumulative Layout Shift (CLS) ≤ 0.1\n- [ ] All images optimized using next/image\n- [ ] Fonts loaded via next/font\n- [ ] Preconnect to required origins\n- [ ] Appropriate caching headers implemented\n- [ ] Unused JavaScript eliminated\n- [ ] Critical CSS inlined\n\n## Accessibility Checklist\n- [ ] Keyboard navigation works for all interactive elements\n- [ ] Focus states visible on all interactive elements\n- [ ] Color contrast meets WCAG AA standards (4.5:1 for normal text, 3:1 for large text)\n- [ ] All form inputs have associated labels\n- [ ] ARIA attributes used correctly where needed\n- [ ] No critical issues reported by axe\n- [ ] Proper heading hierarchy\n- [ ] Alt text for all images\n\n## Best Practices Checklist\n- [ ] Security headers implemented (Content-Security-Policy, X-Content-Type-Options, etc.)\n- [ ] Site served over HTTPS\n- [ ] No console errors\n- [ ] No large JavaScript bundles on first load\n- [ ] Proper aspect ratios for images\n- [ ] No deprecated APIs used\n- [ ] Correct doctype declaration\n\n## SEO Checklist\n- [ ] Metadata titles and descriptions on all pages\n- [ ] JSON-LD structured data present on Home page\n- [ ] JSON-LD structured data present on Services page\n- [ ] JSON-LD structured data present on Service detail pages\n- [ ] All links are crawlable\n- [ ] robots.txt properly configured\n- [ ] Canonical URLs implemented\n- [ ] Mobile-friendly design\n\n## Audit Results\n\n### Initial Audit (Date: _______)\n- Performance: __/100\n- Accessibility: __/100\n- Best Practices: __/100\n- SEO: __/100\n\n#### Issues Found\n- Performance:\n  - \n- Accessibility:\n  - \n- Best Practices:\n  - \n- SEO:\n  - \n\n#### Action Items\n1. \n2. \n3. \n\n### Final Audit (Date: _______)\n- Performance: __/100\n- Accessibility: __/100\n- Best Practices: __/100\n- SEO: __/100\n\n#### Improvements Made\n1. \n2. \n3. \n```\n\n2. Run initial Lighthouse audit in Chrome DevTools:\n   - Open Chrome DevTools\n   - Navigate to the Lighthouse tab\n   - Select all categories (Performance, Accessibility, Best Practices, SEO)\n   - Run audit in both mobile and desktop modes\n   - Document initial scores and issues in the markdown file\n\n3. Address performance issues:\n   - Verify all images use next/image with proper sizing and optimization\n   - Ensure fonts are loaded using next/font with proper display strategy\n   - Add preconnect links for external resources in the document head\n   - Implement appropriate caching headers in next.config.js\n   - Analyze and reduce JavaScript bundle sizes using dynamic imports where appropriate\n\n4. Address accessibility issues:\n   - Test keyboard navigation throughout the site\n   - Ensure focus states are visible on all interactive elements\n   - Verify color contrast meets WCAG AA standards\n   - Check that all form inputs have proper labels and ARIA attributes\n   - Run axe accessibility checker and fix critical issues\n\n5. Address best practices issues:\n   - Implement security headers in next.config.js\n   - Verify HTTPS is properly configured\n   - Fix any console errors\n   - Optimize JavaScript bundles for first load\n   - Ensure proper aspect ratios for all images\n\n6. Address SEO issues:\n   - Verify metadata (title, description) on all pages\n   - Implement JSON-LD structured data on Home, Services, and Service detail pages\n   - Ensure all links are crawlable\n   - Verify robots.txt configuration\n   - Implement canonical URLs\n\n7. Run final Lighthouse audit:\n   - Repeat the audit process\n   - Document final scores and improvements\n   - Ensure all categories score ≥ 90 in production build\n   - Document any remaining issues and future improvement plans",
         "testStrategy": "1. Initial Assessment:\n   - Run Lighthouse audits on all key pages in both development and production environments\n   - Document baseline scores for all four categories\n   - Create a prioritized list of issues to address\n\n2. Performance Testing:\n   - Use Chrome DevTools Performance tab to measure LCP, TBT, and CLS\n   - Verify values meet targets (LCP ≤ 2.5s, TBT ≤ 200ms, CLS ≤ 0.1)\n   - Use Network tab to verify image optimization, font loading, and caching headers\n   - Test with throttled connections (Slow 3G) to ensure performance under constrained conditions\n\n3. Accessibility Testing:\n   - Use keyboard-only navigation to verify all interactive elements are accessible\n   - Test with screen readers (VoiceOver, NVDA) to verify content is properly announced\n   - Use axe DevTools extension to identify and fix accessibility issues\n   - Verify color contrast using WebAIM's contrast checker\n\n4. Best Practices Testing:\n   - Use securityheaders.com to verify security headers implementation\n   - Check for HTTPS configuration and certificate validity\n   - Verify console is free of errors during page load and user interactions\n   - Use Chrome DevTools Coverage tab to identify unused JavaScript\n\n5. SEO Testing:\n   - Use structured data testing tools (schema.org validator, Google Rich Results Test)\n   - Verify metadata using view-source or Chrome DevTools Elements panel\n   - Test crawlability using Google Search Console URL Inspection tool\n   - Verify mobile-friendliness using Google's Mobile-Friendly Test\n\n6. Final Verification:\n   - Run Lighthouse audits in production environment on all key pages\n   - Verify all categories score ≥ 90\n   - Document before/after scores in the markdown file\n   - Create a report of all issues found and fixes implemented\n\n7. Ongoing Monitoring:\n   - Set up regular Lighthouse audits (weekly or bi-weekly)\n   - Update the checklist with any new issues found\n   - Track performance metrics over time to identify regressions",
         "status": "pending",
-        "dependencies": [9, 13],
+        "dependencies": [
+          9,
+          13
+        ],
         "priority": "medium",
         "subtasks": []
       },
@@ -805,7 +938,12 @@
         "details": "1. Resolve missing dependencies and Tailwind token issues:\n   - Install required runtime dependencies for the server:\n     ```bash\n     npm -w server i morgan express-rate-limit compression\n     ```\n   - Install necessary TypeScript type definitions:\n     ```bash\n     npm -w server i -D @types/morgan\n     ```\n   - Fix Tailwind styling issue by replacing the incorrect token in client/src/app/globals.css:\n     ```css\n     /* Replace this: */\n     .bg-sand-50 { ... }\n     \n     /* With this: */\n     .bg-sand-light { ... }\n     ```\n\n2. Clean up Next.js configuration warnings:\n   - Locate and fix the experimental.serverActions configuration in next.config.js:\n     ```javascript\n     // Incorrect:\n     experimental: {\n       serverActions: true, // or incorrect boolean value\n     }\n     \n     // Correct approach - either remove if not needed or configure properly according to Next.js documentation\n     ```\n   - Ensure the Next.js configuration is warning-free to prevent potential runtime issues\n\n3. Verify development servers are functioning correctly:\n   - Start the client development server on port 3000:\n     ```bash\n     npm run dev -w client\n     ```\n   - Start the server on port 5000:\n     ```bash\n     npm run dev -w server\n     ```\n   - Load the homepage (/) and services page (/services) in the browser\n   - Confirm both pages return 200 OK status codes and render content properly",
         "testStrategy": "1. Dependency Installation Verification:\n   - Run `npm list -w server` to confirm morgan, express-rate-limit, and compression are installed\n   - Check node_modules/@types for morgan type definitions\n\n2. Tailwind Configuration Testing:\n   - Verify the bg-sand-light class is properly defined in the Tailwind configuration\n   - Confirm the styling is correctly applied by inspecting elements using browser dev tools\n\n3. Next.js Configuration Testing:\n   - Run `next build` and verify no configuration warnings appear in the console\n   - Check that server actions (if needed) function correctly after configuration changes\n\n4. Application Rendering Testing:\n   - Start both development servers (client and server)\n   - Navigate to the homepage (/) and verify:\n     - Page loads without errors (no HTTP 500)\n     - Content renders properly\n     - Check browser console for any JavaScript errors\n   - Navigate to the services page (/services) and perform the same checks\n   \n5. Lighthouse Testing:\n   - Run a Lighthouse audit on the homepage\n   - Confirm First Contentful Paint (FCP) is being measured\n   - Verify Lighthouse can complete a full audit without errors\n   - Document baseline performance metrics for future comparison",
         "status": "pending",
-        "dependencies": [3, 5, 10, 13],
+        "dependencies": [
+          3,
+          5,
+          10,
+          13
+        ],
         "priority": "medium",
         "subtasks": []
       },
@@ -816,7 +954,13 @@
         "details": "1. LCP Element Optimization:\n   - Identify the LCP element on the Home page using Lighthouse or browser DevTools\n   - For image LCP:\n     ```html\n     <!-- Add to app/layout.tsx or relevant component -->\n     <link \n       rel=\"preload\" \n       as=\"image\" \n       href=\"/path/to/hero-image.jpg\" \n       imagesrcset=\"/path/to/hero-image-small.jpg 480w, /path/to/hero-image.jpg 1080w\" \n       imagesizes=\"(max-width: 600px) 480px, 1080px\"\n     />\n     ```\n   - Ensure LCP image is not lazy-loaded by removing loading=\"lazy\" attribute\n   - For text LCP, ensure the Inter font preload is minimal and hero section has no render-blocking CSS\n\n2. Implement next/image Across Components:\n   - Replace all placeholder divs with the OptimizedImage component:\n     ```typescript\n     // Replace instances like:\n     <div className=\"bg-gray-200 h-64 w-full\" /> \n     \n     // With:\n     import Image from 'next/image';\n     \n     <Image \n       src=\"/path/to/image.jpg\"\n       alt=\"Descriptive alt text\"\n       width={640}\n       height={480}\n       className=\"w-full h-auto\"\n     />\n     ```\n   - Add explicit width/height attributes to all images to prevent layout shifts\n   - Apply loading=\"lazy\" to all below-the-fold images:\n     ```typescript\n     <Image \n       src=\"/path/to/offscreen-image.jpg\"\n       alt=\"Descriptive alt text\"\n       width={640}\n       height={480}\n       loading=\"lazy\"\n     />\n     ```\n\n3. API Compression and Caching:\n   - Enable compression in Express for API responses:\n     ```typescript\n     // app/api/[[...route]]/route.ts or equivalent\n     import compression from 'compression';\n     \n     // Apply middleware\n     app.use(compression());\n     \n     // Set cache headers for static JSON responses\n     app.get('/api/static-data', (req, res) => {\n       res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=86400');\n       res.json(staticData);\n     });\n     ```\n\n4. Static Asset Caching:\n   - Configure caching headers in next.config.js:\n     ```javascript\n     module.exports = {\n       async headers() {\n         return [\n           {\n             source: '/_next/static/:path*',\n             headers: [\n               {\n                 key: 'Cache-Control',\n                 value: 'public, max-age=31536000, immutable',\n               },\n             ],\n           },\n           {\n             source: '/images/:path*',\n             headers: [\n               {\n                 key: 'Cache-Control',\n                 value: 'public, max-age=86400, stale-while-revalidate=31536000',\n               },\n             ],\n           },\n         ];\n       },\n     };\n     ```",
         "testStrategy": "1. Measure LCP Performance:\n   - Run Lighthouse audits before and after implementation to verify LCP improvement\n   - Target LCP ≤ 2.5s on local development environment\n   - Use Chrome DevTools Performance panel to identify the LCP element and verify preloading is working\n\n2. Verify Image Optimization:\n   - Inspect network requests to confirm next/image is generating optimized WebP/AVIF formats\n   - Verify no \"Properly size images\" warnings in Lighthouse\n   - Check that all images have explicit width/height attributes to prevent layout shifts\n   - Confirm below-the-fold images have loading=\"lazy\" attribute\n\n3. Test API Compression and Caching:\n   - Use Chrome DevTools Network panel to verify:\n     - Response headers include \"Content-Encoding: gzip\" or \"Content-Encoding: br\"\n     - Static API responses include appropriate Cache-Control headers\n   - Measure API response size before and after compression\n\n4. Validate Static Asset Caching:\n   - Verify caching headers are correctly applied to _next/static/* and image assets\n   - Test subsequent page loads to ensure cached assets are loaded from disk cache\n   - Confirm no \"Serve static assets with an efficient cache policy\" warnings in Lighthouse\n\n5. Overall Performance Testing:\n   - Run Lighthouse performance audit and verify no \"Defer offscreen images\" flags\n   - Test on both desktop and mobile devices/emulation\n   - Verify Core Web Vitals metrics meet targets (LCP ≤ 2.5s, FID < 100ms, CLS < 0.1)",
         "status": "pending",
-        "dependencies": [2, 3, 4, 13, 15],
+        "dependencies": [
+          2,
+          3,
+          4,
+          13,
+          15
+        ],
         "priority": "medium",
         "subtasks": []
       },
@@ -827,7 +971,11 @@
         "details": "## Keyboard Navigation and Focus Management\n1. Audit focus order across all interactive elements:\n   ```typescript\n   // Add to app/layout.tsx or a global CSS file\n   :focus-visible {\n     outline: 2px solid var(--focus-color, #4f46e5);\n     outline-offset: 2px;\n   }\n   ```\n2. Verify the skip link implementation:\n   ```typescript\n   // In app/layout.tsx or a shared component\n   const SkipLink = () => (\n     <a \n       href=\"#main-content\" \n       className=\"sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-primary\"\n     >\n       Skip to main content\n     </a>\n   );\n   ```\n3. Ensure all interactive components have proper focus states:\n   - Review all Button, Link, Input, Select, and other interactive components\n   - Test tabbing through the entire application\n\n## Labels and Names\n1. Audit all form elements:\n   ```typescript\n   // Example of proper form labeling\n   <div className=\"form-group\">\n     <label htmlFor=\"name\" className=\"block text-sm font-medium\">Name</label>\n     <input \n       id=\"name\"\n       name=\"name\" \n       type=\"text\"\n       aria-required=\"true\"\n       className=\"mt-1 block w-full rounded-md\"\n     />\n   </div>\n   ```\n2. Ensure all buttons have accessible names:\n   ```typescript\n   // Bad example\n   <button><FaSearch /></button>\n   \n   // Good example\n   <button aria-label=\"Search\"><FaSearch /></button>\n   ```\n3. Add alt text to all images:\n   ```typescript\n   // For meaningful images\n   <Image src=\"/path/to/image.jpg\" alt=\"Description of image content\" width={400} height={300} />\n   \n   // For decorative images\n   <Image src=\"/path/to/decorative.jpg\" alt=\"\" width={400} height={300} role=\"presentation\" />\n   ```\n\n## Landmarks and Language\n1. Add language attribute to HTML:\n   ```typescript\n   // In app/layout.tsx\n   export default function RootLayout({ children }) {\n     return (\n       <html lang=\"en\">\n         <body>{children}</body>\n       </html>\n     );\n   }\n   ```\n2. Implement proper landmark regions:\n   ```typescript\n   // Example page structure\n   <header role=\"banner\">...</header>\n   <nav role=\"navigation\">...</nav>\n   <main id=\"main-content\" role=\"main\">...</main>\n   <aside role=\"complementary\">...</aside>\n   <footer role=\"contentinfo\">...</footer>\n   ```\n3. Use semantic HTML elements appropriately:\n   - `<section>` for thematic grouping of content\n   - `<article>` for self-contained compositions\n   - `<h1>` through `<h6>` for proper heading hierarchy\n\n## Contrast and Viewport\n1. Verify color contrast using the WebAIM contrast checker:\n   - Text color vs background color must meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)\n   - Update the design tokens if needed\n2. Ensure viewport meta tag is present:\n   ```html\n   <!-- Should be in app/layout.tsx by default with App Router -->\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n   ```\n3. Test text zoom and responsive layouts:\n   - Ensure text remains readable at 200% zoom\n   - Verify no horizontal scrolling occurs on mobile devices",
         "testStrategy": "## Automated Testing\n1. Install and configure axe-core for automated accessibility testing:\n   ```bash\n   npm install @axe-core/react\n   ```\n\n2. Set up axe in development environment:\n   ```typescript\n   // In a test utility file\n   import { axe, toHaveNoViolations } from 'jest-axe';\n   expect.extend(toHaveNoViolations);\n   \n   // In component tests\n   it('should have no accessibility violations', async () => {\n     const { container } = render(<MyComponent />);\n     const results = await axe(container);\n     expect(results).toHaveNoViolations();\n   });\n   ```\n\n3. Run Lighthouse accessibility audit:\n   - Use Chrome DevTools or CLI to run Lighthouse\n   - Target score: ≥ 95\n   - Document and address all issues found\n\n## Manual Testing\n1. Keyboard Navigation Testing:\n   - Tab through the entire application without using a mouse\n   - Verify all interactive elements are reachable\n   - Confirm focus indicators are clearly visible\n   - Test that the skip link works correctly\n\n2. Screen Reader Testing:\n   - Test with at least one screen reader (NVDA, VoiceOver, or JAWS)\n   - Verify all content is announced correctly\n   - Check that form controls have proper labels\n   - Ensure images have appropriate alt text\n\n3. Contrast and Zoom Testing:\n   - Use browser dev tools to simulate different vision impairments\n   - Test the site at 200% zoom\n   - Verify all text meets contrast requirements using WebAIM's contrast checker\n\n## Documentation and Reporting\n1. Create an accessibility report documenting:\n   - Issues found and fixed\n   - Current accessibility score\n   - Areas for future improvement\n   \n2. Update the project documentation with accessibility guidelines for developers",
         "status": "pending",
-        "dependencies": [7, 15, 17],
+        "dependencies": [
+          7,
+          15,
+          17
+        ],
         "priority": "medium",
         "subtasks": []
       },
@@ -838,7 +986,12 @@
         "details": "## 1. Canonical and Robots/Sitemap Implementation\n\n1. Add canonical URLs to all pages:\n```typescript\n// In app/layout.tsx or individual page components\nimport { Metadata } from 'next';\n\nexport const metadata: Metadata = {\n  // ...other metadata\n  alternates: {\n    canonical: 'https://yourdomain.com/current-page-path',\n  },\n};\n```\n\n2. Create robots.txt and sitemap.xml using next-sitemap:\n```bash\nnpm install next-sitemap\n```\n\n3. Configure next-sitemap in next-sitemap.config.js:\n```javascript\n/** @type {import('next-sitemap').IConfig} */\nmodule.exports = {\n  siteUrl: process.env.SITE_URL || 'https://yourdomain.com',\n  generateRobotsTxt: true,\n  robotsTxtOptions: {\n    policies: [\n      {\n        userAgent: '*',\n        allow: '/',\n      },\n    ],\n    additionalSitemaps: [\n      'https://yourdomain.com/server-sitemap.xml',\n    ],\n  },\n  exclude: ['/admin', '/private-page'],\n}\n```\n\n4. Add the build step to package.json:\n```json\n\"scripts\": {\n  \"postbuild\": \"next-sitemap\"\n}\n```\n\n## 2. Verify Metadata Across Pages\n\n1. Create a consistent metadata pattern for all key pages:\n```typescript\n// For Home page (app/page.tsx)\nexport const metadata: Metadata = {\n  title: 'P&D Web Development | Professional Web Solutions',\n  description: 'P&D Web Development offers custom web solutions, responsive design, and performance optimization for businesses of all sizes.',\n  openGraph: {\n    title: 'P&D Web Development | Professional Web Solutions',\n    description: 'P&D Web Development offers custom web solutions, responsive design, and performance optimization for businesses of all sizes.',\n    images: ['/images/og-home.jpg'],\n  },\n};\n\n// For Services page (app/services/page.tsx)\nexport const metadata: Metadata = {\n  title: 'Our Services | P&D Web Development',\n  description: 'Explore our comprehensive web development services including custom websites, e-commerce solutions, and performance optimization.',\n  openGraph: {\n    title: 'Our Services | P&D Web Development',\n    description: 'Explore our comprehensive web development services including custom websites, e-commerce solutions, and performance optimization.',\n    images: ['/images/og-services.jpg'],\n  },\n};\n\n// Similar patterns for About, Contact, and Service detail pages\n```\n\n2. Create a utility function for service detail pages:\n```typescript\n// utils/metadata.ts\nexport function generateServiceMetadata(service: ServiceType): Metadata {\n  return {\n    title: `${service.title} | P&D Web Development`,\n    description: service.metaDescription || service.excerpt,\n    openGraph: {\n      title: `${service.title} | P&D Web Development`,\n      description: service.metaDescription || service.excerpt,\n      images: [service.ogImage || '/images/og-default-service.jpg'],\n    },\n  };\n}\n```\n\n## 3. Structured Data Validation\n\n1. Implement JSON-LD for Organization on the home page:\n```typescript\n// components/JsonLd.tsx\nimport Script from 'next/script';\n\nexport function OrganizationJsonLd() {\n  const orgData = {\n    '@context': 'https://schema.org',\n    '@type': 'Organization',\n    name: 'P&D Web Development',\n    url: 'https://yourdomain.com',\n    logo: 'https://yourdomain.com/images/logo.png',\n    sameAs: [\n      'https://twitter.com/pdwebdev',\n      'https://linkedin.com/company/pdwebdev',\n    ],\n    contactPoint: {\n      '@type': 'ContactPoint',\n      telephone: '+1-123-456-7890',\n      contactType: 'customer service',\n      email: 'contact@yourdomain.com',\n    },\n  };\n\n  return (\n    <Script\n      id=\"organization-jsonld\"\n      type=\"application/ld+json\"\n      dangerouslySetInnerHTML={{ __html: JSON.stringify(orgData) }}\n    />\n  );\n}\n```\n\n2. Implement JSON-LD for Service on service detail pages:\n```typescript\n// components/JsonLd.tsx\nexport function ServiceJsonLd({ service }: { service: ServiceType }) {\n  const serviceData = {\n    '@context': 'https://schema.org',\n    '@type': 'Service',\n    name: service.title,\n    description: service.description,\n    provider: {\n      '@type': 'Organization',\n      name: 'P&D Web Development',\n      url: 'https://yourdomain.com',\n    },\n    url: `https://yourdomain.com/services/${service.slug}`,\n  };\n\n  return (\n    <Script\n      id=\"service-jsonld\"\n      type=\"application/ld+json\"\n      dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceData) }}\n    />\n  );\n}\n```\n\n3. Add the JSON-LD components to respective pages:\n```typescript\n// app/page.tsx\nimport { OrganizationJsonLd } from '@/components/JsonLd';\n\nexport default function HomePage() {\n  return (\n    <>\n      <OrganizationJsonLd />\n      {/* Rest of the page content */}\n    </>\n  );\n}\n\n// app/services/[slug]/page.tsx\nimport { ServiceJsonLd } from '@/components/JsonLd';\n\nexport default function ServicePage({ params }) {\n  const service = await getServiceBySlug(params.slug);\n  \n  return (\n    <>\n      <ServiceJsonLd service={service} />\n      {/* Rest of the page content */}\n    </>\n  );\n}\n```",
         "testStrategy": "## Testing Strategy\n\n### 1. SEO Metadata Testing\n\n1. Verify all pages have appropriate metadata:\n   ```bash\n   # Create a script to crawl all pages and extract metadata\n   npm install puppeteer\n   ```\n   \n   ```javascript\n   // scripts/check-metadata.js\n   const puppeteer = require('puppeteer');\n   \n   async function checkMetadata() {\n     const browser = await puppeteer.launch();\n     const page = await browser.newPage();\n     \n     const urls = [\n       'http://localhost:3000',\n       'http://localhost:3000/services',\n       'http://localhost:3000/about',\n       'http://localhost:3000/contact',\n       // Add service detail pages\n     ];\n     \n     for (const url of urls) {\n       await page.goto(url);\n       \n       const metadata = await page.evaluate(() => {\n         return {\n           title: document.title,\n           description: document.querySelector('meta[name=\"description\"]')?.content,\n           canonical: document.querySelector('link[rel=\"canonical\"]')?.href,\n         };\n       });\n       \n       console.log(`URL: ${url}`);\n       console.log(`Title: ${metadata.title}`);\n       console.log(`Description: ${metadata.description}`);\n       console.log(`Canonical: ${metadata.canonical}`);\n       console.log('---');\n     }\n     \n     await browser.close();\n   }\n   \n   checkMetadata();\n   ```\n\n2. Run Lighthouse SEO audit on all key pages:\n   ```bash\n   npm install -g lighthouse\n   lighthouse https://yourdomain.com --only-categories=seo --view\n   ```\n\n3. Verify robots.txt and sitemap.xml:\n   - Access https://yourdomain.com/robots.txt and verify content\n   - Access https://yourdomain.com/sitemap.xml and verify all important URLs are included\n   - Validate sitemap using Google Search Console\n\n### 2. Structured Data Testing\n\n1. Use Google's Rich Results Test for each page type:\n   - Visit https://search.google.com/test/rich-results\n   - Test home page, service listing page, and individual service pages\n   - Fix any warnings or errors reported\n\n2. Use Schema.org Validator:\n   - Visit https://validator.schema.org/\n   - Test all JSON-LD implementations\n   - Ensure no errors are reported\n\n3. Create automated tests for JSON-LD:\n   ```javascript\n   // __tests__/jsonld.test.js\n   import { render } from '@testing-library/react';\n   import { OrganizationJsonLd, ServiceJsonLd } from '@/components/JsonLd';\n   \n   describe('JSON-LD Components', () => {\n     test('OrganizationJsonLd renders correct schema', () => {\n       const { container } = render(<OrganizationJsonLd />);\n       const script = container.querySelector('script[type=\"application/ld+json\"]');\n       expect(script).toBeInTheDocument();\n       \n       const jsonData = JSON.parse(script.innerHTML);\n       expect(jsonData['@type']).toBe('Organization');\n       expect(jsonData.name).toBe('P&D Web Development');\n     });\n     \n     test('ServiceJsonLd renders correct schema', () => {\n       const mockService = {\n         title: 'Web Development',\n         description: 'Custom web development services',\n         slug: 'web-development',\n       };\n       \n       const { container } = render(<ServiceJsonLd service={mockService} />);\n       const script = container.querySelector('script[type=\"application/ld+json\"]');\n       expect(script).toBeInTheDocument();\n       \n       const jsonData = JSON.parse(script.innerHTML);\n       expect(jsonData['@type']).toBe('Service');\n       expect(jsonData.name).toBe('Web Development');\n     });\n   });\n   ```\n\n### 3. Final Validation\n\n1. Run a comprehensive Lighthouse audit:\n   ```bash\n   lighthouse https://yourdomain.com --view\n   ```\n   - Ensure SEO score is ≥ 95\n   - Fix any remaining issues\n\n2. Prepare for Search Console submission:\n   - Verify robots.txt allows crawling of important pages\n   - Verify sitemap.xml is accessible and valid\n   - Ensure canonical URLs are correctly implemented\n\n3. Test with mobile-friendly test:\n   - Visit https://search.google.com/test/mobile-friendly\n   - Test all key pages\n   - Fix any mobile usability issues\n\n4. Create a final SEO checklist document:\n   ```markdown\n   # SEO Implementation Checklist\n   \n   ## Metadata\n   - [x] All pages have appropriate titles\n   - [x] All pages have descriptive meta descriptions\n   - [x] Canonical URLs implemented on all pages\n   \n   ## Technical SEO\n   - [x] robots.txt properly configured\n   - [x] sitemap.xml includes all important URLs\n   - [x] Structured data implemented and validated\n   \n   ## Performance\n   - [x] Lighthouse SEO score ≥ 95\n   - [x] Mobile-friendly test passed\n   \n   ## Ready for Search Console\n   - [x] Site ready for submission to Google Search Console\n   ```",
         "status": "pending",
-        "dependencies": [3, 6, 9, 17],
+        "dependencies": [
+          3,
+          6,
+          9,
+          17
+        ],
         "priority": "medium",
         "subtasks": []
       }
@@ -915,7 +1068,9 @@
         "details": "1. Create a new component at components/ui/Button.jsx\n2. Implement using CVA and Radix Slot for composition:\n   ```jsx\n   'use client';\n   import { cva } from 'class-variance-authority';\n   import { Slot } from '@radix-ui/react-slot';\n   import { cn } from '@/lib/utils';\n   \n   const buttonVariants = cva(\n     'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',\n     {\n       variants: {\n         variant: {\n           primary: 'bg-brand-primary text-white hover:bg-brand-primary/90',\n           secondary: 'bg-sand-100 text-ink-900 hover:bg-sand-200',\n           ghost: 'hover:bg-sand-100 text-ink-700 hover:text-ink-900'\n         },\n         size: {\n           sm: 'h-9 px-3 text-sm',\n           md: 'h-10 py-2 px-4',\n           lg: 'h-12 px-6 text-lg'\n         }\n       },\n       defaultVariants: {\n         variant: 'primary',\n         size: 'md'\n       }\n     }\n   );\n   \n   const Button = ({ className, variant, size, asChild = false, ...props }) => {\n     const Comp = asChild ? Slot : 'button';\n     return (\n       <Comp\n         className={cn(buttonVariants({ variant, size, className }))}\n         {...props}\n       />\n     );\n   };\n   \n   export { Button, buttonVariants };\n   ```\n3. Ensure all states (hover, focus, disabled) match Figma specs\n4. Implement focus-visible styling as specified in constraints",
         "testStrategy": "1. Create a test page with all button variants and states\n2. Compare visually with Figma designs\n3. Test keyboard navigation and focus states\n4. Verify accessibility using axe DevTools\n5. Test with screen readers to ensure proper announcements",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -931,7 +1086,9 @@
             "id": 2,
             "title": "Implement button variants (primary, secondary, ghost)",
             "description": "Add styling for all button variants according to the Figma design system, ensuring correct colors, backgrounds, and hover states.",
-            "dependencies": ["2.1"],
+            "dependencies": [
+              "2.1"
+            ],
             "details": "Extend the buttonVariants cva function to include all required variants: primary (brand-primary background with white text), secondary (sand-100 background with ink-900 text), and ghost (transparent with ink-700 text). Implement hover states for each variant according to the Figma specs. Ensure text colors and background colors match the design system tokens.",
             "status": "pending",
             "testStrategy": "Create a test page showing all variants side by side and compare with Figma designs. Test hover interactions manually."
@@ -940,7 +1097,9 @@
             "id": 3,
             "title": "Implement button sizes (sm, md, lg)",
             "description": "Add styling for all button sizes according to the Figma design system, ensuring correct padding, height, and font sizes.",
-            "dependencies": ["2.1"],
+            "dependencies": [
+              "2.1"
+            ],
             "details": "Extend the buttonVariants cva function to include all required sizes: sm (height 9, padding x-3, small text), md (height 10, padding y-2 x-4, default text), and lg (height 12, padding x-6, large text). Ensure consistent vertical alignment of text and icons within each size variant. Set 'md' as the default size in defaultVariants.",
             "status": "pending",
             "testStrategy": "Create a test page showing all sizes side by side and compare with Figma designs. Verify text alignment and padding is consistent."
@@ -949,7 +1108,11 @@
             "id": 4,
             "title": "Implement button states (focus, disabled)",
             "description": "Add styling for focus and disabled states according to the Figma design system, ensuring proper accessibility and visual feedback.",
-            "dependencies": ["2.1", "2.2", "2.3"],
+            "dependencies": [
+              "2.1",
+              "2.2",
+              "2.3"
+            ],
             "details": "Implement focus-visible styling with outline-none, ring-2, and ring-offset-2 properties. Add disabled styling with opacity-50 and pointer-events-none. Ensure focus rings use the appropriate color from the design system. Test keyboard navigation to verify focus states appear correctly. Ensure disabled buttons visually indicate their state while maintaining their variant appearance.",
             "status": "pending",
             "testStrategy": "Test keyboard navigation to verify focus states. Test with screen readers to ensure proper announcements. Verify disabled buttons cannot be clicked and have the correct visual appearance."
@@ -958,7 +1121,12 @@
             "id": 5,
             "title": "Add TypeScript types and documentation",
             "description": "Add proper TypeScript types to the Button component and document all props, variants, and usage examples.",
-            "dependencies": ["2.1", "2.2", "2.3", "2.4"],
+            "dependencies": [
+              "2.1",
+              "2.2",
+              "2.3",
+              "2.4"
+            ],
             "details": "Convert Button.jsx to Button.tsx if not already using TypeScript. Add proper type definitions for all props including variant, size, asChild, and className. Create a ButtonProps interface that extends React.ButtonHTMLAttributes<HTMLButtonElement>. Add JSDoc comments to document the component, its props, and usage examples. Include information about which props are forwarded to the underlying button element.",
             "status": "pending",
             "testStrategy": "Verify TypeScript compilation succeeds without errors. Test the component with various prop combinations to ensure type safety."
@@ -972,7 +1140,9 @@
         "details": "1. Create a new component at components/ui/Card.jsx\n2. Implement using CVA for styling variants:\n   ```jsx\n   import { cva } from 'class-variance-authority';\n   import { cn } from '@/lib/utils';\n   \n   const cardVariants = cva('rounded-lg', {\n     variants: {\n       variant: {\n         elevated: 'bg-white shadow-md',\n         outline: 'border border-sand-200',\n         flat: 'bg-sand-50'\n       },\n       padding: {\n         none: '',\n         sm: 'p-4',\n         md: 'p-6',\n         lg: 'p-8'\n       }\n     },\n     defaultVariants: {\n       variant: 'elevated',\n       padding: 'md'\n     }\n   });\n   \n   const Card = ({ className, variant, padding, ...props }) => {\n     return (\n       <div\n         className={cn(cardVariants({ variant, padding, className }))}\n         {...props}\n       />\n     );\n   };\n   \n   export { Card, cardVariants };\n   ```\n3. Consider creating sub-components for Card.Header, Card.Content, Card.Footer if needed based on Figma components",
         "testStrategy": "1. Create a test page with all card variants and padding options\n2. Compare visually with Figma designs\n3. Test responsive behavior at different viewport sizes\n4. Verify proper nesting of content within cards",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -988,7 +1158,9 @@
             "id": 2,
             "title": "Implement Card Sub-Components",
             "description": "Create Card.Header, Card.Content, and Card.Footer sub-components to provide a consistent structure for card content.",
-            "dependencies": ["3.1"],
+            "dependencies": [
+              "3.1"
+            ],
             "details": "Extend the Card.jsx file to include Card.Header, Card.Content, and Card.Footer components. Each sub-component should have appropriate default styling and accept custom className props. For example:\n\nconst CardHeader = ({ className, ...props }) => {\n  return <div className={cn('mb-2', className)} {...props} />;\n};\n\nConst CardContent = ({ className, ...props }) => {\n  return <div className={cn('', className)} {...props} />;\n};\n\nConst CardFooter = ({ className, ...props }) => {\n  return <div className={cn('mt-4 flex justify-end', className)} {...props} />;\n};\n\nAssign these components as properties of the Card component and export them.",
             "status": "pending",
             "testStrategy": "Test each sub-component individually and in combination. Verify proper spacing and layout when sub-components are nested within the Card component."
@@ -997,7 +1169,9 @@
             "id": 3,
             "title": "Add Hover and Focus States",
             "description": "Implement hover and focus states for the Card component according to the Figma design system.",
-            "dependencies": ["3.1"],
+            "dependencies": [
+              "3.1"
+            ],
             "details": "Enhance the cardVariants definition to include hover and focus states for interactive cards. Add appropriate CSS classes for focus rings, hover effects, and transitions. For example:\n\nconst cardVariants = cva('rounded-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500', {\n  variants: {\n    // existing variants...\n    interactive: {\n      true: 'cursor-pointer hover:shadow-lg',\n      false: ''\n    }\n  },\n  defaultVariants: {\n    // existing defaults...\n    interactive: false\n  }\n});\n\nUpdate the Card component to accept and apply the interactive prop.",
             "status": "pending",
             "testStrategy": "Test hover and focus states visually. Verify focus rings appear correctly when using keyboard navigation. Ensure interactive cards show appropriate hover effects."
@@ -1006,7 +1180,10 @@
             "id": 4,
             "title": "Implement Responsive Behavior",
             "description": "Ensure the Card component and its sub-components respond appropriately to different viewport sizes.",
-            "dependencies": ["3.1", "3.2"],
+            "dependencies": [
+              "3.1",
+              "3.2"
+            ],
             "details": "Add responsive utility classes to the Card component and its sub-components. Consider implementing size variants that adjust padding based on screen size using Tailwind's responsive prefixes. For example:\n\nconst cardVariants = cva('rounded-lg', {\n  variants: {\n    // existing variants...\n    size: {\n      sm: 'sm:p-4 p-3',\n      md: 'sm:p-6 p-4',\n      lg: 'sm:p-8 p-6'\n    }\n  },\n  defaultVariants: {\n    // existing defaults...\n    size: 'md'\n  }\n});\n\nTest the component at various breakpoints to ensure proper spacing and layout.",
             "status": "pending",
             "testStrategy": "Test the component at various viewport sizes using browser dev tools. Verify that padding and layout adjust appropriately at each breakpoint."
@@ -1015,7 +1192,12 @@
             "id": 5,
             "title": "Create Card Component Documentation and Examples",
             "description": "Document the Card component API and create example usage patterns for the component library.",
-            "dependencies": ["3.1", "3.2", "3.3", "3.4"],
+            "dependencies": [
+              "3.1",
+              "3.2",
+              "3.3",
+              "3.4"
+            ],
             "details": "Create a documentation file or comments that explain:\n1. Available props and their default values\n2. All available variants and their visual appearance\n3. How to use sub-components\n4. Examples of common card patterns\n\nImplement a simple test page that showcases all variants of the Card component with different content structures. For example:\n\n```jsx\n// Example in app/test/card/page.jsx\nimport { Card } from '@/components/ui/Card';\n\nexport default function CardTestPage() {\n  return (\n    <div className=\"p-8 space-y-8\">\n      <h1>Card Component Test</h1>\n      \n      <div className=\"grid grid-cols-1 md:grid-cols-3 gap-6\">\n        <Card variant=\"elevated\">\n          <Card.Header>Elevated Card</Card.Header>\n          <Card.Content>Content goes here</Card.Content>\n          <Card.Footer>Footer content</Card.Footer>\n        </Card>\n        \n        <Card variant=\"outline\" padding=\"lg\">\n          <Card.Header>Outline Card (Large Padding)</Card.Header>\n          <Card.Content>Content goes here</Card.Content>\n        </Card>\n        \n        <Card variant=\"flat\" padding=\"sm\">\n          <Card.Content>Flat Card (Small Padding)</Card.Content>\n        </Card>\n      </div>\n    </div>\n  );\n}\n```",
             "status": "pending",
             "testStrategy": "Review documentation for completeness and accuracy. Test all examples to ensure they work as expected and demonstrate the component's capabilities correctly."
@@ -1029,7 +1211,9 @@
         "details": "1. Create a new component at components/ui/Section.jsx\n2. Implement using CVA for styling variants:\n   ```jsx\n   import { cva } from 'class-variance-authority';\n   import { cn } from '@/lib/utils';\n   \n   const sectionVariants = cva('w-full', {\n     variants: {\n       background: {\n         none: '',\n         brand: 'bg-brand-primary text-white',\n         ink: 'bg-ink-900 text-white',\n         sand: 'bg-sand-100'\n       },\n       spacing: {\n         sm: 'py-8',\n         md: 'py-12',\n         lg: 'py-16',\n         xl: 'py-24'\n       },\n       container: {\n         none: '',\n         sm: 'max-w-screen-sm mx-auto px-4',\n         md: 'max-w-screen-md mx-auto px-4 sm:px-6',\n         lg: 'max-w-screen-lg mx-auto px-4 sm:px-6',\n         xl: 'max-w-screen-xl mx-auto px-4 sm:px-6',\n         full: 'w-full px-4 sm:px-6'\n       }\n     },\n     defaultVariants: {\n       background: 'none',\n       spacing: 'md',\n       container: 'lg'\n     }\n   });\n   \n   const Section = ({ \n     className, \n     background, \n     spacing, \n     container, \n     as: Component = 'section',\n     ...props \n   }) => {\n     return (\n       <Component\n         className={cn(sectionVariants({ background, spacing, container, className }))}\n         {...props}\n       />\n     );\n   };\n   \n   export { Section, sectionVariants };\n   ```\n3. Ensure the component can be used with semantic HTML elements (section, div, article, etc.)",
         "testStrategy": "1. Create a test page with all section variants\n2. Test responsive behavior at different viewport sizes\n3. Verify container widths match Figma specifications\n4. Check that spacing presets are applied correctly\n5. Verify background colors match design tokens",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1045,7 +1229,9 @@
             "id": 2,
             "title": "Implement CVA styling variants",
             "description": "Define the styling variants using CVA for background, spacing, and container options according to the design specifications.",
-            "dependencies": ["4.1"],
+            "dependencies": [
+              "4.1"
+            ],
             "details": "Implement the sectionVariants using cva with the specified variants for background (none, brand, ink, sand), spacing (sm, md, lg, xl), and container (none, sm, md, lg, xl, full). Set appropriate default variants (background: 'none', spacing: 'md', container: 'lg').",
             "status": "pending",
             "testStrategy": "Verify all variant options are correctly defined and match the design specifications."
@@ -1054,7 +1240,9 @@
             "id": 3,
             "title": "Create polymorphic Section component",
             "description": "Implement the Section component with support for different HTML elements through the 'as' prop.",
-            "dependencies": ["4.2"],
+            "dependencies": [
+              "4.2"
+            ],
             "details": "Create the Section component that accepts className, background, spacing, container, and as props. Implement the component to render the specified HTML element (defaulting to 'section') with the appropriate classes from sectionVariants. Ensure all additional props are passed through to the rendered element.",
             "status": "pending",
             "testStrategy": "Test rendering the component with different HTML elements (section, div, article) and verify the correct element is used in the DOM."
@@ -1063,7 +1251,9 @@
             "id": 4,
             "title": "Add responsive behavior to Section component",
             "description": "Ensure the Section component behaves correctly across different viewport sizes with appropriate padding and width constraints.",
-            "dependencies": ["4.3"],
+            "dependencies": [
+              "4.3"
+            ],
             "details": "Refine the container variants to ensure proper responsive behavior. Verify that padding scales appropriately (px-4 sm:px-6) and that max-width constraints are applied correctly for each container size. Test that the component maintains proper alignment and spacing at all breakpoints.",
             "status": "pending",
             "testStrategy": "Test the component at various viewport sizes (mobile, tablet, desktop) to verify responsive behavior matches the design specifications."
@@ -1072,7 +1262,9 @@
             "id": 5,
             "title": "Create documentation and usage examples",
             "description": "Document the Section component API and create usage examples for different variants and configurations.",
-            "dependencies": ["4.4"],
+            "dependencies": [
+              "4.4"
+            ],
             "details": "Create a documentation file or comments that explain the available props, variants, and usage patterns. Include examples of common use cases such as full-width sections, contained sections with different backgrounds, and sections with various spacing options. Demonstrate how to nest content within the Section component.",
             "status": "pending",
             "testStrategy": "Review documentation for completeness and accuracy. Verify that all examples work as expected when implemented."
@@ -1086,7 +1278,9 @@
         "details": "1. Create components at components/ui/Input.jsx and components/ui/Textarea.jsx\n2. Implement Input using CVA:\n   ```jsx\n   'use client';\n   import { forwardRef } from 'react';\n   import { cva } from 'class-variance-authority';\n   import { cn } from '@/lib/utils';\n   \n   const inputVariants = cva(\n     'flex w-full rounded-md border bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-ink-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',\n     {\n       variants: {\n         state: {\n           default: 'border-sand-200',\n           error: 'border-red-500 focus-visible:ring-red-500'\n         },\n         size: {\n           sm: 'h-8 text-xs',\n           md: 'h-10 text-sm',\n           lg: 'h-12 text-base'\n         }\n       },\n       defaultVariants: {\n         state: 'default',\n         size: 'md'\n       }\n     }\n   );\n   \n   const Input = forwardRef(({ className, state, size, ...props }, ref) => {\n     return (\n       <input\n         className={cn(inputVariants({ state, size, className }))}\n         ref={ref}\n         {...props}\n       />\n     );\n   });\n   Input.displayName = 'Input';\n   \n   // Create FormField wrapper component for label, input, and helper text\n   const FormField = ({ label, helperText, error, children, className }) => {\n     return (\n       <div className={cn('space-y-2', className)}>\n         {label && (\n           <label className=\"text-sm font-medium leading-none\">\n             {label}\n           </label>\n         )}\n         {children}\n         {(helperText || error) && (\n           <p className={cn(\n             'text-xs', \n             error ? 'text-red-500' : 'text-ink-500'\n           )}>\n             {error || helperText}\n           </p>\n         )}\n       </div>\n     );\n   };\n   \n   export { Input, inputVariants, FormField };\n   ```\n3. Implement similar pattern for Textarea\n4. Ensure all states (focus, error, disabled) match Figma specs",
         "testStrategy": "1. Create a test form with all input variants and states\n2. Test form validation and error states\n3. Compare visually with Figma designs\n4. Test keyboard navigation and focus states\n5. Verify accessibility using axe DevTools\n6. Test with screen readers to ensure proper announcements",
         "priority": "high",
-        "dependencies": [1],
+        "dependencies": [
+          1
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1102,7 +1296,9 @@
             "id": 2,
             "title": "Implement Textarea Component",
             "description": "Create the Textarea component with the same pattern as Input, supporting all required states and variants.",
-            "dependencies": ["5.1"],
+            "dependencies": [
+              "5.1"
+            ],
             "details": "1. Create components/ui/Textarea.jsx file.\n2. Implement using CVA pattern similar to Input:\n```jsx\nconst textareaVariants = cva(\n  'flex w-full rounded-md border bg-white px-3 py-2 text-sm ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',\n  {\n    variants: {\n      state: {\n        default: 'border-sand-200',\n        error: 'border-red-500 focus-visible:ring-red-500'\n      },\n      size: {\n        sm: 'min-h-[80px] text-xs',\n        md: 'min-h-[100px] text-sm',\n        lg: 'min-h-[120px] text-base'\n      }\n    },\n    defaultVariants: {\n      state: 'default',\n      size: 'md'\n    }\n  }\n);\n```\n3. Create forwardRef component with proper props handling.\n4. Ensure resize behavior is properly configured.",
             "status": "pending",
             "testStrategy": "Test with various content lengths to ensure proper resizing behavior. Verify all states (focus, error, disabled) match Figma specs."
@@ -1111,7 +1307,10 @@
             "id": 3,
             "title": "Enhance FormField Component",
             "description": "Improve the FormField wrapper component to handle both Input and Textarea components with proper labeling and error states.",
-            "dependencies": ["5.1", "5.2"],
+            "dependencies": [
+              "5.1",
+              "5.2"
+            ],
             "details": "1. Refactor FormField to be more flexible with different input types.\n2. Add support for required field indicators.\n3. Implement proper label-for relationships using IDs.\n4. Add support for optional tooltip/help icon.\n5. Ensure proper spacing between label, input/textarea, and helper text.\n6. Add proper aria-describedby for error messages.",
             "status": "pending",
             "testStrategy": "Test with screen readers to ensure proper announcements of labels and error messages. Verify visual alignment with Figma designs."
@@ -1120,7 +1319,10 @@
             "id": 4,
             "title": "Create Input Field Variants",
             "description": "Implement specialized input field variants like password fields with show/hide toggle, search inputs with clear button, and number inputs with increment/decrement controls.",
-            "dependencies": ["5.1", "5.3"],
+            "dependencies": [
+              "5.1",
+              "5.3"
+            ],
             "details": "1. Create PasswordInput component that extends Input with show/hide functionality:\n```jsx\nconst PasswordInput = forwardRef(({ className, ...props }, ref) => {\n  const [showPassword, setShowPassword] = useState(false);\n  return (\n    <div className=\"relative\">\n      <Input\n        type={showPassword ? 'text' : 'password'}\n        className={className}\n        ref={ref}\n        {...props}\n      />\n      <button\n        type=\"button\"\n        className=\"absolute right-3 top-1/2 -translate-y-1/2\"\n        onClick={() => setShowPassword(!showPassword)}\n      >\n        {showPassword ? 'Hide' : 'Show'}\n      </button>\n    </div>\n  );\n});\n```\n2. Create SearchInput with clear button functionality.\n3. Create NumberInput with increment/decrement controls.",
             "status": "pending",
             "testStrategy": "Test special interactions like password visibility toggle, search clearing, and number increment/decrement. Verify keyboard accessibility for all custom controls."
@@ -1129,7 +1331,12 @@
             "id": 5,
             "title": "Create Form Examples and Documentation",
             "description": "Create example form implementations and documentation to demonstrate proper usage of the Input, Textarea, and FormField components.",
-            "dependencies": ["5.1", "5.2", "5.3", "5.4"],
+            "dependencies": [
+              "5.1",
+              "5.2",
+              "5.3",
+              "5.4"
+            ],
             "details": "1. Create a documentation page or component that shows:\n   - Basic usage examples\n   - Form validation integration\n   - Different states and sizes\n   - Proper form layout techniques\n2. Implement a complete form example with various field types:\n```jsx\nconst ExampleForm = () => {\n  return (\n    <form className=\"space-y-4\">\n      <FormField label=\"Name\" helperText=\"Enter your full name\">\n        <Input placeholder=\"John Doe\" />\n      </FormField>\n      \n      <FormField label=\"Email\" error=\"Please enter a valid email\">\n        <Input state=\"error\" placeholder=\"example@email.com\" />\n      </FormField>\n      \n      <FormField label=\"Password\">\n        <PasswordInput placeholder=\"Enter password\" />\n      </FormField>\n      \n      <FormField label=\"Message\">\n        <Textarea placeholder=\"Type your message here\" />\n      </FormField>\n      \n      <Button>Submit</Button>\n    </form>\n  );\n};\n```\n3. Add comments explaining best practices for form implementation.",
             "status": "pending",
             "testStrategy": "Test the example form with various input methods. Verify form validation works correctly. Test with screen readers and keyboard navigation to ensure accessibility."
@@ -1143,7 +1350,12 @@
         "details": "1. Create page at app/page.jsx as a Server Component\n2. Implement the page structure using the Section component:\n   ```jsx\n   import { Section } from '@/components/ui/Section';\n   import { Button } from '@/components/ui/Button';\n   import { Card } from '@/components/ui/Card';\n   import Image from 'next/image';\n   import { Navbar } from '@/components/Navbar';\n   import { Footer } from '@/components/Footer';\n   \n   export const metadata = {\n     title: 'P&D Website - Home',\n     description: 'Description from Figma design',\n     openGraph: {\n       images: ['/og-image.jpg']\n     }\n   };\n   \n   export default function HomePage() {\n     return (\n       <>\n         <Navbar />\n         \n         {/* Hero Section */}\n         <Section \n           background=\"brand\" \n           spacing=\"xl\"\n           className=\"relative overflow-hidden\"\n         >\n           <div className=\"grid grid-cols-1 md:grid-cols-2 gap-8 items-center\">\n             <div>\n               <h1 className=\"text-4xl md:text-5xl lg:text-6xl font-bold mb-6\">\n                 {/* Hero heading from Figma */}\n               </h1>\n               <p className=\"text-xl mb-8\">\n                 {/* Hero subtext from Figma */}\n               </p>\n               <div className=\"flex flex-wrap gap-4\">\n                 <Button size=\"lg\">Primary CTA</Button>\n                 <Button variant=\"secondary\" size=\"lg\">Secondary CTA</Button>\n               </div>\n             </div>\n             <div className=\"relative h-[300px] md:h-[400px] lg:h-[500px]\">\n               <Image \n                 src=\"/hero-image.jpg\" \n                 alt=\"Hero image\"\n                 fill\n                 priority\n                 className=\"object-cover rounded-lg\"\n               />\n             </div>\n           </div>\n         </Section>\n         \n         {/* Section 2 */}\n         <Section spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         {/* Section 3 */}\n         <Section background=\"sand\" spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         {/* Section 4 */}\n         <Section spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         <Footer />\n       </>\n     );\n   }\n   ```\n3. Export and optimize all required images from Figma\n4. Implement responsive layouts for sm/md/lg/xl breakpoints\n5. Ensure proper heading hierarchy (h1, h2, h3, etc.)\n6. Add appropriate landmark roles (header, main, footer, etc.)\n7. Configure metadata for SEO",
         "testStrategy": "1. Compare visually with Figma designs at all breakpoints\n2. Test responsive behavior using browser dev tools\n3. Run Lighthouse accessibility audit (target ≥ 95)\n4. Verify heading structure with accessibility tools\n5. Test keyboard navigation\n6. Verify all images have proper alt text\n7. Check SEO metadata",
         "priority": "medium",
-        "dependencies": [1, 2, 3, 4],
+        "dependencies": [
+          1,
+          2,
+          3,
+          4
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1159,7 +1371,9 @@
             "id": 2,
             "title": "Implement Section 2 Content",
             "description": "Build the second section of the landing page with content, layout, and visual elements according to the Figma design.",
-            "dependencies": ["6.1"],
+            "dependencies": [
+              "6.1"
+            ],
             "details": "1. Extract section 2 content (heading, text, images) from Figma\n2. Export and optimize any required images\n3. Implement the section layout using the Section component with appropriate spacing\n4. Add heading (h2) and content with proper typography\n5. Implement any cards, images, or interactive elements shown in the design\n6. Ensure responsive behavior at all breakpoints\n7. Apply appropriate background color if specified in design",
             "status": "pending",
             "testStrategy": "1. Compare visually with Figma design\n2. Test responsive layout at sm/md/lg/xl breakpoints\n3. Verify content alignment and spacing\n4. Check image rendering and optimization"
@@ -1168,7 +1382,9 @@
             "id": 3,
             "title": "Implement Section 3 Content",
             "description": "Create the third section of the landing page with sand background and all required content elements according to the Figma design.",
-            "dependencies": ["6.2"],
+            "dependencies": [
+              "6.2"
+            ],
             "details": "1. Extract section 3 content from Figma\n2. Implement the section with sand background using the Section component\n3. Add heading (h2) and subheadings (h3) with proper hierarchy\n4. Create any card components, lists, or content blocks shown in the design\n5. Export and integrate any required images or icons\n6. Ensure responsive layout adjustments for all breakpoints\n7. Implement any interactive elements or hover states",
             "status": "pending",
             "testStrategy": "1. Verify background color matches the sand theme\n2. Compare layout and content with Figma design\n3. Test responsive behavior\n4. Check heading hierarchy for accessibility\n5. Verify any interactive elements work correctly"
@@ -1177,7 +1393,9 @@
             "id": 4,
             "title": "Implement Section 4 Content",
             "description": "Build the fourth and final content section of the landing page with all required elements according to the Figma design.",
-            "dependencies": ["6.3"],
+            "dependencies": [
+              "6.3"
+            ],
             "details": "1. Extract section 4 content from Figma\n2. Implement the section layout using the Section component\n3. Add heading (h2) and content with proper typography\n4. Create any testimonials, CTAs, or feature highlights shown in the design\n5. Export and integrate any required images\n6. Ensure responsive behavior at all breakpoints\n7. Implement any final call-to-action elements",
             "status": "pending",
             "testStrategy": "1. Compare visually with Figma design\n2. Test responsive layout at all breakpoints\n3. Verify content alignment and spacing\n4. Check any interactive elements function correctly\n5. Verify CTAs are properly styled and positioned"
@@ -1186,7 +1404,12 @@
             "id": 5,
             "title": "Finalize Page Structure and SEO",
             "description": "Integrate all sections with Navbar and Footer, implement metadata for SEO, and ensure overall page accessibility and responsive behavior.",
-            "dependencies": ["6.1", "6.2", "6.3", "6.4"],
+            "dependencies": [
+              "6.1",
+              "6.2",
+              "6.3",
+              "6.4"
+            ],
             "details": "1. Import and integrate Navbar and Footer components\n2. Wrap all content in appropriate semantic HTML (main, section)\n3. Complete the metadata configuration with title, description, and OG image\n4. Verify heading hierarchy across the entire page (h1 → h2 → h3)\n5. Add appropriate landmark roles for accessibility\n6. Ensure all images have proper alt text\n7. Test and fix any responsive layout issues across the entire page\n8. Verify proper spacing between all sections",
             "status": "pending",
             "testStrategy": "1. Run Lighthouse accessibility audit (target ≥95)\n2. Test keyboard navigation through the entire page\n3. Verify SEO metadata is correctly implemented\n4. Check responsive behavior at all breakpoints\n5. Validate HTML structure and landmark roles\n6. Test page load performance and image optimization"
@@ -1200,7 +1423,12 @@
         "details": "1. Create page at app/services/page.jsx as a Server Component\n2. Implement the page structure using the Section component:\n   ```jsx\n   import { Section } from '@/components/ui/Section';\n   import { Button } from '@/components/ui/Button';\n   import { Card } from '@/components/ui/Card';\n   import Image from 'next/image';\n   import { Navbar } from '@/components/Navbar';\n   import { Footer } from '@/components/Footer';\n   \n   export const metadata = {\n     title: 'P&D Website - Our Services',\n     description: 'Description from Figma design',\n     openGraph: {\n       images: ['/og-services.jpg']\n     }\n   };\n   \n   // Sample service data - extract from Figma\n   const services = [\n     {\n       title: 'Service 1',\n       description: 'Description from Figma',\n       image: '/service1.jpg',\n       cta: 'Learn More'\n     },\n     // Add other services from Figma\n   ];\n   \n   export default function ServicesPage() {\n     return (\n       <>\n         <Navbar />\n         \n         {/* Section 1 - Header */}\n         <Section \n           background=\"ink\" \n           spacing=\"lg\"\n         >\n           <div className=\"text-center\">\n             <h1 className=\"text-4xl md:text-5xl font-bold mb-6\">\n               Our Services\n             </h1>\n             <p className=\"text-xl max-w-2xl mx-auto\">\n               {/* Subtext from Figma */}\n             </p>\n           </div>\n         </Section>\n         \n         {/* Section 2 - Services */}\n         <Section spacing=\"xl\">\n           <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8\">\n             {services.map((service, index) => (\n               <Card key={index} variant=\"elevated\" className=\"flex flex-col\">\n                 <div className=\"relative h-48 w-full mb-4\">\n                   <Image \n                     src={service.image} \n                     alt={service.title}\n                     fill\n                     className=\"object-cover rounded-t-lg\"\n                   />\n                 </div>\n                 <div className=\"p-6 flex-1 flex flex-col\">\n                   <h3 className=\"text-xl font-bold mb-2\">{service.title}</h3>\n                   <p className=\"mb-4 flex-1\">{service.description}</p>\n                   <Button variant=\"primary\">{service.cta}</Button>\n                 </div>\n               </Card>\n             ))}\n           </div>\n         </Section>\n         \n         {/* Section 3 */}\n         <Section background=\"sand\" spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         {/* Section 4 - CTA */}\n         <Section spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         <Footer />\n       </>\n     );\n   }\n   ```\n3. Export and optimize all required images from Figma\n4. Ensure service cards match component specs\n5. Implement consistent CTAs as shown in Figma\n6. Ensure proper heading hierarchy and landmark roles",
         "testStrategy": "1. Compare visually with Figma designs at all breakpoints\n2. Test responsive behavior using browser dev tools\n3. Run Lighthouse accessibility audit (target ≥ 95)\n4. Verify heading structure with accessibility tools\n5. Test keyboard navigation\n6. Verify all images have proper alt text\n7. Check SEO metadata",
         "priority": "medium",
-        "dependencies": [1, 2, 3, 4],
+        "dependencies": [
+          1,
+          2,
+          3,
+          4
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1216,7 +1444,9 @@
             "id": 2,
             "title": "Implement header section and service cards grid",
             "description": "Complete the implementation of Section 1 (header) and Section 2 (service cards grid) with proper styling, responsive behavior, and accessibility features.",
-            "dependencies": ["7.1"],
+            "dependencies": [
+              "7.1"
+            ],
             "details": "1. Complete the header section with the title and subtext from Figma\n2. Implement the service cards grid using the data prepared in subtask 7.1\n3. Style the cards according to the Figma design with proper spacing and layout\n4. Ensure responsive behavior of the grid (1 column on mobile, 2 on tablet, 3 on desktop)\n5. Add hover states for cards and buttons as specified in Figma\n6. Implement proper image loading with blur placeholders\n7. Ensure all content has proper semantic markup and ARIA attributes",
             "status": "pending",
             "testStrategy": "Test responsive layout at all breakpoints and verify keyboard navigation through the service cards"
@@ -1243,7 +1473,11 @@
             "id": 5,
             "title": "Finalize page with metadata and accessibility improvements",
             "description": "Complete the page implementation by adding proper metadata, ensuring accessibility compliance, and performing final testing against the Figma design.",
-            "dependencies": ["7.2", "7.3", "7.4"],
+            "dependencies": [
+              "7.2",
+              "7.3",
+              "7.4"
+            ],
             "details": "1. Update the metadata with final title, description, and OpenGraph image\n2. Review and improve heading hierarchy (h1, h2, h3) throughout the page\n3. Add appropriate landmark roles (main, section, etc.)\n4. Ensure all images have descriptive alt text\n5. Verify keyboard navigation flow throughout the page\n6. Add any missing aria-labels or aria-describedby attributes\n7. Test with screen readers to ensure proper announcements\n8. Perform final visual comparison with Figma design and make any necessary adjustments",
             "status": "pending",
             "testStrategy": "Run Lighthouse accessibility audit (target ≥95), verify heading structure with accessibility tools, and test keyboard navigation throughout the page"
@@ -1257,7 +1491,12 @@
         "details": "1. Create page at app/about/page.jsx as a Server Component\n2. Implement the page structure using the Section component:\n   ```jsx\n   import { Section } from '@/components/ui/Section';\n   import { Card } from '@/components/ui/Card';\n   import Image from 'next/image';\n   import { Navbar } from '@/components/Navbar';\n   import { Footer } from '@/components/Footer';\n   \n   export const metadata = {\n     title: 'P&D Website - About Us',\n     description: 'Description from Figma design',\n     openGraph: {\n       images: ['/og-about.jpg']\n     }\n   };\n   \n   // Sample team data - extract from Figma\n   const team = [\n     {\n       name: 'Team Member 1',\n       role: 'Role from Figma',\n       bio: 'Bio from Figma',\n       image: '/team1.jpg'\n     },\n     // Add other team members from Figma\n   ];\n   \n   // JSON-LD for Organization\n   export const generateMetadata = () => {\n     return {\n       alternates: {\n         canonical: 'https://example.com/about'\n       },\n       other: {\n         'application/ld+json': JSON.stringify({\n           '@context': 'https://schema.org',\n           '@type': 'Organization',\n           name: 'P&D Website',\n           url: 'https://example.com',\n           logo: 'https://example.com/logo.png',\n           // Add other organization details from Figma\n         })\n       }\n     };\n   };\n   \n   export default function AboutPage() {\n     return (\n       <>\n         <Navbar />\n         \n         {/* Section 1 - Header */}\n         <Section \n           background=\"brand\" \n           spacing=\"lg\"\n         >\n           <div className=\"text-center\">\n             <h1 className=\"text-4xl md:text-5xl font-bold mb-6\">\n               About Us\n             </h1>\n             <p className=\"text-xl max-w-2xl mx-auto\">\n               {/* Subtext from Figma */}\n             </p>\n           </div>\n         </Section>\n         \n         {/* Section 2 - Company Story */}\n         <Section spacing=\"xl\">\n           {/* Content from Figma */}\n         </Section>\n         \n         {/* Section 3 - Team */}\n         <Section background=\"sand\" spacing=\"lg\">\n           <h2 className=\"text-3xl font-bold mb-12 text-center\">Our Team</h2>\n           <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8\">\n             {team.map((member, index) => (\n               <Card key={index} variant=\"elevated\" className=\"text-center\">\n                 <div className=\"relative h-48 w-48 mx-auto mb-4 overflow-hidden rounded-full\">\n                   <Image \n                     src={member.image} \n                     alt={member.name}\n                     fill\n                     className=\"object-cover\"\n                   />\n                 </div>\n                 <h3 className=\"text-xl font-bold mb-1\">{member.name}</h3>\n                 <p className=\"text-ink-600 mb-4\">{member.role}</p>\n                 <p>{member.bio}</p>\n               </Card>\n             ))}\n           </div>\n         </Section>\n         \n         {/* Section 4 */}\n         <Section spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         <Footer />\n       </>\n     );\n   }\n   ```\n3. Export and optimize all team member images from Figma\n4. Implement JSON-LD for Organization schema\n5. Ensure team cards match component specs\n6. Ensure proper heading hierarchy and landmark roles",
         "testStrategy": "1. Compare visually with Figma designs at all breakpoints\n2. Test responsive behavior using browser dev tools\n3. Run Lighthouse accessibility audit (target ≥ 95)\n4. Verify heading structure with accessibility tools\n5. Test keyboard navigation\n6. Verify all images have proper alt text\n7. Check SEO metadata\n8. Validate JSON-LD using Google's Structured Data Testing Tool",
         "priority": "medium",
-        "dependencies": [1, 2, 3, 4],
+        "dependencies": [
+          1,
+          2,
+          3,
+          4
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1273,7 +1512,9 @@
             "id": 2,
             "title": "Implement Section 1 (Header) and Section 2 (Company Story)",
             "description": "Build the header section with title and subtext, and the company story section according to the Figma design.",
-            "dependencies": ["8.1"],
+            "dependencies": [
+              "8.1"
+            ],
             "details": "1. For Section 1 (Header):\n   - Use the Section component with 'brand' background and 'lg' spacing\n   - Add the 'About Us' heading with proper text styling\n   - Extract and add the subtext content from Figma\n2. For Section 2 (Company Story):\n   - Use the Section component with 'xl' spacing\n   - Extract content from Figma including headings, paragraphs, and any images\n   - Implement responsive layout according to design\n   - Ensure proper text hierarchy and spacing",
             "status": "pending",
             "testStrategy": "Compare visually with Figma designs at all breakpoints and verify responsive behavior using browser dev tools"
@@ -1282,7 +1523,9 @@
             "id": 3,
             "title": "Extract and optimize team member data and images",
             "description": "Extract all team member information from Figma and prepare optimized images for the team section.",
-            "dependencies": ["8.1"],
+            "dependencies": [
+              "8.1"
+            ],
             "details": "1. Extract complete team member data from Figma including:\n   - Full names\n   - Role titles\n   - Complete bio text\n2. Export all team member images from Figma at appropriate resolutions\n3. Optimize all images using appropriate tools (e.g., ImageOptim)\n4. Save images to the public directory with consistent naming\n5. Create a complete team data array with all members and their details\n6. Ensure image paths are correctly referenced in the data structure",
             "status": "pending",
             "testStrategy": "Verify image optimization with tools like Lighthouse and ensure all images load correctly at different viewport sizes"
@@ -1291,7 +1534,10 @@
             "id": 4,
             "title": "Implement Section 3 (Team Members)",
             "description": "Build the team members section with cards displaying team information according to the Figma design.",
-            "dependencies": ["8.1", "8.3"],
+            "dependencies": [
+              "8.1",
+              "8.3"
+            ],
             "details": "1. Use the Section component with 'sand' background and 'lg' spacing\n2. Add the 'Our Team' heading with proper styling\n3. Create the responsive grid layout for team cards\n4. Implement the Card component for each team member with:\n   - Circular image container with proper sizing and overflow handling\n   - Name with appropriate font weight and size\n   - Role with correct color styling\n   - Bio text with proper formatting\n5. Ensure responsive behavior matches design at all breakpoints\n6. Add proper alt text for all team member images",
             "status": "pending",
             "testStrategy": "Test responsive grid layout at all breakpoints and verify accessibility of team cards using screen readers"
@@ -1300,7 +1546,11 @@
             "id": 5,
             "title": "Implement Section 4 and finalize page accessibility",
             "description": "Complete the final section of the About Us page and ensure the entire page meets accessibility standards.",
-            "dependencies": ["8.1", "8.2", "8.4"],
+            "dependencies": [
+              "8.1",
+              "8.2",
+              "8.4"
+            ],
             "details": "1. Extract content for Section 4 from Figma\n2. Implement Section 4 using the Section component with 'lg' spacing\n3. Add all required content elements according to design\n4. Review and ensure proper heading hierarchy throughout the page (h1 → h2 → h3)\n5. Add appropriate ARIA landmark roles where needed\n6. Verify all interactive elements are keyboard accessible\n7. Ensure sufficient color contrast throughout the page\n8. Add any missing alt text for images\n9. Test page navigation and flow",
             "status": "pending",
             "testStrategy": "Run Lighthouse accessibility audit (target ≥95), verify heading structure with accessibility tools, test keyboard navigation, and check all images have proper alt text"
@@ -1314,7 +1564,13 @@
         "details": "1. Create page at app/contact/page.jsx and a client component for the form\n2. Implement the page structure using the Section component:\n   ```jsx\n   // app/contact/page.jsx\n   import { Section } from '@/components/ui/Section';\n   import { Navbar } from '@/components/Navbar';\n   import { Footer } from '@/components/Footer';\n   import { ContactForm } from './ContactForm';\n   \n   export const metadata = {\n     title: 'P&D Website - Contact Us',\n     description: 'Description from Figma design',\n     openGraph: {\n       images: ['/og-contact.jpg']\n     }\n   };\n   \n   export default function ContactPage() {\n     return (\n       <>\n         <Navbar />\n         \n         {/* Section 1 - Header */}\n         <Section \n           background=\"ink\" \n           spacing=\"lg\"\n         >\n           <div className=\"text-center\">\n             <h1 className=\"text-4xl md:text-5xl font-bold mb-6\">\n               Contact Us\n             </h1>\n             <p className=\"text-xl max-w-2xl mx-auto\">\n               {/* Subtext from Figma */}\n             </p>\n           </div>\n         </Section>\n         \n         {/* Section 2 - Contact Form */}\n         <Section spacing=\"xl\">\n           <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-12\">\n             <div>\n               <h2 className=\"text-3xl font-bold mb-6\">Get in Touch</h2>\n               <p className=\"mb-8\">\n                 {/* Content from Figma */}\n               </p>\n               {/* Contact details from Figma */}\n             </div>\n             <div>\n               <ContactForm />\n             </div>\n           </div>\n         </Section>\n         \n         {/* Section 3 */}\n         <Section background=\"sand\" spacing=\"lg\">\n           {/* Content from Figma */}\n         </Section>\n         \n         <Footer />\n       </>\n     );\n   }\n   ```\n\n3. Implement the client-side contact form component:\n   ```jsx\n   // app/contact/ContactForm.jsx\n   'use client';\n   \n   import { useState } from 'react';\n   import { Button } from '@/components/ui/Button';\n   import { Input } from '@/components/ui/Input';\n   import { FormField } from '@/components/ui/Input';\n   import { Textarea } from '@/components/ui/Textarea';\n   \n   export function ContactForm() {\n     const [formState, setFormState] = useState({\n       name: '',\n       email: '',\n       message: ''\n     });\n     const [errors, setErrors] = useState({});\n     const [status, setStatus] = useState(null); // 'success', 'error', or null\n     \n     const validateForm = () => {\n       const newErrors = {};\n       if (!formState.name) newErrors.name = 'Name is required';\n       if (!formState.email) newErrors.email = 'Email is required';\n       else if (!/^\\S+@\\S+\\.\\S+$/.test(formState.email)) {\n         newErrors.email = 'Please enter a valid email';\n       }\n       if (!formState.message) newErrors.message = 'Message is required';\n       \n       setErrors(newErrors);\n       return Object.keys(newErrors).length === 0;\n     };\n     \n     const handleChange = (e) => {\n       const { name, value } = e.target;\n       setFormState(prev => ({ ...prev, [name]: value }));\n       // Clear error when user types\n       if (errors[name]) {\n         setErrors(prev => ({ ...prev, [name]: undefined }));\n       }\n     };\n     \n     const handleSubmit = async (e) => {\n       e.preventDefault();\n       if (!validateForm()) return;\n       \n       try {\n         // Mock form submission - replace with actual API call\n         setStatus('success');\n       } catch (error) {\n         setStatus('error');\n       }\n     };\n     \n     if (status === 'success') {\n       return (\n         <div className=\"bg-green-50 border border-green-200 rounded-lg p-6 text-center\">\n           <h3 className=\"text-xl font-bold text-green-800 mb-2\">Message Sent!</h3>\n           <p className=\"text-green-700 mb-4\">Thank you for contacting us. We'll respond shortly.</p>\n           <Button \n             onClick={() => {\n               setFormState({ name: '', email: '', message: '' });\n               setStatus(null);\n             }}\n           >\n             Send Another Message\n           </Button>\n         </div>\n       );\n     }\n     \n     if (status === 'error') {\n       return (\n         <div className=\"bg-red-50 border border-red-200 rounded-lg p-6 text-center\">\n           <h3 className=\"text-xl font-bold text-red-800 mb-2\">Something went wrong</h3>\n           <p className=\"text-red-700 mb-4\">We couldn't send your message. Please try again later.</p>\n           <Button \n             onClick={() => setStatus(null)}\n           >\n             Try Again\n           </Button>\n         </div>\n       );\n     }\n     \n     return (\n       <form onSubmit={handleSubmit} className=\"space-y-6\">\n         <FormField\n           label=\"Name\"\n           error={errors.name}\n         >\n           <Input\n             name=\"name\"\n             value={formState.name}\n             onChange={handleChange}\n             state={errors.name ? 'error' : 'default'}\n             placeholder=\"Your name\"\n           />\n         </FormField>\n         \n         <FormField\n           label=\"Email\"\n           error={errors.email}\n         >\n           <Input\n             name=\"email\"\n             type=\"email\"\n             value={formState.email}\n             onChange={handleChange}\n             state={errors.email ? 'error' : 'default'}\n             placeholder=\"your.email@example.com\"\n           />\n         </FormField>\n         \n         <FormField\n           label=\"Message\"\n           error={errors.message}\n         >\n           <Textarea\n             name=\"message\"\n             value={formState.message}\n             onChange={handleChange}\n             state={errors.message ? 'error' : 'default'}\n             placeholder=\"Your message\"\n             rows={5}\n           />\n         </FormField>\n         \n         <Button type=\"submit\" className=\"w-full\">\n           Send Message\n         </Button>\n       </form>\n     );\n   }\n   ```\n4. Ensure form validation matches Figma error states\n5. Implement success and error states as shown in Figma",
         "testStrategy": "1. Compare visually with Figma designs at all breakpoints\n2. Test form validation for all fields\n3. Test form submission success and error states\n4. Verify form accessibility (labels, error messages)\n5. Test keyboard navigation through form fields\n6. Run Lighthouse accessibility audit (target ≥ 95)\n7. Test with screen readers to ensure proper form announcements",
         "priority": "medium",
-        "dependencies": [1, 2, 3, 4, 5],
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1330,7 +1586,9 @@
             "id": 2,
             "title": "Implement Form Field Components and Validation",
             "description": "Complete the form field components with proper validation logic, error states, and accessibility features according to the Figma design.",
-            "dependencies": ["9.1"],
+            "dependencies": [
+              "9.1"
+            ],
             "details": "1. Enhance the form validation logic to match all Figma error states\n2. Implement proper error message styling according to design\n3. Add aria-invalid and aria-describedby attributes to form fields when errors exist\n4. Ensure focus states match Figma design\n5. Add required attribute to all mandatory fields\n6. Implement client-side validation for email format, required fields, and message length",
             "status": "pending",
             "testStrategy": "Test all form validation states by submitting empty forms, invalid emails, and valid data. Verify error messages appear correctly and that the form cannot be submitted with invalid data. Test keyboard navigation and screen reader announcements for error states."
@@ -1339,7 +1597,9 @@
             "id": 3,
             "title": "Create Form Submission Handler and API Route",
             "description": "Implement the form submission functionality with proper API route handling, loading states, and error handling.",
-            "dependencies": ["9.2"],
+            "dependencies": [
+              "9.2"
+            ],
             "details": "1. Create an API route at app/api/contact/route.js\n2. Implement form submission loading state in the ContactForm component\n3. Add a loading spinner or disabled state to the submit button during submission\n4. Connect the form submission handler to the API route\n5. Implement proper error handling for network failures\n6. Add rate limiting to prevent spam submissions\n7. Implement CSRF protection for the form",
             "status": "pending",
             "testStrategy": "Test the form submission process with valid data, network failures, and server errors. Verify loading states display correctly and that success/error messages match the Figma design."
@@ -1348,7 +1608,9 @@
             "id": 4,
             "title": "Implement Success and Error State UI Components",
             "description": "Create the success and error state UI components that display after form submission according to the Figma design.",
-            "dependencies": ["9.3"],
+            "dependencies": [
+              "9.3"
+            ],
             "details": "1. Refine the success state UI to exactly match Figma design\n2. Implement the error state UI according to Figma specifications\n3. Add appropriate animations for state transitions\n4. Ensure both states are fully responsive\n5. Add appropriate aria-live regions for screen reader announcements\n6. Implement the \"Send Another Message\" and \"Try Again\" button functionality",
             "status": "pending",
             "testStrategy": "Test the success and error states by triggering them manually and through actual form submissions. Verify the UI matches Figma design at all breakpoints and that the buttons function correctly to reset the form or retry submission."
@@ -1357,7 +1619,9 @@
             "id": 5,
             "title": "Optimize Form Accessibility and Performance",
             "description": "Enhance the form's accessibility features and optimize performance according to project requirements.",
-            "dependencies": ["9.4"],
+            "dependencies": [
+              "9.4"
+            ],
             "details": "1. Add proper form labeling and ARIA attributes\n2. Implement keyboard navigation improvements\n3. Add form field auto-focus on error\n4. Optimize form validation for performance\n5. Add analytics tracking for form submissions and errors\n6. Implement form data persistence in localStorage to prevent data loss\n7. Add automated tests for form validation and submission\n8. Run and fix any Lighthouse accessibility issues",
             "status": "pending",
             "testStrategy": "Run Lighthouse accessibility audit (target ≥95). Test keyboard navigation through all form fields. Verify screen reader announcements for form fields, errors, and success/error states. Test form with various assistive technologies."
@@ -1371,7 +1635,12 @@
         "details": "1. Create Navbar component at components/Navbar.jsx:\n   ```jsx\n   'use client';\n   \n   import { useState } from 'react';\n   import Link from 'next/link';\n   import { Button } from '@/components/ui/Button';\n   import { Section } from '@/components/ui/Section';\n   import Image from 'next/image';\n   \n   export function Navbar() {\n     const [isMenuOpen, setIsMenuOpen] = useState(false);\n     \n     return (\n       <header className=\"sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b border-sand-200\">\n         <Section container=\"lg\" className=\"py-4\">\n           <div className=\"flex items-center justify-between\">\n             <Link href=\"/\" className=\"flex items-center space-x-2\">\n               <Image \n                 src=\"/logo.svg\" \n                 alt=\"P&D Logo\"\n                 width={40}\n                 height={40}\n               />\n               <span className=\"font-bold text-xl\">P&D Website</span>\n             </Link>\n             \n             {/* Desktop navigation */}\n             <nav className=\"hidden md:flex items-center space-x-6\">\n               <Link href=\"/\" className=\"text-ink-900 hover:text-brand-primary font-medium\">\n                 Home\n               </Link>\n               <Link href=\"/services\" className=\"text-ink-900 hover:text-brand-primary font-medium\">\n                 Our Services\n               </Link>\n               <Link href=\"/about\" className=\"text-ink-900 hover:text-brand-primary font-medium\">\n                 About Us\n               </Link>\n               <Link href=\"/contact\" className=\"text-ink-900 hover:text-brand-primary font-medium\">\n                 Contact\n               </Link>\n               <Button>Get Started</Button>\n             </nav>\n             \n             {/* Mobile menu button */}\n             <button \n               className=\"md:hidden p-2\"\n               onClick={() => setIsMenuOpen(!isMenuOpen)}\n               aria-expanded={isMenuOpen}\n               aria-label=\"Toggle menu\"\n             >\n               {/* Hamburger icon - use SVG from Figma */}\n               <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                 <path d=\"M3 12H21\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\"/>\n                 <path d=\"M3 6H21\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\"/>\n                 <path d=\"M3 18H21\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinejoin=\"round\"/>\n               </svg>\n             </button>\n           </div>\n           \n           {/* Mobile navigation */}\n           {isMenuOpen && (\n             <nav className=\"md:hidden pt-4 pb-2 space-y-4\">\n               <Link \n                 href=\"/\" \n                 className=\"block py-2 text-ink-900 hover:text-brand-primary font-medium\"\n                 onClick={() => setIsMenuOpen(false)}\n               >\n                 Home\n               </Link>\n               <Link \n                 href=\"/services\" \n                 className=\"block py-2 text-ink-900 hover:text-brand-primary font-medium\"\n                 onClick={() => setIsMenuOpen(false)}\n               >\n                 Our Services\n               </Link>\n               <Link \n                 href=\"/about\" \n                 className=\"block py-2 text-ink-900 hover:text-brand-primary font-medium\"\n                 onClick={() => setIsMenuOpen(false)}\n               >\n                 About Us\n               </Link>\n               <Link \n                 href=\"/contact\" \n                 className=\"block py-2 text-ink-900 hover:text-brand-primary font-medium\"\n                 onClick={() => setIsMenuOpen(false)}\n               >\n                 Contact\n               </Link>\n               <Button className=\"w-full\">\n                 Get Started\n               </Button>\n             </nav>\n           )}\n         </Section>\n       </header>\n     );\n   }\n   ```\n\n2. Create Footer component at components/Footer.jsx:\n   ```jsx\n   import Link from 'next/link';\n   import { Section } from '@/components/ui/Section';\n   import Image from 'next/image';\n   \n   export function Footer() {\n     return (\n       <footer className=\"bg-ink-900 text-white\">\n         <Section container=\"lg\" spacing=\"lg\">\n           <div className=\"grid grid-cols-1 md:grid-cols-4 gap-8\">\n             <div className=\"md:col-span-2\">\n               <Link href=\"/\" className=\"flex items-center space-x-2 mb-4\">\n                 <Image \n                   src=\"/logo-white.svg\" \n                   alt=\"P&D Logo\"\n                   width={40}\n                   height={40}\n                 />\n                 <span className=\"font-bold text-xl\">P&D Website</span>\n               </Link>\n               <p className=\"text-sand-300 mb-6\">\n                 {/* Footer description from Figma */}\n               </p>\n               <div className=\"flex space-x-4\">\n                 {/* Social media icons from Figma */}\n               </div>\n             </div>\n             \n             <div>\n               <h3 className=\"font-bold text-lg mb-4\">Quick Links</h3>\n               <ul className=\"space-y-2\">\n                 <li>\n                   <Link href=\"/\" className=\"text-sand-300 hover:text-white\">\n                     Home\n                   </Link>\n                 </li>\n                 <li>\n                   <Link href=\"/services\" className=\"text-sand-300 hover:text-white\">\n                     Our Services\n                   </Link>\n                 </li>\n                 <li>\n                   <Link href=\"/about\" className=\"text-sand-300 hover:text-white\">\n                     About Us\n                   </Link>\n                 </li>\n                 <li>\n                   <Link href=\"/contact\" className=\"text-sand-300 hover:text-white\">\n                     Contact\n                   </Link>\n                 </li>\n               </ul>\n             </div>\n             \n             <div>\n               <h3 className=\"font-bold text-lg mb-4\">Contact</h3>\n               <address className=\"not-italic text-sand-300 space-y-2\">\n                 {/* Contact details from Figma */}\n               </address>\n             </div>\n           </div>\n           \n           <div className=\"border-t border-ink-700 mt-8 pt-8 text-sand-400 text-sm\">\n             <p>© {new Date().getFullYear()} P&D Website. All rights reserved.</p>\n           </div>\n         </Section>\n       </footer>\n     );\n   }\n   ```\n\n3. Create a verification script to check all pages:\n   ```js\n   // scripts/verify-pages.js\n   const lighthouse = require('lighthouse');\n   const chromeLauncher = require('chrome-launcher');\n   const fs = require('fs');\n   const path = require('path');\n   \n   const urls = [\n     'http://localhost:3000',\n     'http://localhost:3000/services',\n     'http://localhost:3000/about',\n     'http://localhost:3000/contact'\n   ];\n   \n   async function runLighthouse() {\n     const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});\n     const options = {port: chrome.port, output: 'json', onlyCategories: ['accessibility', 'performance', 'seo']};\n     \n     const results = {};\n     \n     for (const url of urls) {\n       console.log(`Testing ${url}...`);\n       const runnerResult = await lighthouse(url, options);\n       const reportJson = runnerResult.report;\n       \n       const scores = {\n         accessibility: runnerResult.lhr.categories.accessibility.score * 100,\n         performance: runnerResult.lhr.categories.performance.score * 100,\n         seo: runnerResult.lhr.categories.seo.score * 100\n       };\n       \n       results[url] = scores;\n       console.log(`Results for ${url}:`, scores);\n       \n       // Save report\n       const pageName = url.split('/').pop() || 'home';\n       fs.writeFileSync(\n         path.join(__dirname, `../lighthouse-${pageName}.json`),\n         reportJson\n       );\n     }\n     \n     await chrome.kill();\n     \n     // Save summary\n     fs.writeFileSync(\n       path.join(__dirname, '../lighthouse-summary.json'),\n       JSON.stringify(results, null, 2)\n     );\n     \n     return results;\n   }\n   \n   runLighthouse().then(results => {\n     console.log('All tests completed!');\n     \n     // Check if all pages meet requirements\n     let allPassed = true;\n     for (const [url, scores] of Object.entries(results)) {\n       if (scores.accessibility < 95 || scores.performance < 90 || scores.seo < 90) {\n         console.error(`❌ ${url} does not meet requirements`);\n         allPassed = false;\n       } else {\n         console.log(`✅ ${url} meets all requirements`);\n       }\n     }\n     \n     process.exit(allPassed ? 0 : 1);\n   });\n   ```\n\n4. Add the verification script to package.json:\n   ```json\n   \"scripts\": {\n     \"verify\": \"node scripts/verify-pages.js\"\n   }\n   ```\n\n5. Perform visual side-by-side comparison with Figma designs",
         "testStrategy": "1. Run the verification script to check all pages\n2. Perform visual side-by-side comparison with Figma designs\n3. Test responsive behavior at all breakpoints\n4. Verify navigation works correctly on all pages\n5. Test keyboard navigation through the entire site\n6. Verify all links work correctly\n7. Run Lighthouse accessibility audit (target ≥ 95)\n8. Run Lighthouse performance audit (target green)\n9. Run Lighthouse SEO audit (target green)",
         "priority": "high",
-        "dependencies": [6, 7, 8, 9],
+        "dependencies": [
+          6,
+          7,
+          8,
+          9
+        ],
         "status": "pending",
         "subtasks": [
           {
@@ -1396,7 +1665,10 @@
             "id": 3,
             "title": "Integrate Components into Page Layouts",
             "description": "Integrate the Navbar and Footer components into all page layouts to ensure consistent navigation and footer across the site.",
-            "dependencies": ["10.1", "10.2"],
+            "dependencies": [
+              "10.1",
+              "10.2"
+            ],
             "details": "1. Create a layout component at app/layout.jsx that includes the Navbar and Footer\n2. Ensure the layout is applied to all pages\n3. Check that the Navbar and Footer are properly positioned\n4. Verify that the main content area has appropriate padding/margin\n5. Test that page transitions maintain the Navbar position\n6. Ensure the Footer is always at the bottom of the page, even with minimal content",
             "status": "pending",
             "testStrategy": "1. Test navigation flow between all pages\n2. Verify consistent appearance across all pages\n3. Check that content areas have proper spacing\n4. Test with different content lengths to ensure footer positioning\n5. Verify smooth transitions between pages"
@@ -1405,7 +1677,9 @@
             "id": 4,
             "title": "Implement Verification Script and Testing",
             "description": "Set up and run the verification script to check all pages against accessibility, performance, and SEO requirements.",
-            "dependencies": ["10.3"],
+            "dependencies": [
+              "10.3"
+            ],
             "details": "1. Create the scripts directory if it doesn't exist\n2. Implement the verify-pages.js script as outlined\n3. Install required dependencies: lighthouse and chrome-launcher\n4. Add the verification script to package.json\n5. Run the script against all pages\n6. Generate reports and analyze results\n7. Document any issues found for remediation",
             "status": "pending",
             "testStrategy": "1. Run the verification script on all pages\n2. Check that all pages meet the minimum score requirements\n3. Review detailed reports for specific issues\n4. Verify that the script correctly identifies problems\n5. Test script with intentionally broken pages to ensure it catches issues"
@@ -1414,7 +1688,10 @@
             "id": 5,
             "title": "Perform Final Design Verification and Fixes",
             "description": "Conduct a comprehensive visual comparison between the implemented pages and Figma designs, fixing any discrepancies.",
-            "dependencies": ["10.3", "10.4"],
+            "dependencies": [
+              "10.3",
+              "10.4"
+            ],
             "details": "1. Create a checklist of all design elements from Figma\n2. Systematically compare each page with its Figma counterpart\n3. Check typography, spacing, colors, and component styling\n4. Verify responsive behavior matches design at all breakpoints\n5. Document all discrepancies found\n6. Implement fixes for all identified issues\n7. Conduct a final review after fixes are applied\n8. Update any components that need refinement",
             "status": "pending",
             "testStrategy": "1. Use browser dev tools to compare dimensions and styling\n2. Test on multiple devices and screen sizes\n3. Create side-by-side screenshots for comparison\n4. Verify animations and transitions match design specifications\n5. Get stakeholder approval on final implementation"
@@ -1426,6 +1703,22 @@
       "created": "2025-08-19T07:23:18.541Z",
       "updated": "2025-08-20T02:31:44.806Z",
       "description": "Tasks for refactor-figma-sync context"
+    }
+  },
+  "about-carousel": {
+    "tasks": [],
+    "metadata": {
+      "created": "2025-08-29T06:27:43.662Z",
+      "updated": "2025-08-29T06:27:43.662Z",
+      "description": "Tasks for implementing the Our Process carousel section on About page"
+    }
+  },
+  "contact-page-rebuild": {
+    "tasks": [],
+    "metadata": {
+      "created": "2025-08-29T07:39:53.469Z",
+      "updated": "2025-08-29T07:39:53.469Z",
+      "description": "Complete rebuild of contact page according to Figma design"
     }
   }
 }

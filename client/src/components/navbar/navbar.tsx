@@ -1,27 +1,28 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Navbar() {
+  const navbarLogoSrc = '/images/navbarLogo.svg'
   return (
     <header className="bg-sand-background/90 border-ink-dark sticky top-0 z-50 border-b shadow-sm backdrop-blur">
       <nav
         aria-label="Primary"
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+        className="flex h-[60px] w-full items-stretch justify-between px-4 py-0 sm:h-[64px] sm:px-6 lg:h-[72px] lg:px-8"
       >
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-200">
-            <span className="font-bold text-gray-700">P&amp;D</span>
-          </div>
-          <div className="leading-3">
-            <div className="text-[10px] uppercase tracking-widest text-gray-500">
-              Web Development
-            </div>
-            <div className="text-[10px] uppercase tracking-widest text-gray-500">Design Studio</div>
-          </div>
+        <Link href="/" className="-ml-2 flex h-full items-center gap-3 sm:-ml-3 lg:-ml-4">
+          <Image
+            src={navbarLogoSrc}
+            alt="P&D Web Studio logo"
+            width={240}
+            height={72}
+            className="h-full w-auto"
+            priority
+          />
         </Link>
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-6 font-mono text-[25px] md:flex">
           <li>
             <Link
-              className="hover:text-brand-700 focus-visible:ring-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="hover:text-brand-700 focus-visible:ring-brand-700 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               href="/"
             >
               Home
@@ -29,7 +30,7 @@ export function Navbar() {
           </li>
           <li>
             <Link
-              className="hover:text-brand-700 focus-visible:ring-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="hover:text-brand-700 focus-visible:ring-brand-700 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               href="/services"
             >
               Services
@@ -37,7 +38,7 @@ export function Navbar() {
           </li>
           <li>
             <Link
-              className="hover:text-brand-700 focus-visible:ring-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="hover:text-brand-700 focus-visible:ring-brand-700 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               href="/about"
             >
               About Us
@@ -45,7 +46,7 @@ export function Navbar() {
           </li>
           <li>
             <Link
-              className="bg-brand-700 hover:bg-brand-800 focus-visible:ring-brand-700 rounded-full px-4 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="hover:text-brand-700 focus-visible:ring-brand-700 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               href="/contact"
             >
               Contact Us

@@ -3,27 +3,28 @@ import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/cn'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center rounded-full font-mono transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink-dark focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        // Primary button uses brand accent from Figma palette
-        default: 'bg-brand-accentDeep text-ink-inverse hover:bg-brand-accentDeep/90',
-        // Secondary on light background: white surface with ink text and subtle border
-        secondary: 'bg-sand-surface text-ink-dark border border-sand-light hover:bg-sand-light',
-        // Outline: transparent with ink text and brand border on hover
-        outline: 'border border-brand-accentDeep text-ink-dark hover:bg-brand-accentDeep/10',
-        // Ghost: minimal; uses sand hover to indicate affordance
+        primary:
+          'bg-brand-accentDeep text-sand-background shadow-lg hover:shadow-lg hover:-translate-y-0.5 hover:bg-brand-accentDeep/90 active:translate-y-0',
+        secondary:
+          'bg-sand-background text-brand-accentDeep border border-ink-dark/20 hover:bg-sand-light/80',
+        outline: 'border-2 border-brand-accentDeep text-ink-dark hover:bg-brand-accentDeep/10',
         ghost: 'text-ink-dark hover:bg-sand-light',
+        link: 'text-brand-accentDeep underline underline-offset-4 rounded-none h-auto p-0 hover:no-underline',
       },
       size: {
-        sm: 'h-9 px-3',
-        md: 'h-10 px-4',
-        lg: 'h-11 px-6',
+        sm: 'h-9 px-3 text-sm',
+        md: 'h-11 px-4 text-base',
+        lg: 'h-12 px-6 text-[21px]',
+        xl: 'h-16 px-6 text-[22px]',
+        '2xl': 'h-20 px-8 text-[28px]',
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'primary',
       size: 'md',
     },
   }

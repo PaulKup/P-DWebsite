@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Navbar />
-        <main id="content" className="mx-auto max-w-7xl flex-grow px-4 sm:px-6 lg:px-8">
+        <main id="content" className="flex-grow">
           {children}
         </main>
         <Footer />

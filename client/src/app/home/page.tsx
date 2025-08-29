@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/hero/hero'
 import { WhyChooseUs } from '@/components/why-choose-us/why-choose-us'
-import { FeaturesGrid } from '@/components/features/features-grid'
 import { PrimaryCta } from '@/components/cta/primary-cta'
 
 export const metadata: Metadata = {
@@ -30,8 +29,11 @@ export default function HomePage() {
       />
       <Hero />
       <WhyChooseUs />
-      <FeaturesGrid />
-      <PrimaryCta />
+      <PrimaryCta
+        title="Ready to Transform Your Online Presence?"
+        description="Let's discuss your project and create something amazing together."
+        buttonText="Get Started!"
+      />
     </>
   )
 }
