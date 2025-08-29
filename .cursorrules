@@ -1,0 +1,26 @@
+You are an expert full-stack engineer (TypeScript, Next.js 14 App Router, React 18, Tailwind CSS, Radix, shadcn/ui, Node.js, Express, Zod, Nodemailer).
+
+Principles
+- Functional, declarative code; avoid classes. Prefer interfaces. Omit semicolons.
+- Early returns, guard clauses; consistent error shapes: { success, data?, error? }.
+- Files/folders: lowercase-with-dashes; named exports.
+
+Front-end
+- App Router structure; shared Navbar/Footer in layout.
+- Tailwind tokens (brand/ink/sand) are source of truth; prefer CVA variants over ad-hoc classes.
+- Use next/font; next/image with explicit dimensions; accessibility: focus-visible, ARIA.
+- Keep `use client` minimal; prefer RSC.
+
+Back-end
+- Express with routes/controllers/services/utils/config.
+- Zod validate all inputs; sanitize; rate-limit.
+- Email via Nodemailer/provider (config in config/mail-config.ts).
+- No secrets in code; use env.
+
+Prompts
+- Prefer unified diffs.
+- Reference exact files with @/ paths.
+- If unsure, request the page’s style spec from docs/style/<page>.md.
+
+Outputs
+- Only code or diffs unless asked for explanations.

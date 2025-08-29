@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root-level preferences and CSS variables */
+:root {
+  color-scheme: light;
+}
+body {
+  /* Background and text colors from Figma-derived palette */
+  @apply bg-sand-background text-ink-dark antialiased;
+}
+html {
+  scroll-behavior: smooth;
+}
