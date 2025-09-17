@@ -1,0 +1,11 @@
+# Task ID: 15
+# Title: Implement Core UI Components
+# Status: pending
+# Dependencies: 2.1, 2.2
+# Priority: medium
+# Description: Create the foundational UI components using shadcn and CVA (Class Variance Authority) for consistent styling and variants.
+# Details:
+Implement Button component with variants (primary, secondary, outline, ghost, etc.) and states (default, hover, focus, disabled). Create Card component with options for different padding, borders, and shadows. Build Section component for consistent page section styling. Each component should use CVA for variant management and be fully typed with TypeScript.
+
+# Test Strategy:
+Create component tests for each variant and state. Test keyboard interactions and focus states. Verify accessibility with axe-core.

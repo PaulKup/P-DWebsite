@@ -1,0 +1,81 @@
+# Task ID: 11
+# Title: Implement Form Submission and API Integration
+# Status: pending
+# Dependencies: 7.2, 7.3
+# Priority: medium
+# Description: Add the form submission functionality that sends data to the backend API and handles the response appropriately.
+# Details:
+Update the handleSubmit function in the ContactForm component to send data to the API:
+```typescript
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  if (!validateForm()) return;
+  
+  setStatus('submitting');
+  
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to send message');
+    }
+    
+    setStatus('success');
+    setFormData({ name: '', email: '', message: '' });
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setStatus('error');
+  }
+};
+
+// Create a temporary API route for development until the backend is implemented
+// Create file: app/api/contact/route.ts
+```
+
+Create a temporary API route for development:
+```typescript
+// app/api/contact/route.ts
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    
+    // Simulate API processing time
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Simulate validation
+    if (!body.name || !body.email || !body.message) {
+      return NextResponse.json(
+        { message: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+    
+    // This is just a mock - the actual email sending will be implemented in the backend
+    console.log('Contact form submission:', body);
+    
+    return NextResponse.json({ message: 'Message sent successfully' });
+  } catch (error) {
+    console.error('Contact API error:', error);
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}```
+
+# Test Strategy:
+1. Test form submission with mock API responses
+2. Verify error handling for different HTTP status codes
+3. Test network error handling
+4. Verify that form state updates correctly after submission
+5. Test rate limiting behavior with multiple submissions

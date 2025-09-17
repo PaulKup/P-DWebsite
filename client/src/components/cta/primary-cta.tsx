@@ -20,7 +20,7 @@ export function PrimaryCta({
       className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
     >
       <div className="flex w-full flex-col items-center gap-3 px-4 text-center sm:gap-4 sm:px-6 lg:gap-3 lg:px-8">
-        <h2 className="text-ink-dark font-mono text-[32px] font-light sm:text-[48px] md:text-[56px] lg:text-7xl">
+        <h2 className="text-ink-dark font-OpenSans text-[32px] font-light sm:text-[48px] md:text-[56px] lg:text-7xl">
           {title}
         </h2>
         <p className="text-ink-dark max-w-4xl font-mono text-[18px] sm:text-[20px] md:text-[23px] lg:text-[30px]">

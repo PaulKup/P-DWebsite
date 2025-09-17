@@ -37,10 +37,10 @@ export function Footer() {
               <p className="text-lg text-white/90">
                 Email:
                 <a
-                  href="mailto:pdwebdev.studio@gmail.com"
+                  href="mailto:office@pdwebstudio.com"
                   className="text-white/90 underline-offset-2 hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#ae7b60]"
                 >
-                  pdwebdev.studio@gmail.com
+                  office@pdwebstudio.com
                 </a>
               </p>
               <p className="text-lg text-white/90">Phone: (407) 801-9652‬</p>
@@ -102,7 +102,7 @@ export function Footer() {
         {/* Bottom divider and copyright */}
         <div className="border-t border-[#f5efe8]" />
         <div className="mx-auto px-4 py-6 text-center text-sm text-[#ebd9c2] sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} P&amp;D Web Studio. All rights reserved.
+          © {new Date().getFullYear()} P&amp;D Web Studio LLC. All rights reserved.
         </div>
       </div>
     </footer>

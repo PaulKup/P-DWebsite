@@ -26,12 +26,12 @@ export default function ServicesPage() {
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 -z-10 object-cover"
+          className="absolute inset-0 -z-10 object-cover object-center"
         />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <h1
-            className="font-heading2 text-sand-background text-5xl leading-none sm:text-6xl lg:text-[200px]"
-            style={{ textShadow: '3px 8px 8px #2D2A26' }}
+            className="font-heading2 text-sand-background text-4xl leading-none sm:text-5xl md:text-6xl lg:text-[200px]"
+            style={{ textShadow: '2px 4px 4px #2D2A26' }}
           >
             Our Services
           </h1>
@@ -94,15 +94,14 @@ export default function ServicesPage() {
                   Menu & Online Ordering Integration
                 </h3>
                 <p className="text-ink-dark text-[20px] leading-tight sm:text-[23px]">
-                  Custom web applications to streamline your business processes and improve
-                  efficiency.
+                  Make it easy for customers to browse your menu or shop, place orders, or make
+                  reservations and bookings directly from your site.
                 </p>
                 <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
                   <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-6 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
                     <li className="whitespace-nowrap">Secure payment processing</li>
-                    <li>Inventory management</li>
-                    <li>Order tracking</li>
-                    <li>Customer accounts</li>
+                    <li>CMS and Shop Management</li>
+                    <li>Booking and Reservation Management</li>
                   </ul>
                 </div>
               </div>
@@ -119,18 +118,17 @@ export default function ServicesPage() {
               </div>
               <div className="px-5 pb-4 pt-2 text-center sm:px-6 sm:pb-5 sm:pt-2">
                 <h3 className="text-brand-accentDeep mb-3 text-[26px] font-bold sm:text-[27px]">
-                  Web Applications
+                  Progressive Web Applications
                 </h3>
                 <p className="text-ink-dark text-[20px] leading-tight sm:text-[23px]">
-                  Custom web applications to streamline your business processes and improve
-                  efficiency.
+                  Custom progressive web applications to streamline your business processes and
+                  improve efficiency.
                 </p>
                 <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
                   <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-7 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
-                    <li>Custom functionality</li>
+                    <li>AI-powered chatbots</li>
                     <li>User authentication</li>
-                    <li>API development</li>
-                    <li>Database Functionality</li>
+                    <li>Offline functionality</li>
                   </ul>
                 </div>
               </div>
@@ -146,8 +144,8 @@ export default function ServicesPage() {
             Pricing Plans
           </h2>
           <div className="mt-6" />
-          <div className="grid grid-cols-1 items-center justify-items-center gap-6 min-[840px]:grid-cols-2 min-[1390px]:grid-cols-3">
-            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 lg:h-[632px] lg:w-[356px]">
+          <div className="grid grid-cols-1 items-center justify-items-center gap-6 min-[840px]:grid-cols-2 min-[840px]:grid-rows-2 min-[1390px]:grid-cols-3 min-[1390px]:grid-rows-1">
+            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 min-[840px]:col-start-1 min-[840px]:row-start-2 lg:h-[632px] lg:w-[356px] min-[1390px]:col-start-1 min-[1390px]:row-start-1">
               <h3 className="text-ink-dark mb-2 text-[26px] font-light sm:text-[27px] lg:text-[75px]">
                 Starter
               </h3>
@@ -167,7 +165,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </article>
-            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 lg:h-[754px] lg:w-[346px]">
+            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 min-[840px]:col-span-2 min-[840px]:row-start-1 lg:h-[754px] lg:w-[346px] min-[1390px]:col-span-1 min-[1390px]:col-start-2 min-[1390px]:row-start-1">
               <h3 className="text-ink-dark mb-2 text-[26px] font-light sm:text-[27px] lg:text-[75px]">
                 Growth
               </h3>
@@ -190,14 +188,14 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </article>
-            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 lg:h-[632px] lg:w-[346px]">
+            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] p-3 text-center shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:p-4 min-[840px]:col-start-2 min-[840px]:row-start-2 lg:h-[632px] lg:w-[346px] min-[1390px]:col-start-3 min-[1390px]:row-start-1">
               <h3 className="text-ink-dark mb-1 text-[26px] font-light sm:text-[27px] lg:text-[75px]">
                 Custom
               </h3>
               <Button
                 asChild
                 variant="secondary"
-                className="hover:text-sand-background mt-1 w-auto whitespace-nowrap rounded-[40px] border-[3px] border-[#984d37] px-2 text-[36px] leading-none tracking-tight shadow-[5px_5px_8px_0_#2D2A26] hover:bg-[#984d37]"
+                className="hover:text-sand-background mt-1 w-auto whitespace-nowrap rounded-[40px] border-[3px] !border-[#984d37] px-2 text-[36px] leading-none tracking-tight shadow-[5px_5px_8px_0_#2D2A26] hover:!bg-[#984d37]"
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>

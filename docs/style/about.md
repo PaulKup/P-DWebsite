@@ -1,0 +1,96 @@
+- Background color: `#f5efe8`
+- Navbar
+- Our Vision Section
+  - a card that is a rectangle
+    - approx. 2:1, horizontally long
+    - Center aligned
+    - Corner rounding: 30px
+    - All cards have a border-radius of 30px
+    - Color: `#ebd9c2`
+  - Effects
+    - Glow shadow effect behind this card
+    - Snap scroll effect
+  - Header Text
+    - On the card, aligned on the left side of the card, slightly inset from the left
+    - Font: Open Sauce, 60 pt
+    - Color: `#2d2a26`
+  - Body text
+    - On the card, aligned below the header text on the left side of the card, slightly inset from the left
+    - Font: Open Sauce, 22 pt
+    - Color: `#2d2a26`
+  - CTA Button
+    - On the card, centered under body text
+    - a superellipse with a flat top and bottom
+    - about 4:1 long horizontally
+    - Text
+      - Color:`#f5efe8`
+      - Font: Roboto Mono, 16 pt
+  - Image
+    ![ourVision.png](@ourVision.png)
+    - On the card, to the right of the Body text
+    - Evenly spaced between the Body text and right edge of the card
+
+- Our Values Section
+  - This image takes up the background of this section. It already has a transparency of 50% applied, so the background color shines through.
+    ![ourValues.png](@ourValues.png)
+  - Header
+    - Meow Script, 140pt
+    - Color: `#212d23`
+  - Cards
+    - Three cards, aligned horizontally below the header, are centered over the image with some space between them.
+      - All three cards are vertically long rectangles, approx 1:1.25
+      - Transparency: : 85%
+      - Color: `#8a9284`
+      - No border
+      - Text
+        - Header
+          - Center aligned horizontally on each card
+          - Font: Open Sauce, 38pt
+          - Color:`#f5efe8`
+          - The header will occupy the top quarter of the card
+        - Body text
+          - Center aligned horizontally on each card
+          - Font: Open Sauce, 25pt
+          - Color: `#f5efe8`
+          - The body text will occupy the bottom three-quarters of the cards
+      - Effects
+        - Glow shadow behind each card.
+        - Implement a hover effect similar to what we have on the current landing page cards.
+          - On hover, it should become fully opaque with a slight enlargement and a light lineweight border color: `#212d23`
+- Meet Our Founders Section
+  - Header
+    - Font: Open Sauce, 60 pt
+    - Color: `#984d37`
+  - Cards
+    - Two cards, center aligned on the page horizontally below the header
+      - All three cards are vertically long rectangles, approx 1:1.5
+      - Card Color: `#f5efe8`
+      - Thin border on the cards
+        - Border color: `#984d37`
+      - Founder images
+        ![paulHeadshot.png](@paulHeadshot.png)
+        ![damiaHeadshot.png](@damiaHeadshot.png)
+        - Near the top of each card is a circular photo of Paul (left card) and Damia (right card) that takes up approximately the top third of the cards
+      - Card Text
+        - Header
+          - horizontally centered on each card
+          - Below the founder images
+          - Font: Open Sauce, 38pt
+          - Color: `#984d37`
+        - Sub Header
+          - horizontally centered on each card
+          - Below the header
+          - Font: Open Sauce, 27pt
+          - Color: `#ae7b60`
+        - Body text
+          - horizontally centered on each card
+          - Below the subheader
+          - Font: Open Sauce, 24pt
+          - Color: `#2d2a26`
+          - The header, subheader, and body text will occupy the bottom two-thirds of the cards
+      - Effects
+        - Glow shadow behind each card.
+        - Implement a hover effect similar to what we have on the current landing page cards.
+          - On hover, it should have a slight enlargement, and the lineweight of the border should also enlarge a little
+- Footer CTA
+- Footer

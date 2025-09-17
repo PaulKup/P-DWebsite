@@ -10,8 +10,8 @@ export function Hero() {
       bg="background"
       className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
     >
-      <div className="grid w-full items-end gap-4 px-2 py-8 sm:px-4 md:[grid-template-columns:minmax(0,1fr)_max-content]">
-        <div className="relative z-10 mr-[-40px] space-y-3 self-end md:mr-[-80px]">
+      <div className="grid w-full items-end gap-4 px-2 py-8 sm:px-4 lg:[grid-template-columns:minmax(0,1fr)_max-content]">
+        <div className="relative z-10 mr-0 space-y-3 self-center text-center lg:mr-[-35px] lg:self-end lg:text-left">
           <h1 className="text-ink-dark font-heading1 text-[36px] font-normal leading-[1.1] tracking-normal sm:text-[48px] lg:text-[60px]">
             Let’s Get You a Website That Brings in Customers.
           </h1>
@@ -37,7 +37,7 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div className="relative w-full md:justify-self-end">
+        <div className="relative hidden w-full lg:block lg:justify-self-end">
           <div
             id="hero-image"
             className="relative mx-auto w-full max-w-xl -translate-x-6 -translate-y-[60px] overflow-hidden rounded-[30px] md:max-w-lg md:-translate-x-20 md:-translate-y-[99px] lg:max-w-xl"

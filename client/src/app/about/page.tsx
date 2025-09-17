@@ -26,8 +26,8 @@ export default function AboutPage() {
         bg="background"
         className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
       >
-        <div className="grid w-full items-end gap-4 px-4 py-4 sm:px-6 sm:py-6 md:py-8 md:[grid-template-columns:minmax(0,1fr)_max-content] lg:px-2">
-          <div className="relative z-10 mr-0 space-y-3 self-end md:mr-[-80px]">
+        <div className="grid w-full items-end gap-4 px-4 py-4 sm:px-6 sm:py-6 md:py-8 lg:px-2 lg:[grid-template-columns:minmax(0,1fr)_max-content]">
+          <div className="relative z-10 mr-0 space-y-3 self-center text-center lg:mr-[-80px] lg:self-end lg:text-left">
             <h1 className="text-ink-dark font-heading1 text-[32px] font-normal leading-[1.1] tracking-normal sm:text-[48px] md:text-[60px] lg:text-[95px]">
               Our Vision
             </h1>
@@ -56,7 +56,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
-          <div className="relative hidden w-full md:justify-self-end lg:block">
+          <div className="relative hidden w-full lg:block lg:justify-self-end">
             <div
               id="about-hero-image"
               className="relative mx-auto w-full max-w-2xl -translate-y-[30px] translate-x-[69px] overflow-hidden rounded-[30px] md:max-w-xl md:-translate-y-[50px] md:translate-x-[55px] lg:max-w-2xl lg:-translate-y-[70px] xl:-translate-y-[70px]"
@@ -84,7 +84,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Meet Our Founders Section */}
-      <Section padded bg="background">
+      <Section bg="background">
         <Container>
           <MeetOurFounders />
         </Container>

@@ -19,7 +19,7 @@ export function FounderCard({
 }: FounderCardProps) {
   return (
     <div
-      className={`bg-background relative h-[480px] w-[320px] rounded-[20px] border-[3px] border-[#984D37] shadow-[2px_6px_8px_0px_#2d2a26] sm:h-[580px] sm:w-[400px] sm:rounded-[25px] sm:border-[4px] sm:shadow-[3px_8px_10px_0px_#2d2a26] lg:h-[757px] lg:w-[501px] lg:rounded-[30px] lg:border-[5px] lg:shadow-[4px_10px_10px_0px_#2d2a26] ${className}`}
+      className={`bg-background relative h-[480px] w-[320px] rounded-[20px] border-[3px] border-[#984D37] shadow-[2px_6px_8px_0px_#2d2a26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] sm:h-[580px] sm:w-[400px] sm:rounded-[25px] sm:border-[4px] sm:shadow-[3px_8px_10px_0px_#2d2a26] lg:h-[757px] lg:w-[501px] lg:rounded-[30px] lg:border-[5px] lg:shadow-[4px_10px_10px_0px_#2d2a26] ${className}`}
     >
       {/* Founder Image */}
       <div className="absolute left-1/2 top-[15px] h-[100px] w-[100px] -translate-x-1/2 overflow-hidden rounded-full sm:top-[18px] sm:h-[130px] sm:w-[130px] lg:top-[20px] lg:h-[170px] lg:w-[170px]">

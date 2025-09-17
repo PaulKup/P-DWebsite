@@ -1,0 +1,106 @@
+- Landing Page
+  - Background color: `#f5efe8`
+  - NavBar
+  - Hero Section
+    - a card that is a rectangle
+      - approx. 2:1, horizontally long
+      - Center aligned
+      - Corner rounding: 30px
+      - All cards have a border-radius of 30px
+      - Color: `#ebd9c2`
+    - Effects
+      - Glow shadow effect behind this card
+      - Snap scroll effect
+    - Header Text
+      - On the card, aligned on the left side of the card, slightly inset from the left
+      - Font: Open Sauce, 60 pt
+      - Color: `#2d2a26`
+    - Body text
+      - On the card, aligned below the header text on the left side of the card, slightly inset from the left
+      - Font: Open Sauce, 22 pt
+      - Color: `#2d2a26`
+    - CTA Button
+      - On the card, centered under body text
+      - a superellipse with a flat top and bottom
+      - about 4:1 long horizontally
+      - Text
+        - Color:`#f5efe8`
+        - Font: Roboto Mono, 16 pt
+    - Image
+      - Align this image on the right side of the card, flush with the bottom, slightly inset from the right
+      ![heroIMG.png](@heroIMG.png)
+  - Why Choose Us Section
+    - This image takes up the background of this section. It already has a transparency of 50% applied, so the background color shines through.
+      ![whyChooseUs.png](@whyChooseUs.png)
+    - Four cards, aligned vertically, with the same height, are centered over the image with some space between.
+      - Effects
+        - Glow shadow behind each card.
+        - Implement a hover effect similar to what we have on the current landing page cards.
+          - On hover, it should become fully opaque with a slight enlargement and a light lineweight border color: `#ae7b60`
+    - Card one
+      - Horizontal rectangle, approximately 4:1
+      - Color: `#ebd9c2`
+      - Transparency: 80%
+      - Text
+        - Header
+          - Centered and aligned on the cards
+          - Font: Meow Script, 70 pt
+          - Color:`#2d2a26`
+        - Body Text
+          - Center aligned under the header
+          - Font: Open Sauce, 22pt
+          - Color:`#2d2a26`
+      - Card two
+        - Horizontal rectangle, approximately 3:1
+        - Color: `#ebd9c2`
+        - Transparency: 80%
+        - Text
+          - No header
+          - Centered and aligned on the card
+          - Font: Open Sauce, 22pt
+          - Color:`#2d2a26`
+      - Card three
+        - Horizontal rectangle, approximately 3:1
+        - Color: `#ebd9c2`
+        - Transparency: 80%
+        - Text
+          - No header
+          - Centered and aligned on the card
+          - Font: Open Sauce, 22pt
+          - Color:`#2d2a26`
+      - Card Four
+        - Horizontal rectangle, approximately 3:1
+        - Color: `#ebd9c2`
+        - Transparency: 80%
+        - Text
+          - No header
+          - Centered and aligned on the card
+          - Font: Open Sauce, 22pt
+          - Color:`#2d2a26`
+  - Section Three
+    - Three cards aligned horizontally on a flat background (color:`#f5efe8`) with text and images inside
+    - Images should take up the top half of the card
+    - All three cards are vertically long rectangles, approx 1:2
+    - Surrounded by a thin border with a line separating the header from the body text, with equal line weight
+      - Border-Radius 30px
+      - Color: `#2d2a26`
+      - Header
+        - Center aligned under image
+        - Font: Open Sauce
+        - Color: `#2d2a26`
+      - Body Text
+        - Centered and aligned under the separation line
+        - Font: Open Sauce, 18pt
+        - Color: `#2d2a26`
+    - Effects
+      - Give these cards glow shadows
+      - Implement hover effects that change the card color to `#ebd9c2` and the border color to `#984d37` with a slight enlargement of both the card and the border lineweight
+    - Images
+      - Card one
+        ![card1.png](@card1.png)
+      - Card Two
+      ![card2.png](@card2.png)
+      - Card Three
+      ![card3.png](@card3.png)
+  - Footer CTA
+  - Footer
