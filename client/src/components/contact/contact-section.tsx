@@ -11,7 +11,7 @@ export function ContactSection() {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="flex-shrink-0 px-4 lg:px-0">
+        <div className="flex-shrink-0 px-4 lg:px-0 lg:pr-12">
           <EnhancedContactForm />
         </div>
       </div>

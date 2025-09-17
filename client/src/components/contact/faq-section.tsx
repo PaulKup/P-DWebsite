@@ -10,7 +10,7 @@ interface FAQCardProps {
 function FAQCard({ question, answer, icon, className = '' }: FAQCardProps) {
   return (
     <div
-      className={`flex flex-col rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] p-4 shadow-[3px_8px_8px_0px_#2d2a26] lg:p-8 ${className}`}
+      className={`flex flex-col rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] p-4 shadow-[3px_8px_8px_0px_#2d2a26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] lg:p-8 ${className}`}
     >
       {/* Icon */}
       <div className="mb-4 flex justify-center lg:mb-6">

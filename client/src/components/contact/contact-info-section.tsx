@@ -2,17 +2,17 @@ import { OptimizedImage } from '@/components/ui/optimized-image'
 
 export function ContactInfoSection() {
   return (
-    <section id="contact-info" className="px-4 py-8 lg:px-12 lg:py-16">
+    <section id="contact-info" className="px-4 py-4 lg:px-12 lg:py-8">
       <div className="max-w-[701px]">
         {/* Main Heading */}
-        <h2 className="mb-10 font-['Open_Sans'] text-[32px] font-light leading-tight text-[#2d2a26] sm:text-[48px] lg:mb-20 lg:text-[60px] lg:leading-[65px]">
+        <h2 className="mb-4 font-['Open_Sans'] text-[32px] font-light leading-tight text-[#2d2a26] sm:text-[48px] lg:mb-8 lg:text-[60px] lg:leading-[65px]">
           Ready to Get Started?
         </h2>
 
         {/* Email Section */}
-        <div className="mb-8 lg:mb-16">
-          <div className="mb-6 flex items-start gap-4 lg:gap-6">
-            <div className="mt-2 h-[32px] w-[32px] flex-shrink-0 lg:mt-4 lg:h-[42px] lg:w-[42px]">
+        <div className="mb-4 lg:mb-6">
+          <div className="mb-3 flex items-start gap-4 lg:gap-6">
+            <div className="mt-1 h-[32px] w-[32px] flex-shrink-0 lg:mt-2 lg:h-[42px] lg:w-[42px]">
               <OptimizedImage
                 src="/figma-assets/857737a4f71b7f4be83891fa12c8c2a9263b0bed.svg"
                 alt="Email icon"
@@ -21,12 +21,12 @@ export function ContactInfoSection() {
               />
             </div>
             <div>
-              <h3 className="mb-3 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-6 lg:text-[50px] lg:leading-[65px]">
+              <h3 className="mb-1 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-2 lg:text-[50px] lg:leading-[65px]">
                 Email Us
               </h3>
-              <p className="mb-2 font-['Open_Sans'] text-[18px] font-semibold leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-4 lg:text-[30px] lg:leading-[65px]">
-                <a href="mailto:pdwebdev.studio@gmail.com" className="break-all hover:underline">
-                  pdwebdev.studio@gmail.com
+              <p className="mb-0.5 font-['Open_Sans'] text-[18px] font-semibold leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]">
+                <a href="mailto:office@pdwebstudio.com" className="break-all hover:underline">
+                  office@pdwebstudio.com
                 </a>
               </p>
               <p className="font-['Open_Sans'] text-[16px] font-light leading-tight text-[#2d2a26] sm:text-[20px] lg:text-[30px] lg:leading-[65px]">
@@ -48,10 +48,10 @@ export function ContactInfoSection() {
               />
             </div>
             <div>
-              <h3 className="mb-3 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-6 lg:text-[50px] lg:leading-[65px]">
+              <h3 className="mb-1 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-2 lg:text-[50px] lg:leading-[65px]">
                 Call Us
               </h3>
-              <p className="mb-2 font-['Open_Sans'] text-[18px] font-semibold leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-4 lg:text-[30px] lg:leading-[65px]">
+              <p className="mb-0.5 font-['Open_Sans'] text-[18px] font-semibold leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]">
                 <a href="tel:+14078019652" className="hover:underline">
                   (407) 801-9652‬
                 </a>

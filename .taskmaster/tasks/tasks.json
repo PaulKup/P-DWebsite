@@ -1720,5 +1720,13 @@
       "updated": "2025-08-29T07:39:53.469Z",
       "description": "Complete rebuild of contact page according to Figma design"
     }
+  },
+  "responsive-refactor": {
+    "tasks": [],
+    "metadata": {
+      "created": "2025-08-30T02:36:09.287Z",
+      "updated": "2025-08-30T02:36:09.287Z",
+      "description": "Tasks for improving website responsiveness across all device sizes"
+    }
   }
 }
