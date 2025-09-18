@@ -47,3 +47,4 @@ package.tmp.json
 
 # OS specific
 .DS_Store
+.vercel
