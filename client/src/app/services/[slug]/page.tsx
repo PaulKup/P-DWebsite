@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
+  const { slug } = await params
   const services = await loadServices()
-  const svc = services.find((s) => s.slug === params.slug)
+  const svc = services.find((s) => s.slug === slug)
   if (!svc) return { title: 'Service — P&D Web Development' }
   return {
     title: `${svc.title} — P&D Web Development`,
@@ -24,9 +25,10 @@ export async function generateMetadata({
   }
 }
 
-export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const services = await loadServices()
-  const svc = services.find((s) => s.slug === params.slug)
+  const svc = services.find((s) => s.slug === slug)
   if (!svc) return notFound()
 
   return (
