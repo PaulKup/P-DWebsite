@@ -28,41 +28,6 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
   const services = await loadServices()
   const svc = services.find((s) => s.slug === params.slug)
   if (!svc) return notFound()
-  return (
-    <Section padded>
-      <Container>
-        <h1 className="text-4xl font-bold">{svc.title}</h1>
-        <p className="text-ink-700 mt-4 max-w-2xl">{svc.summary}</p>
-      </Container>
-    </Section>
-  )
-}
-
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import { Container } from '@/components/ui/container'
-import { Section } from '@/components/ui/section'
-import { loadServices } from '@/lib/services'
-
-interface Params {
-  params: { slug: string }
-}
-
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const services = await loadServices()
-  const svc = services.find((s) => s.slug === params.slug)
-  if (!svc) return {}
-  return {
-    title: `${svc.title} — P&D Web Development`,
-    description: svc.summary,
-    openGraph: { title: `${svc.title} — P&D Web Development`, description: svc.summary },
-  }
-}
-
-export default async function ServiceDetailPage({ params }: Params) {
-  const services = await loadServices()
-  const svc = services.find((s) => s.slug === params.slug)
-  if (!svc) return notFound()
 
   return (
     <Section padded>
