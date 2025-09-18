@@ -13,7 +13,6 @@
     "build:client": "npm --prefix client run build",
     "build:server": "npm --prefix server run build",
     "lint": "npm-run-all lint:client lint:server",
-    "prepare": "husky || true",
     "lint:client": "npm --prefix client run lint",
     "lint:server": "npm --prefix server run lint"
   },
