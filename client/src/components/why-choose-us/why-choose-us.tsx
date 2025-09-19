@@ -28,7 +28,7 @@ export function WhyChooseUs() {
       {/* Background image (already semi-transparent in asset) */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/f314912249449e443be149f1482fd9ed1dddd919.png"
+          src="/images/whyChooseUse.png"
           alt="Decorative background for Why Choose Us section"
           fill
           sizes="100vw"
