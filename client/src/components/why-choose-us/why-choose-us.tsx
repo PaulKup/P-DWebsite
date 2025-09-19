@@ -22,8 +22,8 @@ const cards = [
 export function WhyChooseUs() {
   return (
     <Section
-      padded={false}
-      className="relative w-full overflow-hidden"
+      padded
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden"
     >
       {/* Background image (already semi-transparent in asset) */}
       <div className="absolute inset-0 -z-10">
@@ -43,7 +43,7 @@ export function WhyChooseUs() {
         />
       </div>
 
-      <div className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="ml-auto flex flex-col items-center gap-6 md:w-1/2 lg:w-1/2">
           <h2
             className="font-heading2 text-brand-accentDeep text-center text-[96px] font-normal"

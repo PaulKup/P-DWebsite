@@ -8,7 +8,7 @@ export function Hero() {
     <Section
       padded
       bg="background"
-      className="relative w-full"
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
     >
       <div className="grid w-full items-end gap-4 px-2 py-8 sm:px-4 lg:[grid-template-columns:minmax(0,1fr)_max-content]">
         <div className="relative z-10 mr-0 space-y-3 self-center text-center lg:mr-[-35px] lg:self-end lg:text-left">
@@ -52,7 +52,7 @@ export function Hero() {
             />
           </div>
           {/* Single partial line break under image (full-bleed, right-aligned) */}
-          <div className="relative mt-0 w-full overflow-hidden">
+          <div className="relative left-1/2 -ml-[50vw] mt-0 w-screen">
             <div className="bg-ink-dark ml-auto h-[2px] w-[60vw] -translate-y-[60px] md:w-[90vw] md:-translate-y-[112px] lg:w-[80vw]" />
           </div>
         </div>
