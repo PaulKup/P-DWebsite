@@ -17,7 +17,7 @@ export function PrimaryCta({
     <Section
       padded
       bg="background"
-      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+      className="relative w-full"
     >
       <div className="flex w-full flex-col items-center gap-3 px-4 text-center sm:gap-4 sm:px-6 lg:gap-3 lg:px-8">
         <h2 className="text-ink-dark font-OpenSans text-[32px] font-light sm:text-[48px] md:text-[56px] lg:text-7xl">
