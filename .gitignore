@@ -45,5 +45,15 @@ package.tmp.json
 *.sln
 *.sw?
 
+# Server-specific ignores
+server/node_modules/
+server/dist/
+server/.env
+server-backup/
+
+# Backup directory
+*-backup/
+
 # OS specific
 .DS_Store
+.vercel
