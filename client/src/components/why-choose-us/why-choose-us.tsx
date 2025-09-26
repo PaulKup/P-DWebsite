@@ -24,7 +24,7 @@ export function WhyChooseUs() {
     <Section
       padded
       className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden"
-    >
+    > 
       {/* Background image (already semi-transparent in asset) */}
       <div className="absolute inset-0 -z-10">
         <Image
