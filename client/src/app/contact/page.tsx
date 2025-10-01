@@ -1,5 +1,6 @@
 import { ContactHero } from '@/components/contact/contact-hero'
-import { ContactSection } from '@/components/contact/contact-section'
+import { ContactInfoSection } from '@/components/contact/contact-info-section'
+import { EnhancedContactForm } from '@/components/contact/enhanced-contact-form'
 import { FAQSection } from '@/components/contact/faq-section'
 
 export default function ContactPage() {
@@ -31,7 +32,19 @@ export default function ContactPage() {
       <ContactHero />
 
       {/* Contact Information & Form Section */}
-      <ContactSection />
+      <div className="relative overflow-hidden py-8 lg:py-16">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-start lg:gap-12">
+          {/* Contact Information */}
+          <div className="w-full max-w-[600px] px-4 lg:flex-1 lg:min-w-0 lg:max-w-none lg:px-0 lg:ml-4">
+            <ContactInfoSection />
+          </div>
+
+          {/* Contact Form */}
+          <div className="w-full max-w-[600px] px-4 lg:flex-shrink-0 lg:px-0 lg:pr-12">
+            <EnhancedContactForm />
+          </div>
+        </div>
+      </div>
 
       {/* FAQ Section */}
       <FAQSection />

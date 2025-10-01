@@ -2,10 +2,10 @@ import { OptimizedImage } from '@/components/ui/optimized-image'
 
 export function ContactInfoSection() {
   return (
-    <section id="contact-info" className="px-4 py-4 lg:px-12 lg:py-8">
+    <section id="contact-info" className="py-4 lg:py-8">
       <div className="max-w-[701px]">
         {/* Main Heading */}
-        <h2 className="mb-4 font-['Open_Sans'] text-[32px] font-light leading-tight text-[#2d2a26] sm:text-[48px] lg:mb-8 lg:text-[60px] lg:leading-[65px]">
+        <h2 className="mb-4 font-['Open_Sans'] text-[32px] font-normal leading-tight text-[#2d2a26] sm:text-[48px] lg:mb-8 lg:text-[60px] lg:leading-[65px]">
           Ready to Get Started?
         </h2>
 
@@ -20,12 +20,12 @@ export function ContactInfoSection() {
                 height={42}
               />
             </div>
-            <div>
+            <div className="lg:-ml-4">
               <h3 className="mb-1 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-2 lg:text-[50px] lg:leading-[65px]">
                 Email Us
               </h3>
               <p className="mb-0.5 font-['Open_Sans'] text-[18px] font-semibold leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]">
-                <a href="mailto:office@pdwebstudio.com" className="break-all hover:underline">
+                <a href="mailto:office@pdwebstudio.com" className="whitespace-nowrap hover:underline">
                   office@pdwebstudio.com
                 </a>
               </p>
@@ -47,7 +47,7 @@ export function ContactInfoSection() {
                 height={49}
               />
             </div>
-            <div>
+            <div className="lg:-ml-4">
               <h3 className="mb-1 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#984d37] sm:text-[36px] lg:mb-2 lg:text-[50px] lg:leading-[65px]">
                 Call Us
               </h3>

@@ -74,10 +74,10 @@ export function EnhancedContactForm() {
   return (
     <section id="contact-form" className="relative mx-auto w-full max-w-[547px] lg:max-w-[800px]">
       {/* Form Container */}
-      <div className="ml-0 mt-0 rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] p-4 lg:ml-4 lg:mt-6 lg:p-10">
+      <div className="ml-0 mt-0 rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] p-3 lg:ml-4 lg:mt-6 lg:p-6">
         <form onSubmit={onSubmit} noValidate className="space-y-3" aria-label="Contact form">
           {/* Form Title */}
-          <h3 className="mb-3 font-['Open_Sans'] text-[28px] font-light leading-tight text-[#2d2a26] sm:text-[36px] lg:mb-4 lg:text-[50px] lg:leading-[65px]">
+          <h3 className="mb-3 font-['Open_Sans'] text-[28px] font-normal leading-tight text-[#2d2a26] sm:text-[36px] lg:mb-4 lg:text-[50px] lg:leading-[65px]">
             Send us a Message
           </h3>
 
@@ -85,7 +85,7 @@ export function EnhancedContactForm() {
           <div>
             <label
               htmlFor="name"
-              className="mb-1 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-2 lg:text-[30px] lg:leading-[65px]"
+              className="mb-0.5 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]"
             >
               Name*
             </label>
@@ -109,7 +109,7 @@ export function EnhancedContactForm() {
           <div>
             <label
               htmlFor="email"
-              className="mb-1 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-2 lg:text-[30px] lg:leading-[65px]"
+              className="mb-0.5 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]"
             >
               Email*
             </label>
@@ -133,7 +133,7 @@ export function EnhancedContactForm() {
           <div>
             <label
               htmlFor="company"
-              className="mb-1 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-2 lg:text-[30px] lg:leading-[65px]"
+              className="mb-0.5 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]"
             >
               Company Name
             </label>
@@ -149,7 +149,7 @@ export function EnhancedContactForm() {
           <div>
             <label
               htmlFor="website"
-              className="mb-1 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-2 lg:text-[30px] lg:leading-[65px]"
+              className="mb-0.5 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]"
             >
               Current Website
             </label>
@@ -165,7 +165,7 @@ export function EnhancedContactForm() {
           <div>
             <label
               htmlFor="message"
-              className="mb-1 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-2 lg:text-[30px] lg:leading-[65px]"
+              className="mb-0.5 block font-['Open_Sans'] text-[18px] font-light leading-tight text-[#2d2a26] sm:text-[24px] lg:mb-1 lg:text-[30px] lg:leading-[65px]"
             >
               Message
             </label>
@@ -207,9 +207,9 @@ export function EnhancedContactForm() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="rounded-[40px] border-[3px] border-[#984d37] bg-[#f5efe8] px-8 py-3 text-[#984d37] shadow-[5px_5px_8px_0px_#2d2a26] transition-shadow duration-200 hover:!bg-[#984d37] hover:text-[#f5efe8] hover:shadow-[3px_3px_6px_0px_#2d2a26] disabled:opacity-50"
+              className="w-full max-w-[200px] rounded-[40px] border-[3px] border-[#984d37] bg-[#f5efe8] px-4 py-3 text-[#984d37] shadow-[5px_5px_8px_0px_#2d2a26] transition-shadow duration-200 hover:!bg-[#984d37] hover:text-[#f5efe8] hover:shadow-[3px_3px_6px_0px_#2d2a26] disabled:opacity-50 sm:max-w-[240px] sm:px-6 lg:max-w-[280px] lg:px-8"
             >
-              <span className="font-['Roboto_Mono'] text-[33px] font-normal">
+              <span className="whitespace-nowrap font-['Roboto_Mono'] text-[20px] font-normal sm:text-[24px] lg:text-[28px]">
                 {status === 'loading' ? 'Sending...' : 'Contact Us'}
               </span>
             </button>
