@@ -94,11 +94,11 @@ export function OurProcessCarousel() {
   const maxIndex = Math.max(0, processSteps.length - cardsPerView)
 
   const goToNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex))
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
   }
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0))
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
   }
 
   const goToSlide = (index: number) => {
@@ -117,9 +117,16 @@ export function OurProcessCarousel() {
 
     const x = clientX
     const walk = (startX - x) / 100 // Adjust sensitivity
-    const newIndex = Math.round(scrollLeft + walk)
+    let newIndex = Math.round(scrollLeft + walk)
 
-    if (newIndex !== currentIndex && newIndex >= 0 && newIndex <= maxIndex) {
+    // Handle wrapping for continuous scrolling
+    if (newIndex < 0) {
+      newIndex = maxIndex
+    } else if (newIndex > maxIndex) {
+      newIndex = 0
+    }
+
+    if (newIndex !== currentIndex) {
       setCurrentIndex(newIndex)
     }
   }
@@ -238,35 +245,31 @@ export function OurProcessCarousel() {
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        {currentIndex > 0 && (
-          <button
-            onClick={goToPrev}
-            className="bg-brand-accent text-background hover:bg-brand-accentDeep absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full shadow-lg transition-colors"
-            aria-label="Previous slides"
-          >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-        )}
+        {/* Navigation Arrows - Hidden on mobile/small screens */}
+        <button
+          onClick={goToPrev}
+          className="bg-brand-accent text-background hover:bg-brand-accentDeep absolute left-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full shadow-lg transition-colors md:flex"
+          aria-label="Previous slides"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
 
-        {currentIndex < maxIndex && (
-          <button
-            onClick={goToNext}
-            className="bg-brand-accent text-background hover:bg-brand-accentDeep absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full shadow-lg transition-colors"
-            aria-label="Next slides"
-          >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        )}
+        <button
+          onClick={goToNext}
+          className="bg-brand-accent text-background hover:bg-brand-accentDeep absolute right-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full shadow-lg transition-colors md:flex"
+          aria-label="Next slides"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
 
       {/* Indicators */}

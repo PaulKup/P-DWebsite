@@ -50,7 +50,7 @@ export default function ServicesPage() {
       {/* Three service cards (image on top per Figma) */}
       <Section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 min-[840px]:grid-cols-2 min-[1390px]:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 min-[840px]:grid-cols-2 min-[1390px]:grid-cols-3 min-[840px]:justify-items-center">
             <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26]">
               <div className="relative h-24 w-full pt-3 sm:h-28">
                 <Image
@@ -69,8 +69,8 @@ export default function ServicesPage() {
                   A professional website that reflects your brand and gets customers through the
                   door, online and off.
                 </p>
-                <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-7 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
+                <div className="-ml-1 mt-2 w-full text-left sm:-ml-6">
+                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
                     <li>Modern, clean design</li>
                     <li>Mobile-first approach</li>
                     <li>SEO optimized</li>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
                   reservations and bookings directly from your site.
                 </p>
                 <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-6 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
+                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
                     <li className="whitespace-nowrap">Secure payment processing</li>
                     <li>CMS and Shop Management</li>
                     <li>Booking and Reservation Management</li>
@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </article>
-            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26]">
+            <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] min-[840px]:col-span-2 min-[1390px]:col-span-1">
               <div className="relative h-20 w-full pt-3 sm:h-24">
                 <Image
                   src="/images/servicesCard3.png"
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                   improve efficiency.
                 </p>
                 <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-7 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
+                  <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px] md:text-[20px] lg:text-[23px]">
                     <li>AI-powered chatbots</li>
                     <li>User authentication</li>
                     <li>Offline functionality</li>
@@ -156,7 +156,7 @@ export default function ServicesPage() {
                 Perfect for small businesses getting started online
               </p>
               <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-6 text-[16px] leading-tight sm:text-[18px]">
+                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px]">
                   <li>Up to 5-pages responsive website</li>
                   <li>SEO optimized</li>
                   <li>Fast loading times</li>
@@ -176,7 +176,7 @@ export default function ServicesPage() {
                 Ideal for growing businesses with more complex needs
               </p>
               <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-6 text-[16px] leading-tight sm:text-[18px]">
+                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px]">
                   <li>Up to 10-pages responsive website</li>
                   <li>SEO optimized</li>
                   <li>Fast loading times</li>
@@ -204,7 +204,7 @@ export default function ServicesPage() {
                 requiring more comprehensive services, such as:
               </p>
               <div className="-ml-5 mt-2 w-full text-left sm:-ml-6">
-                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-6 text-[16px] leading-tight sm:text-[18px]">
+                <ul className="text-ink-dark w-full list-outside list-disc space-y-1 pl-9 text-[16px] leading-tight sm:text-[18px]">
                   <li>Unlimited pages</li>
                   <li>Custom functionality</li>
                   <li>Advanced integrations</li>
@@ -213,6 +213,11 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </article>
+          </div>
+          <div className="mt-8 text-center">
+            <p className="font-openSans text-[25px] text-ink-dark font-normal leading-normal">
+              All packages include free small content updates for first 6 months
+            </p>
           </div>
         </div>
       </Section>
