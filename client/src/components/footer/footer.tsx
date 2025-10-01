@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Footer() {
   const footerImageSrc = '/images/footerBackground.png'
-  const footerLogoSrc = '/images/logo.png'
+  const footerLogoSrc = '/images/footerLogo.png'
 
   return (
     <footer aria-labelledby="footer-heading">
@@ -87,6 +87,7 @@ export function Footer() {
 
           {/* Right column: logo */}
           <div className="flex w-full items-center justify-center self-stretch md:w-auto md:justify-end">
+            <a href="/">
             <Image
               src={footerLogoSrc}
               alt="P&D Web Studio logo"
@@ -96,6 +97,7 @@ export function Footer() {
               className="h-auto max-h-full w-auto"
               priority
             />
+            </a>
           </div>
         </div>
 

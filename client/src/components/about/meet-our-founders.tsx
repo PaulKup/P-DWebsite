@@ -21,7 +21,7 @@ const founders = [
 
 export function MeetOurFounders() {
   return (
-    <div className="relative w-full py-8 sm:py-10 lg:py-12">
+    <div className="relative w-full">
       {/* Section Title */}
       <div className="mb-8 px-4 text-center sm:mb-10 lg:mb-12">
         <h2 className="text-ink-dark text-[32px] font-light leading-[1.1] tracking-[-2px] sm:text-[48px] sm:tracking-[-3px] md:text-[60px] lg:text-[95px] lg:tracking-[-4.75px]">

@@ -202,7 +202,7 @@ export function OurProcessCarousel() {
   const totalIndicators = maxIndex + 1
 
   return (
-    <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden py-8 sm:py-10 lg:py-12">
+    <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none overflow-hidden">
       {/* Section Title */}
       <div className="mb-8 px-4 text-center sm:mb-10 lg:mb-12">
         <h2 className="text-ink-dark text-[32px] font-light leading-[1.1] tracking-[-2px] sm:text-[48px] sm:tracking-[-3px] md:text-[60px] lg:text-[95px] lg:tracking-[-4.75px]">

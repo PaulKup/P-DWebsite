@@ -23,7 +23,7 @@ export function WhyChooseUs() {
   return (
     <Section
       padded
-      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden"
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none overflow-hidden"
     > 
       {/* Background image (already semi-transparent in asset) */}
       <div className="absolute inset-0 -z-10">
@@ -43,8 +43,8 @@ export function WhyChooseUs() {
         />
       </div>
 
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="ml-auto flex flex-col items-center gap-6 md:w-1/2 lg:w-1/2">
+      <div className="w-full px-6 sm:px-6 lg:px-8">
+        <div className="ml-auto flex flex-col items-center gap-6 md:w-[672px]">
           <h2
             className="font-heading2 text-brand-accentDeep text-center text-[96px] font-normal"
             style={{ textShadow: '1px 3px 4px rgba(45,42,38,0.55)' }}

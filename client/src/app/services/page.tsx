@@ -19,7 +19,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <header className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] -mt-px w-screen max-w-none overflow-hidden">
+      <header className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] -mt-px w-screen max-w-none overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-black after:translate-y-px">
         <Image
           src="/images/ourServicesBackground.png"
           alt="decorative header image"
@@ -41,14 +41,14 @@ export default function ServicesPage() {
               size="2xl"
               className="shadow-[3px_5px_5px_0_#2D2A26] hover:shadow-[3px_5px_5px_0_#2D2A26]"
             >
-              <Link href="/contact">Get started</Link>
+              <Link href="/contact" className="font-mono">Get Started!</Link>
             </Button>
           </div>
         </div>
       </header>
 
       {/* Three service cards (image on top per Figma) */}
-      <Section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+      <Section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 min-[840px]:grid-cols-2 min-[1390px]:grid-cols-3">
             <article className="bg-sand-background border-brand-accentDeep overflow-hidden rounded-[30px] border-[3px] shadow-[2px_5px_6px_0_#2D2A26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26]">
@@ -138,7 +138,7 @@ export default function ServicesPage() {
       </Section>
 
       {/* Packages (no e-commerce) */}
-      <Section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+      <Section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <h2 className="font-openSans text-ink-dark text-center text-5xl leading-none tracking-[-0.03em] sm:text-6xl lg:text-[95px]">
             Pricing Plans

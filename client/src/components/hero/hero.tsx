@@ -8,9 +8,9 @@ export function Hero() {
     <Section
       padded
       bg="background"
-      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none"
     >
-      <div className="grid w-full items-end gap-4 px-2 py-8 sm:px-4 lg:[grid-template-columns:minmax(0,1fr)_max-content]">
+      <div className="grid w-full items-end gap-4 px-2 sm:px-4 lg:[grid-template-columns:minmax(0,1fr)_max-content]">
         <div className="relative z-10 mr-0 space-y-3 self-center text-center lg:mr-[-35px] lg:self-end lg:text-left">
           <h1 className="text-ink-dark font-heading1 text-[36px] font-normal leading-[1.1] tracking-normal sm:text-[48px] lg:text-[60px]">
             Let’s Get You a Website That Brings in Customers.

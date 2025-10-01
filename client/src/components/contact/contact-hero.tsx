@@ -2,7 +2,7 @@ import { OptimizedImage } from '@/components/ui/optimized-image'
 
 export function ContactHero() {
   return (
-    <div className="relative h-[200px] w-full overflow-hidden sm:h-[250px] lg:h-[324px]">
+    <div className="relative h-[200px] w-full overflow-hidden after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-black after:translate-y-px sm:h-[250px] lg:h-[324px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage

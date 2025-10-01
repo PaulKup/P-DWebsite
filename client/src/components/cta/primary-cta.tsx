@@ -6,18 +6,20 @@ export interface PrimaryCtaProps {
   title?: string
   description?: string
   buttonText?: string
+  padded?: boolean | 'tight' | 'normal' | 'loose'
 }
 
 export function PrimaryCta({
   title = 'Ready to Transform Your Online Presence?',
   description = "Let's discuss your project and create something amazing together.",
   buttonText = 'Get Started!',
+  padded = true,
 }: PrimaryCtaProps) {
   return (
     <Section
-      padded
+      padded={padded}
       bg="background"
-      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen"
+      className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-[100vw] max-w-none"
     >
       <div className="flex w-full flex-col items-center gap-3 px-4 text-center sm:gap-4 sm:px-6 lg:gap-3 lg:px-8">
         <h2 className="text-ink-dark font-OpenSans text-[32px] font-light sm:text-[48px] md:text-[56px] lg:text-7xl">
