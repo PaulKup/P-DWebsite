@@ -30,7 +30,7 @@ export default function ServicesPage() {
         />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 text-center sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <h1
-            className="font-heading2 text-sand-background text-4xl leading-none sm:text-5xl md:text-6xl lg:text-[200px]"
+            className="font-heading2 text-sand-background text-6xl leading-none sm:text-9xl md:text-9xl lg:text-[180px] xl:text-[200px]"
             style={{ textShadow: '2px 4px 4px #2D2A26' }}
           >
             Our Services
@@ -39,9 +39,9 @@ export default function ServicesPage() {
             <Button
               asChild
               size="2xl"
-              className="shadow-[3px_5px_5px_0_#2D2A26] hover:shadow-[3px_5px_5px_0_#2D2A26]"
+              className="shadow-[3px_5px_5px_0_#2D2A26] hover:shadow-[3px_5px_5px_0_#2D2A26] !px-2 min-[330px]:!px-4 sm:!px-6"
             >
-              <Link href="/contact" className="font-mono">Get Started!</Link>
+              <Link href="/contact" className="font-mono text-[20px] min-[330px]:text-[24px] sm:text-[28px] md:text-[33px]">Get Started!</Link>
             </Button>
           </div>
         </div>

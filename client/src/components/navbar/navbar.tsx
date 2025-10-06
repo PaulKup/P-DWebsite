@@ -29,7 +29,8 @@ export function Navbar() {
             alt="P&D Web Studio logo"
             width={240}
             height={72}
-            className="h-full w-auto"
+            sizes="(max-width: 640px) 180px, (max-width: 1024px) 200px, 240px"
+            className="h-auto w-[180px] sm:w-[200px] lg:w-[240px]"
             priority
           />
         </Link>

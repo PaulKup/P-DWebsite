@@ -10,22 +10,22 @@ interface FAQCardProps {
 function FAQCard({ question, answer, icon, className = '' }: FAQCardProps) {
   return (
     <div
-      className={`flex flex-col rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] p-4 shadow-[3px_8px_8px_0px_#2d2a26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] lg:p-8 ${className}`}
+      className={`flex flex-col rounded-[30px] border-[3px] border-[#984d37] bg-[#f5efe8] shadow-[3px_8px_8px_0px_#2d2a26] transition-all duration-300 hover:scale-[1.02] hover:shadow-[2px_5px_6px_0_#2D2A26] ${className}`}
     >
       {/* Icon */}
-      <div className="mb-4 flex justify-center lg:mb-6">
+      <div className="mb-1 flex w-full justify-center py-1 lg:mb-3 lg:py-1">
         <div className="h-[80px] w-[80px] lg:h-[147px] lg:w-[147px]">
           <OptimizedImage src={icon} alt="" width={147} height={147} className="h-full w-full" />
         </div>
       </div>
 
       {/* Question */}
-      <h3 className="mb-4 text-center font-['Open_Sans'] text-[20px] font-bold leading-tight text-[#984d37] sm:text-[28px] lg:mb-6 lg:text-[35px] lg:leading-normal">
+      <h3 className="mb-2 w-full px-2 text-center font-['Open_Sans'] text-[20px] font-bold leading-tight text-[#984d37] sm:text-[28px] lg:mb-3 lg:px-3 lg:text-[35px] lg:leading-normal">
         {question}
       </h3>
 
       {/* Answer */}
-      <p className="flex-grow px-2 text-center font-['Open_Sans'] text-[16px] font-normal leading-tight text-[#2d2a26] sm:text-[20px] lg:px-4 lg:text-[30px] lg:leading-normal">
+      <p className="flex-grow w-full px-2 pb-2 text-center font-['Open_Sans'] text-[16px] font-normal leading-tight text-[#2d2a26] sm:text-[20px] lg:px-3 lg:pb-3 lg:text-[30px] lg:leading-normal">
         {answer}
       </p>
     </div>

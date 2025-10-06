@@ -29,7 +29,7 @@ export function Footer() {
         {/* Divider between image and footer */}
         <div className="border-t border-[#f5efe8]" />
 
-        <div className="flex h-[363px] w-full flex-col items-center justify-between gap-8 px-4 sm:px-6 md:flex-row lg:px-8">
+        <div className="flex min-h-[300px] w-full flex-col items-center justify-between gap-8 px-4 py-8 sm:px-6 md:flex-row lg:px-8">
           {/* Left column: contact + quick links */}
           <div className="w-full space-y-4 md:w-auto md:max-w-[60%]">
             <div>
@@ -86,7 +86,7 @@ export function Footer() {
           </div>
 
           {/* Right column: logo */}
-          <div className="flex w-full items-center justify-center self-stretch md:w-auto md:justify-end">
+          <div className="flex w-full items-center justify-center md:w-auto md:justify-end">
             <a href="/">
             <Image
               src={footerLogoSrc}
@@ -94,7 +94,7 @@ export function Footer() {
               width={713}
               height={189}
               sizes="(min-width: 768px) 50vw, 90vw"
-              className="h-auto max-h-full w-auto"
+              className="h-auto max-h-[150px] w-auto max-w-[250px] md:max-h-full md:max-w-none"
               priority
             />
             </a>
@@ -103,7 +103,7 @@ export function Footer() {
 
         {/* Bottom divider and copyright */}
         <div className="border-t border-[#f5efe8]" />
-        <div className="mx-auto px-4 py-6 text-center text-sm text-[#ebd9c2] sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 py-2 text-center text-sm text-[#ebd9c2] sm:px-6 lg:px-8">
           © {new Date().getFullYear()} P&amp;D Web Studio LLC. All rights reserved.
         </div>
       </div>

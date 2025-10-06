@@ -274,12 +274,12 @@ export function OurProcessCarousel() {
 
       {/* Indicators */}
       {totalIndicators > 1 && (
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-8 flex justify-center gap-2 px-4 sm:gap-3">
           {Array.from({ length: totalIndicators }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-[34px] w-[34px] rounded-full transition-colors ${
+              className={`aspect-square min-h-[20px] min-w-[20px] max-h-[20px] max-w-[20px] flex-shrink-0 rounded-full transition-colors min-[560px]:min-h-[24px] min-[560px]:min-w-[24px] min-[560px]:max-h-[24px] min-[560px]:max-w-[24px] sm:min-h-[32px] sm:min-w-[32px] sm:max-h-[32px] sm:max-w-[32px] lg:min-h-[34px] lg:min-w-[34px] lg:max-h-[34px] lg:max-w-[34px] ${
                 index === currentIndex ? 'bg-brand-accent' : 'bg-sand-light hover:bg-sand-medium'
               }`}
               aria-label={`Go to slide ${index + 1}`}
